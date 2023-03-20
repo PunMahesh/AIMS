@@ -5,7 +5,7 @@ from django.contrib import messages
 from .models import login as l
 from .models import registration as r
 from django.db import models
-from .forms import RegistrationForm
+# from .forms import RegistrationForm
 
 # Create your views here.
 def index(request):
@@ -50,7 +50,7 @@ def register(request):
             else:
                 users = r(first_name=first_name,last_name=last_name,email=email,dob=dob,address=address,contact=contact,gender=gender,password=password,confirm_password=confirm_password)
                 users.save()
-                return redirect('/login.html')
+                return redirect('/login')
         return render(request, 'registration.html')
         
     
