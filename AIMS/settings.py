@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'AIMS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'AIMS',
-        'USER': 'root',
-        'PASSWORD': 'try23432',
-        'HOST': 'localhost',
-        'PORT': '3307'
+        'ENGINE':'django.db.backends.mysql',
+        'NAME':'aims',
+        'HOST':'localhost',
+        'PORT':'3306',
+        'USER':'root',
+        'PASSWORD':'',
     }
 }
 
