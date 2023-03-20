@@ -50,12 +50,7 @@ def register(request):
             else:
                 users = r(first_name=first_name,last_name=last_name,email=email,dob=dob,address=address,contact=contact,gender=gender,password=password,confirm_password=confirm_password)
                 users.save()
-                return redirect('/')
+                return redirect('/login.html')
         return render(request, 'registration.html')
         
     
-def services(request):
-    return HttpResponse("This is for service")
-
-def contact(request):
-    return HttpResponse("This is for Contact")
