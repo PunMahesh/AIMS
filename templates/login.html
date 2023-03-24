@@ -56,10 +56,8 @@
                <div class="pass-link">
                   <a href="#" id="forget_password">Forgot Password?</a>
                </div>
-            </div>
-            {% for message in messages %}
-               <p id="messages">{{message}}</p>
-            {% endfor %}            
+            </div>   
+            {{fomr.error}}       
             <div class="field">
                <input type="submit" value="Login">
             </div>
