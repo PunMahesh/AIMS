@@ -37,8 +37,8 @@
          <form action="#" method="POST">
             {% csrf_token %}
             <DIV id="text1">Username or email address </DIV>
-            <div class="field" id="email_address">
-               {{form.username}}
+            <div class="field" id="">
+               <input type="text" required name='username'> 
                <label>Email Address</label>
             </div>
 
