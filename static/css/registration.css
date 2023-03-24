@@ -6,53 +6,12 @@
     color:rgb(29, 25, 25);
 }
 
-.header-div {
-    display: flex;
-    width: 100%;
-    align-content: center;
-    gap: 0 90px;
-}
-.logo-container  img {
-    margin-left: 150px;
-    width: 100px;
-    height: 80px;
-    cursor: pointer;
-    object-fit: cover;
-}
 
-.nav-items-container {
-    align-self: center;
-    font-size: small;
-    margin: 0 40px 0 190px;
-}
-
-.nav-ul {
-    display: flex;
-    gap: 0 45px;
-}
-
-.nav-ul  li {
-    list-style: none;
-    font-weight: 600;
-    cursor: pointer;
-   
-}
-
-.cart-search-container {
-    display: flex;
-    justify-content: left;
-}
-
-.cart-search-container  img {
-    margin: 30px 10px 0 10px;
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
-}
 .registration {
     margin:auto;
+    margin-top: 25px;
     width: 80%;
-    height: 90%;
+    min-height: 100vh;
     margin-bottom: 20px;
     display: flex;
     border: 2px solid rgba(12, 95, 55, 0.2);
@@ -63,15 +22,16 @@
 }
 .registration-box {
     margin-bottom: 20px;
+    min-height: 100vh;
     width: 50%;
-    height: 100%;
     border: 3px solid rgba(12, 95, 55, 0.2);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    justify-content: center;
 }
+
 .registration-box span{
     background-color: rgb(22, 146, 22);
     color:white;
@@ -88,12 +48,9 @@
     text-align: center;
     border-radius: 6px 6px 0 0;
 }
-.gender{
-    display: flex;
-}
+
 .form-group {
-    margin-bottom: 20px;
-    position: relative;
+    margin-bottom: 10px;
 }
 .form-group label {
     display: block;
@@ -113,7 +70,7 @@
     font-size: 12px;
 }
 form{
-    width:250px;
+    width:65%;
 } 
 form label{
     display:flex;
@@ -134,12 +91,16 @@ form .field input[type="submit"]{
     height: 35px;
     margin-top: 5px;
     margin-bottom:5px;
-    margin-left: 80px;
     border:none;
     background-color:rgb(22, 146, 22);
     color: white;
     border-radius: 6px;
     cursor: pointer;   
+}
+form .field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 form .field:hover{
     transform: scale(0.95);
