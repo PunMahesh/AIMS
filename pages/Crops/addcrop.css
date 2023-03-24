@@ -161,6 +161,22 @@
 
 }
 
+.img-upload{
+    display: flex;
+    align-items: center;
+    height:90%;
+    width: 60%;
+    /* padding-left: 10px; */
+    background-color: #F3FEF7;
+    border: 1px solid black ;
+}
+
+.img-upload input[type="file"]{
+    height:auto;
+    width: 100%;
+    border:none  ;
+}
+    
 #textarea {
     height: 150px;
     
