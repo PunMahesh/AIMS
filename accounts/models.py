@@ -3,10 +3,20 @@ from django.contrib.auth.models import AbstractUser
 
 #Create your model here
 
+from django.core.exceptions import ValidationError
+
+def validate_contact(value):
+    if not value.isdigit():
+        raise ValidationError('Please enter only digits for contact number')
+    if len(value) != 10:
+        raise ValidationError('Contact number must be exactly 10 digits')
+    if not value.startswith('9'):
+        raise ValidationError('Contact number must start with 9')
+
 class User(AbstractUser):
     first_name = models.CharField(max_length=225)
     last_name = models.CharField(max_length=225)
-    contact = models.IntegerField(default=0)
+    contact = models.CharField(max_length=10,validators=[validate_contact])
     address = models.CharField(max_length=225,default="")
     gender = models.CharField(max_length=1,default='',
                               choices=(('M', 'Male',),
