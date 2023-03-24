@@ -37,38 +37,31 @@
             <div class="registration-text">
                 <span>User Registration<span>
             </div>
-            <form method="post">
+            <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <label>First Name</label>
-                <input type="text" required placeholder="" name = 'first_name'>
-                <label>Last Name</label>
-                <input type="text" required placeholder="" name = 'last_name'>
+                <label>Username</label>
+                {{form.username}}
+                <label>First Name</label> 
+                {{form.first_name}}
+                <label>Last Name</label>    
+                {{form.last_name}}
                 <label>Email address*</label>
-                <input type="email" required placeholder="" name = 'email'>
-                <label>Date of birth</label>
-                <input type="date"  required  name="dob">
+                {{form.email}}
                 <label>Address*</label>
-                <input type="text" required placeholder="" name = 'address'>
+                {{form.address}}
                 <label>Contact Number</label>
-                <input type="contact" required placeholder="" name = 'contact'>
+                {{form.contact}}
                 <label>Gender</label>
-                <div class="gender">
-                    <input type="radio" id="male" name="gender" />Male
-                    <input type="radio" id="famale" name="gender" checked />Female
-
-                    <input type="radio" id="other" name="gender" />Others
-                </div>
-
+                {{form.gender}}
                 <label>Create Password*</label>
-                <input type="password" required placeholder="" name = 'password'>
+                {{form.password1}}
                 <label>Confirm Password</label>
-                <input type="password" required placeholder="" name = 'confirm_password'>
+                {{form.password2}}
+
+                {{form.errors}}
                 <div class="field">
-                    {{ form.as_p }}
                     <input type="submit" value="Register">
                  </div>
-
             </form>
         </div>
 
