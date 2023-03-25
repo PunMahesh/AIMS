@@ -1,87 +1,25 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>AIMS</title>
-      <link rel="stylesheet" href="static/css/login.css">
-   </head>
-   <body>
-      <header>
-         <div class="header-div">
-             <div class="logo-container">
-                 <img src="static/assets/images/logo.png" alt="logo"/>
-             </div>
-             <div class="nav-items-container">
-                 <nav>
-                     <ul class="nav-ul">
-                         <li>Home</li>
-                         <li>Blogs</li>
-                         <li>Farmers Kit</li>
-                         <li>Market</li>
-                         <li>Hire</li>
-                         <li>Account</li>-
-                     </ul>
-                 </nav>
-             </div>
-             <div class="cart-search-container">
-                 <img src="static/assets/images/search.png" alt="search-button"/>
-                 <img src="static/assets/images/shopping-bag.png" alt="cart-button"/>
-             </div>
-         </div>
-     </header>
-   
-      <div class="wrapper">
-         <div class="title">
-            
-            Forget Password
-         </div>
-         <form action="#" method="POST">
-            {% csrf_token %}
-            <DIV id="text1">Username or email address </DIV>
-            <div class="field" id="email_address">
-            <input type="text" required name='username'> 
-               <label>Email Address</label>
-            </div>
-            <div>
+{% block start %}
+<div class="continer">
+    <form class="form" method="post" id="form">
+        {% csrf_token %}
+        <h4>Forget Password</h4>
 
-               <button class "field" type="submit">Submit</button>
-            </div>
-         </form>
-      </div>
+        {% if messages %}
 
+        {% for message in messages %}
+        <div class="alert alert-info">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+     
+        <div class="form-group">
+            <label for="password">Username</label>
+            <input type="text" name="username"  class="form-control">
+        </div> 
+        <button class="btn" type="submit">Submit</button>
 
-      <!-- footer begins -->
+    </form>
+</div>
 
-      <footer class="footer">
-         <div class="footer-col">
-             <h4>AIMS</h4>
-             <div>
-                 <p>Kathmandu, Nepal</p>
-                 <p>Phone:+977 9819057663</p>
-                 <p>Email:info@aims.com</p>
-             </div>
-         </div>
-
-         <div class="footer-col">
-             <h4>USEFUL LINKS</h4>
-             <div>
-                 <p> >  Blog</p>
-                 <p> >  News</p>
-                 <p> >  Farmers Kit</p>
-                 <p> >  Farmers Market</p>
-             </div>
-         </div>
-
-         <div class="footer-col">
-             <h4>OUR SERVICES</h4>
-             <div>
-                 <p> > Home</p>
-                 <p> > About</p>
-                 <p> > Hire Cntact</p>
-                 
-             </div>
-            
-         </div>
-     </footer>
-   </body>
-</html>
+{% endblock %}
