@@ -37,24 +37,24 @@
          <form action="#" method="POST">
             {% csrf_token %}
             <DIV id="text1">Username or email address </DIV>
-            <div class="field" id="">
-               <input type="text" required name='username'> 
+            <div class="field" id="" name = "txtemail" value = "{{cookie1}}">
+               {{form.username}}
                <label>Email Address</label>
             </div>
 
             <DIV id="text2">Password *</DIV>
 
-            <div class="field" id="password">
+            <div class="field" id="password" name = "txtpass" value= "{{cookie2 }}">
                {{form.password}}
                <label>Password</label>
             </div>
             <div class="content">
-               <div class="checkbox">
-                  <input type="checkbox" id="remember-me">
-                  <label for="remember-me">Remember me</label>
+               <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="remember-me" name="remember_me">
+                  <label class="form-check-label" for="remember-me">Remember me</label>   
                </div>
                <div class="pass-link">
-                  <a href="forgot" id="forget_password">Forgot Password?</a>
+                  <a href="password_reset" id="forget_password">Forgot Password?</a>
                </div>
             </div>   
             {{fomr.error}}       
