@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/registration.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet"/>
+</head>
+
+<body>
+    <div class="registration">
+        <div class="registration-box">
+            <div class="registration-text">
+                <span>User Registration<span>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    {{form.username}}
+                    <div class="error">{{form.username.errors}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="first_name">First Name</label> 
+                    {{form.first_name}}
+                    <div class="error">{{form.first_name.errors}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>    
+                    {{form.last_name}}
+                    <div class="error">{{form.last_name.errors}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address*</label>
+                    {{form.email}}
+                    <div class="error">{{form.email.errors}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address*</label>
+                    {{form.address}}
+                    <div class="error">{{form.address.errors}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number</label>
+                    {{form.contact}}                    
+                    <div class="error">{{form.contact.errors}}</div>
+                </div>
+                <div class="form-group gender">
+                    <label for="gender">Gender</label>
+                    {{form.gender}}
+                    <div class="error">{{form.gender.errors}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="password1">Create Password*</label>
+                    {{form.password1}}
+                    <div class="error">{{form.password1.errors}}</div>
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    {{form.password2}}
+                    <div class="error">{{form.password2.errors}}</div>
+                </div>
+                <div class="form-group">
+                    <div class="field">
+                        <input type="submit" value="Register" href="loginpage">
+                     </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
