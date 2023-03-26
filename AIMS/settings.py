@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts',
+    'farmer',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -136,3 +137,10 @@ AUTH_USER_MODEL = 'accounts.User'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+
+SESSION_COOKIE_AGE = 60 * 60 # Session cookie expires in 1 hour
+SESSION_SAVE_EVERY_REQUEST = True # Save session on every request
+
+# Set the "remember me" cookie age to a longer value
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 30 * 24 * 60 * 60 # Remember me cookie expires in 30 day

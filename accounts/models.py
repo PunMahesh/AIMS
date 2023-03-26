@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+
 
 #Create your model here
 
@@ -26,11 +26,3 @@ class User(AbstractUser):
     is_customer = models.BooleanField(default=True)
     is_farmer = models.BooleanField(default=False)
     is_worker = models.BooleanField(default=False)
-
-class Profile(models.Model):
-    user = models.OneToOneField(User , on_delete=models.CASCADE)
-    forget_password_token = models.CharField(max_length=100)
-    
-
-    def __str__(self):
-        return self.user.username
