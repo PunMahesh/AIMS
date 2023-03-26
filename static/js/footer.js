@@ -18,18 +18,18 @@ class Footer extends HTMLElement {
         <div class="footer-col">
             <h4>USEFUL LINKS</h4>
             <div>
-                <p> > Blog</p>
-                <p> > News</p>
-                <p> > Farmers Kit</p>
-                <p> > Farmers Market</p>
+                <p> {">"} Blog</p>
+                <p> {">"} News</p>
+                <p> {">"} Farmers Kit</p>
+                <p> {">"} Farmers Market</p>
             </div>
         </div>
         <div class="footer-col">
             <h4>OUR SERVICES</h4>
             <div>
-                <p> > Home</p>
-                <p> > About</p>
-                <p> > Hire Contact</p>
+                <p> {">"} Home</p>
+                <p> {">"} About</p>
+                <p> {">"} Hire Contact</p>
             </div>
         </div>
     </footer>

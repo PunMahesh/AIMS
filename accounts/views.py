@@ -6,6 +6,8 @@ from django.http import HttpResponse
 
 
 # Create your views here.
+def farmerHome(request):
+    return render(request, 'farmerHome.html')
 
 def index(request):
     return render(request, 'index.html')
@@ -38,7 +40,7 @@ def login_view(request):
             return redirect('/')
         else:
             msg = 'error validating form'
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'loginpage.html', {'form': form})
 
 def scookie(request):
     response = HttpResponse("cookie example")
