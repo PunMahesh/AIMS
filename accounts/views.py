@@ -25,31 +25,26 @@ def registration(request):
 
     
 def login_view(request):
-    form = LoginForm(request.POST or None)
+    form = LoginForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
-            if request.POST.get("remember_me"):
-                response = HttpResponse("cookie example")
-                response.set_cookie("cid",request.POST["txtemail"])
-                response.set_cookie("cid2",request.POST["txtpass"])
-                return response
-            login(request,user)
-            return redirect('/')
+            if user is not None and user.is_superuser:
+                login(request, user)
+                return redirect('/admin')
+            elif user is not None and user.is_customer:
+                login(request, user)
+                return redirect('/')
+            elif user is not None and user.is_farmer:
+                login(request, user)
+                return redirect('farmerHome')
+            else:
+                msg= 'invalid credentials'
         else:
-            msg = 'error validating form'
-    return render(request, 'loginpage.html', {'form': form})
-
-def scookie(request):
-    response = HttpResponse("cookie example")
-    response.set_cookie("cid","abc@gmail.com")
-    response.set_cookie("cid2","xyz@gmail.com")
-def gcookie(request):
-    a = request.COOKIES["cid"]
-    b = request.COOKIES["cid2"]
-    return HttpResponse("value is "+ a + " value is " + b)
+            msg = "error validation form"
+    return render(request, 'login.html', {'form': form})
 
                 
 

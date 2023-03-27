@@ -37,17 +37,16 @@
          <form action="#" method="POST">
             {% csrf_token %}
             <DIV id="text1">Username or email address </DIV>
-            <div class="field" id="" name = "txtemail" value = "{{cookie1}}">
+            <div class="username" id="" name = "txtemail" value = "{{cookie1}}">
                {{form.username}}
-               <label>Email Address</label>
             </div>
 
             <DIV id="text2">Password *</DIV>
 
-            <div class="field" id="password" name = "txtpass" value= "{{cookie2 }}">
+            <div class="password-container">
                {{form.password}}
-               <label>Password</label>
             </div>
+            <i class="fa-solid fa-eye" id="showpassword"></i>
             <div class="content">
                <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="remember-me" name="remember_me">
@@ -56,8 +55,8 @@
                <div class="pass-link">
                   <a href="password_reset" id="forget_password">Forgot Password?</a>
                </div>
-            </div>   
-            {{fomr.error}}       
+               {{form.error}} 
+            </div>        
             <div class="field">
                <input type="submit" value="Login">
             </div>
@@ -100,6 +99,7 @@
              </div>
             
          </div>
+         <script src="static/js/showpass.js"></script>
      </footer>
    </body>
 </html>
