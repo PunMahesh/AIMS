@@ -4,6 +4,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path("add-crop",views.add_crop,name='add_crop'),
+    path("crops",views.crops,name='crops'),
     path("farmerHome",views.farmerHome,name='farmerHome'),
     path("",views.index,name=''),
     path("loginpage",views.login_view,name="loginpage"),

@@ -54,5 +54,9 @@ def gcookie(request):
 def add_crop(request):
     return render(request, "addcrop.html")
 
+def crops(request):
+    return render(request, "crops.html")
+
+
                 
 
