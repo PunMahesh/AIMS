@@ -51,5 +51,8 @@ def gcookie(request):
     b = request.COOKIES["cid2"]
     return HttpResponse("value is "+ a + " value is " + b)
 
+def add_crop(request):
+    return render(request, "addcrop.html")
+
                 
 
