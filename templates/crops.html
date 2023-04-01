@@ -11,59 +11,105 @@
 </head>
 <body>
     <div class="container">
+        <div class="profile-bar">
+            <div class="name-container">
+                <div class="logo">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>
+                </div>
+                <div class="name-role">
+                    <span class="name">User name</span>
+                    <span class="role">Farmer</span>
+                </div>
+            </div>
+        </div>
         {% include 'components/sidebar.html' %}
 
         <div class="content">
-            <div class="profile-bar">
-                <div class="name-container">
-                    <div class="logo">
-                        <span class="material-symbols-outlined">
-                            account_circle
-                        </span>
-                    </div>
-                    <div class="name-role">
-                        <span class="name">User name</span>
-                        <span class="role">Farmer</span>
+            <div class="main-content">
+                <div class="content-title">
+                    <span>Crops Details</span>
+                    <div class="content-title-button">
+                        <button onclick="goToAddNewCrop()">
+                            <span class="material-symbols-outlined">
+                                add
+                            </span>
+                            Add New Crop
+                        </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="headline">
-                    <h2 class="">Crops Details</h2>
-
-                        <button id="add-new-crop" onclick="goToAddNewCrop()">
-                            <span id="add-sign">
-                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#000" stroke-width="2" d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,18 L12,6 M6,12 L18,12"></path></svg>
-                            </span> Add New Crop
-                        </button>
-            </div>
-
-            <div class="main">
-                <div class="sub-container">
-                    <div class="box">
-                        <div class="upper">1</div>
-                        <div class="middle">
-                            <p>Crop:</p>
-                            <hr class="line">
-                            <p>Season:</p>
-                            <hr class="line">
-                            <p>Disease:</p>
-                            <hr class="line">
-                            <p>Pest:</p>
-                            <hr class="line">
-                            <p>Market Information:</p>
-                            <hr class="line">
-                            <p>Details</p>
-                            <hr class="line">
-                            <hr class="line">
+                <div class="content-body">
+                    <div class="crops-container">
+                        {% for crop in crops %}
+                        <div class="crop-card">
+                            <div class="crop-card-header">
+                                <span>{{ forloop.counter }}</span>
+                            </div>
+                            <div class="crop-card-body">
+                                <div class="crop-card-body-item">
+                                    <div class="bot item-label">
+                                        <span>Crop: </span>
+                                    </div>
+                                    <div class="bot item-value">
+                                        <span>{{ crop.name }}</span>
+                                    </div>
+                                </div>
+                                <div class="crop-card-body-item">
+                                    <div class="bot item-label">
+                                        <span>Season: </span>
+                                    </div>
+                                    <div class="bot item-value">
+                                        <span>{{ crop.season }}</span>
+                                    </div>
+                                </div>
+                                <div class="crop-card-body-item">
+                                    <div class="bot item-label">
+                                        <span>Disease: </span>
+                                    </div>
+                                    <div class="bot item-value">
+                                        <span>{{ crop.disease }}</span>
+                                    </div>
+                                </div>
+                                <div class="crop-card-body-item">
+                                    <div class="bot item-label">
+                                        <span>Pest: </span>
+                                    </div>
+                                    <div class="bot item-value">
+                                        <span>{{ crop.pest }}</span>
+                                    </div>
+                                </div>
+                                <div class="crop-card-body-item">
+                                    <div class="bot item-label">
+                                        <span>Market Information: </span>
+                                    </div>
+                                    <div class="bot item-value">
+                                        <span>{{ crop.season }}</span>
+                                    </div>
+                                </div>
+                                <div class="crop-card-body-item">
+                                    <div class="bot item-label">
+                                        <span>Details: </span>
+                                    </div>
+                                    <div class="bot item-value">
+                                        <span>{{ crop.details }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="crop-card-footer">
+                                <button>
+                                    Show More
+                                </button>
+                            </div>
                         </div>
-                        <div class="lower">
-                            <a href="#" class="link">Show More</a>
-                        </div>
+                        {% endfor %}
+                        <div class="spacer"></div>
+                        <div class="spacer"></div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
 </body>
