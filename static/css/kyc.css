@@ -125,3 +125,30 @@ body {
 .next-btn:active {
     transform: scale(0.96);
 }
+
+.prev-btn {
+    border: none;
+    background: none;
+    font-size: 17px;
+    font-weight: bold;
+    color: #4F9656;
+}
+
+.form-row.reverse {
+    flex-direction: column;
+    gap: 20px
+}
+
+.form-field.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-field.row label {
+    width: 250px
+}
+
+.form-field.row input {
+    width: 700px;
+}
