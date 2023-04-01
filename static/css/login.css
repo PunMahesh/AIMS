@@ -234,3 +234,13 @@ footer {
 .footer{
   width: 100%;
 }
+
+.password-container{
+  width: 300px;
+  position: relative;
+}
+
+.fa-eye{
+  position: absolute;
+  color: #262626;
+}

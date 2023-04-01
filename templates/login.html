@@ -37,34 +37,31 @@
          <form action="#" method="POST">
             {% csrf_token %}
             <DIV id="text1">Username or email address </DIV>
-            <div class="field" id="">
-               <input type="text" required name='username'> 
-               <label>Email Address</label>
+            <div class="username" id="" name = "txtemail" value = "{{cookie1}}">
+               {{form.username}}
             </div>
 
             <DIV id="text2">Password *</DIV>
 
-            <div class="field" id="password">
+            <div class="password-container">
                {{form.password}}
-               <label>Password</label>
             </div>
+            <i class="fa-solid fa-eye" id="showpassword"></i>
             <div class="content">
-               <div class="checkbox">
-                  <input type="checkbox" id="remember-me">
-                  <label for="remember-me">Remember me</label>
+               <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="remember-me" name="remember_me">
+                  <label class="form-check-label" for="remember-me">Remember me</label>   
                </div>
                <div class="pass-link">
-                  <a href="#" id="forget_password">Forgot Password?</a>
+                  <a href="password_reset" id="forget_password">Forgot Password?</a>
                </div>
-            </div>
-            {% for message in messages %}
-               <p id="messages">{{message}}</p>
-            {% endfor %}            
+               {{form.error}} 
+            </div>        
             <div class="field">
                <input type="submit" value="Login">
             </div>
             <div class="signup-link">
-               Don't Have an Account? <br> <a href="#" id="sign_up">SIGN UP NOW</a>
+               Don't Have an Account? <br> <a href="registrationpage" id="sign_up">SIGN UP NOW</a>
             </div>
          </form>
       </div>
@@ -102,6 +99,7 @@
              </div>
             
          </div>
+         <script src="static/js/showpass.js"></script>
      </footer>
    </body>
 </html>

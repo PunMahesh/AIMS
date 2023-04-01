@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.core.exceptions import ValidationError
+from django.contrib.auth.forms import UserCreationForm
+
 
 #Create your model here
-
-from django.core.exceptions import ValidationError
 
 def validate_contact(value):
     if not value.isdigit():
@@ -26,3 +27,5 @@ class User(AbstractUser):
     is_customer = models.BooleanField(default=True)
     is_farmer = models.BooleanField(default=False)
     is_worker = models.BooleanField(default=False)
+
+        
