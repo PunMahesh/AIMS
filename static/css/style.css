@@ -79,7 +79,7 @@
 .content-img {
     display: flex;
     justify-content: flex-start;
-    width: 60%;
+    width: 70%;
 }
 
 .content-img  img{
@@ -94,7 +94,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding: 5px;
-    width: 40%;
+    width: 50%;
+    margin-right: 150px;
 }
 
 
@@ -186,6 +187,7 @@
     display: flex;
     gap: 135px;
     width: 100%;
+    justify-content: center;
 }
 
 .mission-item {
