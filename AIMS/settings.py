@@ -31,14 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts',
-    'farmer',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'farmer',
 ]
 
 MIDDLEWARE = [
@@ -133,9 +133,15 @@ STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static")
 ]
 
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'Nepal.AIMS@gmail.com'
+EMAIL_HOST_PASSWORD = 'aims1234567890'
+
 AUTH_USER_MODEL = 'accounts.User'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 SESSION_COOKIE_AGE = 60 * 60 # Session cookie expires in 1 hour
