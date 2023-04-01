@@ -3,13 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
- 
-  
 }
 
 .container {
   display: flex;
-  
 }
 
 
@@ -29,7 +26,6 @@
   margin-bottom: 10px;
   padding-left: 10px; 
   cursor: pointer;
-  
 }
 .sidebar-item a{
   text-decoration: none;
@@ -37,7 +33,6 @@
   align-items: center;
   gap: 10px;
   color: inherit;
-  
 }
 .sidebar-item:hover {
   background-color: #10571B;
@@ -46,8 +41,6 @@
 
 .sidebar-item .text {
   color: white;
-  
-  
 }
 
 .icon {
@@ -106,8 +99,6 @@
 }
 
 
-
-
 .box{
     display: flex;
     height: 100%;
@@ -120,31 +111,25 @@
     height: 10%;
     width: 100%;
     background-color: #4F9656;
-
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-
     display: flex;
     align-items: center;
     color: white;
-
     font-weight: bolder;
-
     text-indent: 8px;
-
 }
 
-.middle{
+.middle {
     height: 80%;
     width: 100%;
     background-color: #F3FEF7;
 }
 
-.lower{
+.lower {
     height: 10%;
     width: 100%;
     background-color: #92D388;
-
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
@@ -157,8 +142,7 @@
     text-align: center;
     text-decoration: none;
     color: white;
-  }
-  
+}
 
 .main {
     display: grid;
@@ -166,15 +150,14 @@
   grid-template-rows: repeat(4, 1fr);
   gap: 25px; /* you can adjust the gap to your preference */
   }
-  
-  
-  .headline{
+
+.headline{
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-  #add-new-crop{
+#add-new-crop {
   background-color: #4F9656;
   color: white;
   font-size: 15px;
@@ -183,8 +166,3 @@
   border-color: #4F9656;
   border-bottom-color:#4F9656 ;
 }
-
-/* #add-sign{
-color: white;
-
-} */
