@@ -8,17 +8,17 @@
 
 .registration {
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10px;
     width: 80%;
-    height: 90%;
+    /* height: 90%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 2px solid rgba(173, 176, 175, 0.2);
 }
 .registration-box {
-    margin: 10px;
-    min-height: 90%;
+    margin: 5px;
+    /* min-height: 100%; */
     width: 40%;
     border: 2px solid rgba(12, 95, 55, 0.2);
     border-radius: 6px;

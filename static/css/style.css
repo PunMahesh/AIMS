@@ -369,10 +369,11 @@
 .button-div {
     margin-top: 20px;
 }
+/* footer stats here */
 
 .footer {
     height: 250px;
-    background-color: black;
+    background-color: rgb(29, 28, 28);
     color: white;
     display: flex;
     justify-content: space-evenly;
@@ -391,7 +392,7 @@
 
 .footer-col-title > h4 {
     color: white;
-    background-color: black;
+    background-color:  rgb(29, 28, 28);
 }
 
 .footer-col-content {
@@ -410,5 +411,5 @@
 }
 .footer-col-content > a > span {
     color: white;
-    background-color: black;
+    background-color: rgb(29, 28, 28);
 }
