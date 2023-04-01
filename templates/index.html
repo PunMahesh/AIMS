@@ -3,17 +3,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="static/css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet" />
-        <script src="static/js/header.js" type="text/javascript" defer></script>
+        <link rel="stylesheet" href="static/css/style.css">   {% comment %} linked with css {% endcomment %}
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet" /> {% comment %}using material icon cdn {% endcomment %}
+        <script src="static/js/header.js" type="text/javascript" defer></script> {% comment %} linked with header js {% endcomment %}
     </head>
     <body>
+        {% comment %} using resuable header component {% endcomment %}
         <header-element></header-element>
 
-        <div class="content">
+        {% comment %} Parent container {% endcomment %}
+        <div class="content"> 
             <div class="first-content">
                 <div class="content-img">
-                    <img src="static/assets/images/field.jpeg" alt="content image"/>
+                    <img src="static/assets/images/field.jpeg" alt="content image"/>  {% comment %} linked image {% endcomment %}
                 </div>
                 <div class="content-text">
                     <div class="content-first-item">
@@ -25,8 +27,8 @@
                         <p class="site-info">The agriculture management system is to help farmers by providing all kinds of agriculture-related information on the website.</p>
                     </div>
                     <div class="first-content-buttons">
-                        <button class="icon-button">
-                            <span class="material-symbols-outlined button__icon button__icon_black">shopping_cart</span>
+                        <button class="icon-button"> 
+                            <span class="material-symbols-outlined button__icon button__icon_black">shopping_cart</span> {% comment %} icons used{% endcomment %}
                             <span class="button__text">Shop Now</span>
                         </button>
                         <button class="icon-button">
@@ -182,6 +184,6 @@
             </div>
         </div>
 
-        {% include 'components/footer.html' %}
+        {% include 'components/footer.html' %} {% comment %} using resuable footer component {% endcomment %}
     </body>
 </html>
