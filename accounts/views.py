@@ -55,9 +55,13 @@ def add_crop(request):
     return render(request, "addcrop.html")
 
 def crops(request):
-    # Fetch Crops information here and pass it in the context. The format should be as follows:
+    # Fetch Crops information from database and pass it in the context. The format should be as follows:
     context = {
         "crops": [
+            {"name": "Crop 1", "season": "Winter", "disease": "Disease 1", "pest": "Pest 1", "market_information": "Market Information 1", "details": "Details 1"},
+            {"name": "Crop 2", "season": "Summer", "disease": "Disease 2", "pest": "Pest 2", "market_information": "Market Information 2", "details": "Details 2"},
+            {"name": "Crop 3", "season": "Spring", "disease": "Disease 3", "pest": "Pest 3", "market_information": "Market Information 3", "details": "Details 3"},
+            {"name": "Crop 4", "season": "Spring", "disease": "Disease 4", "pest": "Pest 4", "market_information": "Market Information 4", "details": "Details 4"},
             {"name": "Crop 1", "season": "Winter", "disease": "Disease 1", "pest": "Pest 1", "market_information": "Market Information 1", "details": "Details 1"},
             {"name": "Crop 2", "season": "Summer", "disease": "Disease 2", "pest": "Pest 2", "market_information": "Market Information 2", "details": "Details 2"},
             {"name": "Crop 3", "season": "Spring", "disease": "Disease 3", "pest": "Pest 3", "market_information": "Market Information 3", "details": "Details 3"},
