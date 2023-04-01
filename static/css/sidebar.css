@@ -1,9 +1,8 @@
-/* sidebar starts here */
 .sidebar {
     background-color: #4F9656;
     width:210px;
     height: 100vh;
-    top: 0;
+    top: 10px;
     left: 0;
     padding-top:70px;
 }
@@ -12,21 +11,24 @@
     height: 42px;
     padding: 5px;
     margin-bottom: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar-item a {
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
-    padding-left: 10px; 
-    cursor: pointer;
+    color: inherit;
 }
+
 .sidebar-item:hover {
     background-color: #10571B;
-
 }
 
 .sidebar-item .text {
     color: white;
-    
-    
 }
 
 .icon {
