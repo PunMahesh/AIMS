@@ -218,10 +218,38 @@
                 <div class="title">
                     <div class="form-section"><span>D. Photo</span></div>
                 </div>
-                <div class="form">
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main">
+                            <div class="form-row reverse">
+                                <div class="form-field">
+                                    <label class="label" for="pp_photo">Passport Size Photo</label>
+                                    <input type="file" name="pp_photo" />
+                                </div>
+                                <div class="form-field">
+                                    <div class="option-radio">
+                                        <label for="citizenship">Citizenship</label>
+                                        <input type="radio" name="doc_type" id="citizenship" value="citizenship" />
+                                    </div>
+                                    <div class="option-radio">
+                                        <label for="passport">Passport</label>
+                                        <input type="radio" name="doc_type" id="passport" value="passport" />
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="doc_front">Front of the Document</label>
+                                    <input type="file" name="doc_front" />
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="doc_back">Back of the Document</label>
+                                    <input type="file" name="doc_back" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="next-prev-btn">
                         <button type="button" class="prev-btn">Back</button>
-                        <button type="button" class="finish-btn">Finish</button>
+                        <button type="button" class="next-btn">Finish</button>
                     </div>
                 </div>
             </div>
