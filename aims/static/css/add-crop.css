@@ -1,13 +1,26 @@
+.headline{
+  padding-top: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.main{
+  padding: 0px 35px 35px 30px;
+}
+
+
 .box{
     display: flex;
     height: 100%;
     width: 100%;
     flex-direction: column;
-}
+    /* padding: 15px 15px 15px 15px; */
+
+  }
 
 
 .upper{
-    height: 10%;
+    height: 13%;
     width: 100%;
     background-color: #4F9656;
 
@@ -19,19 +32,23 @@
     color: white;
 
     font-weight: bolder;
+    font-size: 20;
 
     text-indent: 8px;
+    padding-left: 1%;
 
 }
 
 .middle{
-    height: 80%;
+    height: 74%;
     width: 100%;
     background-color: #F3FEF7;
+    padding-left: 5%;
+    padding-top: 2.5%;
 }
 
 .lower{
-    height: 10%;
+    height: 13%;
     width: 100%;
     background-color: #92D388;
 
