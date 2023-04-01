@@ -66,3 +66,5 @@ def crops(request):
 
     return render(request, "crops.html", context)
 
+def kyc(request):
+    return render(request, "kyc_form.html")
