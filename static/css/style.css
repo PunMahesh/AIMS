@@ -370,8 +370,8 @@
     margin-top: 20px;
 }
 
-footer {
-    height: 35vh;
+.footer {
+    height: 250px;
     background-color: black;
     color: white;
     display: flex;
@@ -382,30 +382,33 @@ footer {
 }
 
 .footer-col {
-    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 200px;
+    background-color: inherit;
 }
 
-.footer-col h4 {
+.footer-col-title > h4 {
     color: white;
     background-color: black;
-    margin-bottom: 50px;
 }
 
-.footer-col div {
-    background-color: black;
+.footer-col-content {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
-
-.footer-col div p{
-    margin-bottom: 15px;
-    background-color: black;
+.footer-col-content > p {
+    background-color: inherit;
     color: white;
 }
-
-.footer-col ul {
-    background-color: black;
+.footer-col-content > a {
+    text-decoration: none;
+    background-color: inherit;
 }
-
-.footer-col ul li {
-    list-style: none;
+.footer-col-content > a > span {
+    color: white;
     background-color: black;
 }
