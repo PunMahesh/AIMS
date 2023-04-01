@@ -6,26 +6,22 @@
     color:rgb(29, 25, 25);
 }
 
-
 .registration {
-    margin:auto;
-    margin-top: 10px;
+    margin: auto;
+    margin-top: 50px;
     width: 80%;
-    min-height: 100vh;
-    margin-bottom: 20px;
+    height: 90%;
     display: flex;
-    border: 2px solid rgba(12, 95, 55, 0.2);
-    border-radius: 6px;
-    padding: 15px;
     flex-direction: column;
     align-items: center;
+    border: 2px solid rgba(173, 176, 175, 0.2);
 }
 .registration-box {
-    margin-bottom: 20px;
-    min-height: 100vh;
-    width: 50%;
-    border: 3px solid rgba(12, 95, 55, 0.2);
-    border-radius: 8px;
+    margin: 10px;
+    min-height: 90%;
+    width: 40%;
+    border: 2px solid rgba(12, 95, 55, 0.2);
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +31,6 @@
     background-color: rgb(22, 146, 22);
     color:white;
     font-family: sans-serif;
-    
 }
 .registration-text{
     width:100%;
@@ -45,11 +40,15 @@
     font-weight:500;
     font-size: 25px;
     text-align: center;
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+form {
+    margin: 15px;
 }
 
 .form-group {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .form-group label {
     display: block;
@@ -58,8 +57,9 @@
 .form-group input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid rgba(173, 176, 175, 0.2);
     border-radius: 4px;
+    height: 30px;
 }
 .form-group .error {
     color: red;
@@ -67,13 +67,10 @@
 }
 form{
     width:65%;
-} 
+}
 form label{
-    display:flex;
-    margin-top: 5px;
-    font-size: 16px;
-    font-weight: 550;
-    
+    font-size: 13px;
+    font-weight: bold;
 }
 form input{
     width:100%;
@@ -91,13 +88,49 @@ form .field input[type="submit"]{
     background-color:rgb(22, 146, 22);
     color: white;
     border-radius: 6px;
-    cursor: pointer;   
+    cursor: pointer;
 }
 form .field{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-form .field:hover{
-    transform: scale(0.95);
+form .field:active{
+    transform: scale(0.96);
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+#id_gender {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#id_gender > div {
+    width: 33%;
+    margin-left: 20px;
+}
+#id_gender > div > label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 30px;
+}
+#id_gender > div > label > input {
+    position: absolute;
+    right: 40px;
+    height: auto;
+}
+
+.error > ul > li {
+    list-style: none;
+    color: red;
+    font-size: smaller;
+    margin-top: 1px;
+    margin-left: 2px;
 }
