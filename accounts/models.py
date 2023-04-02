@@ -66,7 +66,7 @@ class farmerKYC(models.Model):
     BackPic = models.ImageField(upload_to="static/assets/docs")
     Verify = models.BooleanField(default=False)
 
-class CropDetail(models.Model):
+class addcrop(models.Model):
     CropName = models.CharField(max_length=225)
     PesticideUsed = models.CharField(max_length=225)
     MarketValue = models.CharField(max_length=10,)

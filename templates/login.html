@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>AIMS</title>
+      <title>Login</title>
       <link rel="stylesheet" href="static/css/login.css">
    </head>
    <body>
@@ -19,52 +19,63 @@
                          <li>Farmers Kit</li>
                          <li>Market</li>
                          <li>Hire</li>
-                         <li>Account</li>-
+                         <li>Account</li>
                      </ul>
                  </nav>
              </div>
              <div class="cart-search-container">
-                 <img src="static/assets/images/search.png" alt="search-button"/>
-                 <img src="static/assets/images/shopping-bag.png" alt="cart-button"/>
+                 <img src="assets/images/search.png" alt="search-button"/>
+                 <img src="assets/images/shopping-bag.png" alt="cart-button"/>
              </div>
          </div>
      </header>
 
-      <div class="wrapper">
-         <div class="title">
-            LOG IN HERE
-         </div>
-         <form action="#" method="POST">
-            {% csrf_token %}
-            <DIV id="text1">Username or email address </DIV>
-            <div class="username" id="" name = "txtemail" value = "{{cookie1}}">
-               {{form.username}}
-            </div>
 
-            <DIV id="text2">Password *</DIV>
 
-            <div class="password-container">
-               {{form.password}}
-            </div>
-            <i class="fa-solid fa-eye" id="showpassword"></i>
-            <div class="content">
-               <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="remember-me" name="remember_me">
-                  <label class="form-check-label" for="remember-me">Remember me</label>   
-               </div>
-               <div class="pass-link">
-                  <a href="password_reset" id="forget_password">Forgot Password?</a>
-               </div>
-               {{form.error}} 
-            </div>        
-            <div class="field">
-               <input type="submit" value="Login">
-            </div>
-            <div class="signup-link">
-               Don't Have an Account? <br> <a href="registrationpage" id="sign_up">SIGN UP NOW</a>
-            </div>
-         </form>
+
+
+
+     <div class="wrapper">
+      <div class="title">
+         LOG IN HERE
       </div>
+      <form action="#" method = POST>
+        {% csrf_token %}
+         <DIV id="text1">Username or email address <span>*</span></DIV>
+  
+         <div class="field" id="email_address">
+            {{form.username}}
+         </div>
+         <DIV id="text1">Password <span>*</span></DIV>
+         <div class="field" id="password">
+            {{form.password}}
+         </div>
+         {% for message in messages %}
+         <p id="messages">{{message}}</p>
+         {% endfor %}
+         <div class="content">
+            <div class="checkbox">
+               <input type="checkbox" id="remember-me">
+               <label for="remember-me">Remember me</label>
+            </div>
+            <div class="pass-link">
+               <a href="password_reset" id="forget_password">Forgot Your Password?</a>
+            </div>
+         </div>
+         <div class="field" id="login">
+            <input type="submit" value="LOG IN">
+         </div>
+         <div class="signup-link">
+          <span id="dont-account">Don't Have an Account?</span>
+          <a href="registrationpage" id="sign_up">SIGN UP NOW</a>
+         </div>
+      </form>
+   </div>
+
+
+
+
+      
 
 
       <!-- footer begins -->
@@ -99,7 +110,6 @@
              </div>
             
          </div>
-         <script src="static/js/showpass.js"></script>
      </footer>
    </body>
 </html>

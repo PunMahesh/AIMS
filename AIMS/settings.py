@@ -138,15 +138,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'Nepal.AIMS@gmail.com'
-EMAIL_HOST_PASSWORD = 'aims1234567890'
+EMAIL_HOST_PASSWORD = 'odjjczjcswylwyrq'
 
 AUTH_USER_MODEL = 'accounts.User'
 
 
-
-SESSION_COOKIE_AGE = 60 * 60 # Session cookie expires in 1 hour
-SESSION_SAVE_EVERY_REQUEST = True # Save session on every request
-
-# Set the "remember me" cookie age to a longer value
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_AGE = 30 * 24 * 60 * 60 # Remember me cookie expires in 30 day

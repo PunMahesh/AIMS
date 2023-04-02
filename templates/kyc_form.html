@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/kyc.css">
+    <title>KYC Form</title>
+</head>
+<body>
+    <div class="container">
+        <form id="kycForm" action="">
+
+            <div class="step step-1 active">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                    <div class="page-counter">Page 1 of 4</div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>A. Identity Details</span></div>
+                </div>
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main with-title">
+                            <div class="section-title"><span>Name of the Applicant</span></div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="first_name">First Name</label>
+                                    <input type="text" name="first_name" />
+                                </div>
+                                <div class="form-field">
+                                    <label for="middle_name">Middle Name</label>
+                                    <input type="text" name="middle_name" />
+                                </div>
+                                <div class="form-field">
+                                    <label for="last_name">Last Name</label>
+                                    <input type="text" name="last_name" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label class="label">Gender</label>
+                                    <div class="option-radio">
+                                        <label for="male">Male</label>
+                                        <input type="radio" name="gender" id="male" value="male" />
+                                    </div>
+                                    <div class="option-radio">
+                                        <label for="female">Female</label>
+                                        <input type="radio" name="gender" id="female" value="female" />
+                                    </div>
+                                    <div class="option-radio">
+                                        <label for="tohers">Others</label>
+                                        <input type="radio" name="gender" id="others" value="others" />
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label">Marital Status</label>
+                                    <div class="option-radio">
+                                        <label for="single">Single</label>
+                                        <input type="radio" name="marital_status" id="single" value="single" />
+                                    </div>
+                                    <div class="option-radio">
+                                        <label for="married">Married</label>
+                                        <input type="radio" name="marital_status" id="married" value="married" />
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="dob">Date of Birth</label>
+                                    <input type="date" name="dob"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label class="label" for="nationality">Nationality</label>
+                                    <input type="text" name="nationality" />
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="citizenship_number">Citizenship No.</label>
+                                    <input type="text" name="citizenship_number" />
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="passport_number">Passport No.</label>
+                                    <input type="text" name="passport_number" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label class="label">Residential Status</label>
+                                    <div class="option-radio">
+                                        <label for="resident">Resident Individual</label>
+                                        <input type="radio" name="residential_status" id="resident" value="resident" />
+                                    </div>
+                                    <div class="option-radio">
+                                        <label for="non-resident">Non Resident</label>
+                                        <input type="radio" name="residential_status" id="non-resident" value="non-resident" />
+                                    </div>
+                                    <div class="option-radio">
+                                        <label for="foreign">Foreign National</label>
+                                        <input type="radio" name="residential_status" id="foreign" value="foreign" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn single">
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step step-2 ">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                    <div class="page-counter">Page 2 of 4</div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>B. Family Information</span></div>
+                </div>
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main">
+                            <div class="form-row reverse">
+                                <div class="form-field row">
+                                    <label class="label" for="father_name">Father's Name</label>
+                                    <input type="text" name="father_name" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="mother_name">Mother's Name</label>
+                                    <input type="text" name="mother_name" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="grandfather_name">Grandfather's Name</label>
+                                    <input type="text" name="grandfather_name" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="grandmother_name">Grandmother's Name</label>
+                                    <input type="text" name="grandmother_name" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="spouse_name">Spouse's Name</label>
+                                    <input type="text" name="spouse_name" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="son_name">Sons's Name</label>
+                                    <input type="text" name="son_name" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="daughter_name">Daughter's Name</label>
+                                    <input type="text" name="daughter_name" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step step-3">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                    <div class="page-counter">Page 3 of 4</div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>C. Address Details</span></div>
+                </div>
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main">
+                            <div class="form-row reverse">
+                                <div class="form-field row">
+                                    <label class="label" for="country">Country</label>
+                                    <input type="text" name="country" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="district">District</label>
+                                    <input type="text" name="district" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="province">Province</label>
+                                    <input type="text" name="province" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="municipality">Rural Municipality/ Municipality</label>
+                                    <input type="text" name="municipality" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="ward_no">Ward No.</label>
+                                    <input type="text" name="ward_no" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="street">Street/Village</label>
+                                    <input type="text" name="street" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step step-4">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                    <div class="page-counter">Page 4 of 4</div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>D. Photo</span></div>
+                </div>
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main">
+                            <div class="form-row reverse">
+                                <div class="form-field">
+                                    <label class="label" for="pp_photo">Passport Size Photo</label>
+                                    <input type="file" name="pp_photo" />
+                                </div>
+                                <div class="form-field">
+                                    <div class="option-radio">
+                                        <label for="citizenship">Citizenship</label>
+                                        <input type="radio" name="doc_type" id="citizenship" value="citizenship" />
+                                    </div>
+                                    <div class="option-radio">
+                                        <label for="passport">Passport</label>
+                                        <input type="radio" name="doc_type" id="passport" value="passport" />
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="doc_front">Front of the Document</label>
+                                    <input type="file" name="doc_front" />
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="doc_back">Back of the Document</label>
+                                    <input type="file" name="doc_back" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn">Finish</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="static/js/kyc.js" type="text/javascript"></script>
+</body>
+</html>

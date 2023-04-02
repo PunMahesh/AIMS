@@ -1,0 +1,40 @@
+.sidebar {
+    background-color: #4F9656;
+    width:210px;
+    height: 100vh;
+    top: 10px;
+    left: 0;
+    padding-top:70px;
+}
+
+.sidebar-item {
+    height: 42px;
+    padding: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+}
+
+.sidebar-item:hover {
+    background-color: #10571B;
+}
+
+.sidebar-item .text {
+    color: white;
+}
+
+.icon {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 40
+}

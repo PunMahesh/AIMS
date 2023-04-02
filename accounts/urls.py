@@ -3,11 +3,6 @@ from accounts import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path("farmerHome",views.farmerHome,name='farmerHome'),
-    path("",views.index,name=''),
-    path("loginpage",views.login_view,name="loginpage"),
-    path("registrationpage",views.registration,name='registrationpage'),
-
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'), 
     name='password_change_done'),
     path('password_change/', auth_views.PasswordChangeView.as_view(template_name='registration/password_change.html'), 
@@ -19,9 +14,12 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
     name='password_reset_complete'),
 
-    path("enter_otp",views.enter_otp,name='enter_otp'),
-    path("send_otp",views.send_otp,name='send_otp'),
-    path("password_reset",views.password_reset,name='password_reset'),
-
+    path("",views.index,name=''),
+    path("farmer_kyc",views.farmer_kyc,name='farmer_kyc'),
+    path("crops",views.crops,name='crops'),
+    path("addcrop",views.addcrop,name='addcrop'),
+    path("farmerHome",views.farmerHome,name='farmerHome'),
+    path("loginpage",views.login_view,name="loginpage"),
+    path("registrationpage",views.registration,name='registrationpage'),
 
 ]
