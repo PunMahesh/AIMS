@@ -15,7 +15,7 @@ body {
     height: 50px;
     padding: 0 30px 0 30px;
 }
-.form-name > span {
+.form-name  span {
     font-size: 23px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -68,7 +68,7 @@ body {
 }
 .label {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: semibold;
     letter-spacing: 1px;
 }
 
