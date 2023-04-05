@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="static/css/registration.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet"/>
+    <link rel="stylesheet" href="static/css/registration.css">  {% comment %} linked with css {% endcomment %}
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet"/>  {% comment %}using material icon cdn {% endcomment %}
 </head>
 
 <body>
@@ -15,7 +15,7 @@
                 <span>User Registration<span>
             </div>
             <form method="POST">
-                {% csrf_token %}
+                {% csrf_token %} {% comment %} To ensure the security of the form {% endcomment %}
                 <div class="form-group">
                     <label for="username" class="required">{{form.username.label}}</label>
                     {{form.username}}
