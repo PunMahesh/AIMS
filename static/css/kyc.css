@@ -50,12 +50,21 @@ body {
     border: 1px solid black;
     margin: 15px;
     padding: 15px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .form-body {
     margin: 20px;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+.profile-pic {
+    position: absolute;
+    right: 400px;
 }
 
 .section-title {
@@ -75,16 +84,40 @@ body {
 .form-row-main {
     margin-bottom: 30px;
 }
+.form-row-main.render {
+    margin-bottom: 10px;
+}
 
 .form-row {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+.form-row.render-only {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 1000px;
 }
 
 .form-field {
+    width: 33%;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.form-field.render-data {
+    gap: 1px;
+    width: 50%;
+}
+.render-data > .label {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.render-data > p > .field-value {
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
 .form-field input {
@@ -100,6 +133,15 @@ body {
 .form-field input[type="radio"] {
     height: auto;
     width: auto;
+}
+.radio-options {
+    display: flex;
+    gap: 20px;
+}
+.radio-options > .option-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px
 }
 
 .next-prev-btn {
@@ -144,13 +186,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
 }
 
 .form-field.row label {
-    width: 250px
+    width: 20%;
 }
 
 .form-field.row input {
-    width: 700px;
+    width: 60%;
 }
 
