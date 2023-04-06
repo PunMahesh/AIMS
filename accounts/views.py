@@ -68,3 +68,7 @@ def crops(request):
 
 def kyc(request):
     return render(request, "kyc_form.html")
+
+
+def not_found(request):
+    return render(request, "404.html")
