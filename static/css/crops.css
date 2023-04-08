@@ -150,18 +150,15 @@
 
 .crop-card {
   padding: 10px;
-  flex: calc(50% - 40px); /* 50% - (margins + paddings) */
+  width: 50%;
 }
 
-.spacer {
-  margin: 0 10px;
-  padding: 0 10px;
-  flex: calc(50% - 40px); /* 50% - (margins + paddings) */
-}
+
 
 .crop-card-header {
   background-color:#4F9656;
   height: 35px;
+  width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: flex;
