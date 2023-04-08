@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .form import RegisterForm, LoginForm
 from django.contrib.auth import authenticate,login
 from .models import addcrop, farmerKYC
@@ -85,35 +85,32 @@ def farmer_kyc(request):
 def crops(request):
     return render(request, 'crops.html')
 
-def addcrop(request):
+def CropDetails(request):
     if request.method == "POST":
         CropName = request.POST.get("CropName")
         PesticideUsed = request.POST.get("PesticideUsed")
         MarketValue = request.POST.get("MarketValue")
         Disease = request.POST.get("Disease")
         Season = request.POST.get("Season")
-        Photo = request.FILES("Photo")
+        Photo = request.FILES.get("Photo")
         Description = request.POST.get("Description")
 
-        crop = addcrop(CropName=CropName,PesticideUsed=PesticideUsed,MarketValue=MarketValue,Disease=Disease,
-                       Season=Season,Photo=Photo,Description=Description)
-        crop.save()
-        
+        details = addcrop(CropName=CropName,PesticideUsed=PesticideUsed,MarketValue=MarketValue,
+                         Disease=Disease,Season=Season,Photo=Photo,Description=Description)
+        details.save()
+        return redirect("crops")
     return render(request, 'addcrop.html')
     
 
-def crops(request):
+def crops_list(request):
     # Fetch Crops information here and pass it in the context. The format should be as follows:
-    context = {
-        "crops": [
-            {"name": "Crop 1", "season": "Winter", "disease": "Disease 1", "pest": "Pest 1", "market_information": "Market Information 1", "details": "Details 1"},
-            {"name": "Crop 2", "season": "Summer", "disease": "Disease 2", "pest": "Pest 2", "market_information": "Market Information 2", "details": "Details 2"},
-            {"name": "Crop 3", "season": "Spring", "disease": "Disease 3", "pest": "Pest 3", "market_information": "Market Information 3", "details": "Details 3"},
-            {"name": "Crop 4", "season": "Spring", "disease": "Disease 4", "pest": "Pest 4", "market_information": "Market Information 4", "details": "Details 4"},
-        ]
-    }
+        crops = addcrop.objects.all()
+        context = {'crops': crops}
+        return render(request, 'crops.html', context)
+    
 
-    return render(request, "crops.html", context)
+           
+
 
 
                 
