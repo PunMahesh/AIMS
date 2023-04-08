@@ -1,11 +1,11 @@
-<html lang="en">
+<html>
 <head>
     <title>Crop details on farmer click</title>
     <link rel="stylesheet" href="static/css/crops.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script>
         function goToAddNewCrop() {
-            document.location.href = "{% url 'addcrop' %}"
+            document.location.href = "{% url 'CropDetails' %}"
         }
     </script>
 </head>
@@ -41,18 +41,18 @@
                 </div>
                 <div class="content-body">
                     <div class="crops-container">
-                        {% for crop in crops %}
                         <div class="crop-card">
                             <div class="crop-card-header">
                                 <span>{{ forloop.counter }}</span>
                             </div>
+                            {% for crop in crops %}
                             <div class="crop-card-body">
                                 <div class="crop-card-body-item">
                                     <div class="bot item-label">
                                         <span>Crop: </span>
                                     </div>
                                     <div class="bot item-value">
-                                        <span>{{ crop.name }}</span>
+                                        <span>{{ crop.CropName }}</span>
                                     </div>
                                 </div>
                                 <div class="crop-card-body-item">
@@ -68,7 +68,7 @@
                                         <span>Disease: </span>
                                     </div>
                                     <div class="bot item-value">
-                                        <span>{{ crop.disease }}</span>
+                                        <span>{{ crop.Disease }}</span>
                                     </div>
                                 </div>
                                 <div class="crop-card-body-item">
@@ -76,7 +76,7 @@
                                         <span>Pest: </span>
                                     </div>
                                     <div class="bot item-value">
-                                        <span>{{ crop.pest }}</span>
+                                        <span>{{ crop.PesticideUsed }}</span>
                                     </div>
                                 </div>
                                 <div class="crop-card-body-item">
@@ -84,7 +84,7 @@
                                         <span>Market Information: </span>
                                     </div>
                                     <div class="bot item-value">
-                                        <span>{{ crop.season }}</span>
+                                        <span>{{ crop.MarketValue }}</span>
                                     </div>
                                 </div>
                                 <div class="crop-card-body-item">
@@ -92,9 +92,10 @@
                                         <span>Details: </span>
                                     </div>
                                     <div class="bot item-value">
-                                        <span>{{ crop.details }}</span>
+                                        <span>{{ crop.Details }}</span>
                                     </div>
                                 </div>
+                                {% endfor %}
                             </div>
                             <div class="crop-card-footer">
                                 <button>
@@ -102,7 +103,6 @@
                                 </button>
                             </div>
                         </div>
-                        {% endfor %}
                         <div class="spacer"></div>
                         <div class="spacer"></div>
                     </div>

@@ -10,7 +10,33 @@
     </head>
     <body>
         
-        <header-element></header-element>
+        {% comment %} <header-element> {% endcomment %}
+            <header>
+                <div class="header-div">
+                <div class ="header-div-content">
+                    <div class="logo-container">
+                        <img src="static/assets/images/logo.png" alt="logo"/>
+                    </div>
+                    <div class="nav-items-container">
+                        <nav>
+                            <ul class="nav-ul">
+                                <li>Home</li>
+                                <li>Blogs</li>
+                                <li>Farmers Kit</li>
+                                <li>Market</li>
+                                <li>Hire</li>
+                                <li>Account</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="cart-search-container">
+                        <img src="static/assets/images/search.png" alt="search-button"/>
+                        <img src="static/assets/images/shopping-bag.png" alt="cart-button"/>
+                    </div>
+                    </div>
+                </div>
+            </header>
+        {% comment %} </header-element> {% endcomment %}
 
         <div class="first-content">
             <div class="content-img">
@@ -178,7 +204,36 @@
             </div>
         </div>
 
-        <footer-element></footer-element>
+        
+        {% comment %} <footer-element></footer-element>
+         {% endcomment %}
+         <footer class="footer">
+            <div class="footer-col">
+                <h4>AIMS</h4>
+                <div>
+                    <p>Kathmandu, Nepal</p>
+                    <p>Phone:+977 9819057663</p>
+                    <p>Email:info@aims.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>USEFUL LINKS</h4>
+                <div>
+                    <p> > Blog</p>
+                    <p> > News</p>
+                    <p> > Farmers Kit</p>
+                    <p> > Farmers Market</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>OUR SERVICES</h4>
+                <div>
+                    <p> > Home</p>
+                    <p> > About</p>
+                    <p> > Hire Contact</p>
+                </div>
+            </div>
+        </footer>
 
     </body>
 </html>

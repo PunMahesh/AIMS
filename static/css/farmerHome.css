@@ -61,10 +61,10 @@
     background-color: #4F9656;
     width:210px;
     height: 100vh;
+    position: fixed;
     top: 0;
     left: 0;
     padding-top:70px;
-    position: fixed;
 }
 
 .sidebar-item {

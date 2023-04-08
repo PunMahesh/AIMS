@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <div class="container" method = POST>
+        <div class="container">
             {% include 'sidebar.html' %}
 
             <div class="content">
@@ -31,18 +31,19 @@
                         <span>Add Crop Details</span>
                     </div>
                     <div class="content-body">
-                        <form>
+                        <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
                             <div class="form-field">
-                                <span class="form-label required" name = "CropName" >Crop Name</span>
-                                <input type="text" placeholder="Enter crop name" />
+                                <span class="form-label required" >Crop Name</span>
+                                <input type="text" name="CropName" placeholder="Enter crop name" />
                             </div>
                             <div class="form-field">
-                                <span class="form-label" name = "PesticideUsed" >Pesticides Used</span>
-                                <input type="text" placeholder="If any" />
+                                <span class="form-label" >Pesticides Used</span>
+                                <input type="text" name="PesticideUsed" placeholder="If any" />
                             </div>
                             <div class="form-field">
-                                <span class="form-label" name = "MarketValue" >Market Value</span>
-                                <select name ="Select" >
+                                <span class="form-label" >Market Value</span>
+                                <select name ="MarketValue" >
                                     <option value=""  selected >Select</option>
                                     <option value="1">Option 1</option>
                                     <option value="2">Option 2</option>
@@ -50,24 +51,24 @@
                                     <option value="4">Option 4</option>
                                     <option value="5">Option 5</option>
                                 </select>
+                            </div> 
+                            <div class="form-field">
+                                <span class="form-label" >Disease</span>
+                                <input type="text" name="Disease" placeholder="If any" />
                             </div>
                             <div class="form-field">
-                                <span class="form-label" name = "Disease" >Disease</span>
-                                <input type="text" placeholder="If any" />
-                            </div>
-                            <div class="form-field">
-                                <span class="form-label required name = "Season" >Season</span>
-                                <input type="text" placeholder="Favourable Season" />
+                                <span class="form-label required">Season</span>
+                                <input type="text"  name="Season" placeholder="Favourable Season" />
                             </div>
                             <div class="form-field">
                                 <span class="form-label" >Photo</span>
                                 <div class="img-upload">
-                                    <input type="file" name = "Photo" class="custom-img-upload" accept="image/png, image/jpeg" multiple/>
+                                    <input type="file" name="Photo" class="custom-img-upload" accept="image/png, image/jpeg" multiple/>
                                 </div>
                             </div>
                             <div class="form-field" id="textarea">
-                                <span class="form-label required" name = "Description" >Description</span>
-                                <textarea  placeholder="50-150 words" rows="4" cols="50"></textarea>
+                                <span class="form-label required" name="Description">Description</span>
+                                <input type="text" placeholder="100-150 words" name="Description" placeholder="Favourable Season" />
                             </div>
                             <div class="form-field submit-btn">
                                 <span class="form-label" ></span>
