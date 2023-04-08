@@ -27,7 +27,7 @@ class User(AbstractUser):
     is_customer = models.BooleanField(default=True)
     is_farmer = models.BooleanField(default=False)
     is_worker = models.BooleanField(default=False)
-    otp = models.IntegerField(default=0)
+
 
 #creating table for farmer kyc that extends User table where user id is in one to one relation
 class farmerKYC(models.Model):
@@ -69,11 +69,14 @@ class farmerKYC(models.Model):
 class addcrop(models.Model):
     CropName = models.CharField(max_length=225)
     PesticideUsed = models.CharField(max_length=225)
-    MarketValue = models.CharField(max_length=10,)
+    MarketValue = models.CharField(max_length=10)
     Disease = models.CharField(max_length=225,null=True, blank=True)
     Season = models.CharField(max_length=225) 
-    Photo = models.ImageField(upload_to="static/assets/crops")
+    Photo = models.ImageField(upload_to="images/crops")
     Description = models.CharField(max_length=500)
+
+    # def __str__(self):
+    #     return self.CropName
 
 
         

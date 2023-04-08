@@ -16,8 +16,8 @@ urlpatterns = [
 
     path("",views.index,name=''),
     path("farmer_kyc",views.farmer_kyc,name='farmer_kyc'),
-    path("crops",views.crops,name='crops'),
-    path("addcrop",views.addcrop,name='addcrop'),
+    path('crops_list',views.crops_list, name='crops_list'),
+    path("CropDetails",views.CropDetails,name='CropDetails'),
     path("farmerHome",views.farmerHome,name='farmerHome'),
     path("loginpage",views.login_view,name="loginpage"),
     path("registrationpage",views.registration,name='registrationpage'),
