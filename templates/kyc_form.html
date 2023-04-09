@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/kyc.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </script>
     <title>KYC Form</title>
 </head>
 <body>
     <div class="container">
         <form id="kycForm" method="post" action="">
-
+            {% csrf_token %}
             <div class="step step-1 active">
                 <div class="header">
                     <div class="form-name"><span>KYC Form</span></div>
@@ -266,7 +268,7 @@
                 <div class="title">
                     <div class="form-section"><span>Personal Information</span></div>
                 </div>
-                <div class="form-container confirm-details-form-container">
+                <div class="form-container confirm-details-form-container" id="confirm-page">
                     <div class="form-body">
                         <div class="profile-pic">
                             <img id="pp-render" src="https://via.placeholder.com/150" alt="Profile Picture" />
@@ -401,7 +403,7 @@
                         </div>
                     </div>
                     <div class="next-prev-btn single">
-                        <button type="submit" class="next-btn">Confirm Details</button>
+                        <button type="submit" class="next-btn" id="submit-btn">Confirm Details</button>
                     </div>
                 </div>
             </div>
