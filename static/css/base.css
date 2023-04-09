@@ -21,10 +21,47 @@ body {
 }
 
 .name-container {
+    display: inline-block;
+    margin-right: 100px;
+    width: 170px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.profile-btn-dd {
     display: flex;
     gap: 9px;
-    margin-right: 100px;
     align-items: center;
+    width: auto;
+}
+.profile-btn-dd:active {
+    transform: scale(0.98);
+}
+.profile-btn-dd > div > span {
+    user-select: none;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    background-color:#4F9656;
+    border-radius:5px;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown-options.show {
+    display: block;
+}
+.dropdown-options a {
+    display: block;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    padding:10px 20px;
+}
+.dropdown-options a:hover {
+    background-color: #10571B;
 }
 
 .name-role {
@@ -117,6 +154,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 35px;
 }
 .content-title span {
     font-size: 17px;
