@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Equipments{% endblock %}
+{% block content_css %}<link rel="stylesheet" href="static/css/equipments.css" type="text/css" >{% endblock %}
+{% block pre_script %}
+<script>
+    function goToAddNewEquipment() {
+        document.location.href = "{% url 'add_equipment' %}"
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="main-content">
+        <div class="content-title">
+            <span>Equipments Details</span>
+            <div class="content-title-button">
+                <button onclick="goToAddNewEquipment()">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                    Add New Equipment
+                </button>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="equipments-container">
+                {% for equipment in equipments %}
+                <div class="equipment-card">
+                    <div class="equipment-card-header">
+                        <span>{{ forloop.counter }}</span>
+                    </div>
+                    <div class="equipment-card-body">
+                        <div class="equipment-card-body-item">
+                            <div class="bot item-label">
+                                <span>Equipment: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ equipment.name }}</span>
+                            </div>
+                        </div>
+                        <div class="equipment-card-body-item">
+                            <div class="bot item-label">
+                                <span>Field 1: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ equipment.field1 }}</span>
+                            </div>
+                        </div>
+                        <div class="equipment-card-body-item">
+                            <div class="bot item-label">
+                                <span>Field 2: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ equipment.field2 }}</span>
+                            </div>
+                        </div>
+                        <div class="equipment-card-body-item">
+                            <div class="bot item-label">
+                                <span>Field 3: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ equipment.field3 }}</span>
+                            </div>
+                        </div>
+                        <div class="equipment-card-body-item">
+                            <div class="bot item-label">
+                                <span>Field 4: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ equipment.field4 }}</span>
+                            </div>
+                        </div>
+                        <div class="equipment-card-body-item">
+                            <div class="bot item-label">
+                                <span>Details: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ equipment.details }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="equipment-card-footer">
+                        <button>
+                            Show More
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="spacer"></div>
+                <div class="spacer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
