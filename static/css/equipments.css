@@ -43,7 +43,7 @@
     align-items: center;
     padding: 5px;
 }
-.equipment-card-header > span {
+.equipment-card-header  span {
     font-size: 17px;
     margin-left: 5px;
     color: white;
@@ -52,6 +52,7 @@
 .equipment-card-body {
     background-color:#F3FEF7;
     padding-left: 20px;
+    font-weight: bold;
 }
 
 .equipment-card-body-item {
