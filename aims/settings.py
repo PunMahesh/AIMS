@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'equipments',
     'accounts',
     'farmer',
     'django.contrib.admin',
@@ -84,7 +85,7 @@ DATABASES = {
         'HOST':'localhost',
         'PORT':'3306',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'rootpass',
     }
 }
 
