@@ -1,0 +1,44 @@
+
+
+.main{
+    width: 1200;
+    height: 1636;
+    border: 1px solid black;
+    margin-left: 150;
+    padding-left: 40;
+
+
+}
+
+h4{
+    font-size: 40;
+    font-weight: bold;
+
+}
+
+img{
+    width: 1120;
+    height: 469;
+
+}
+
+h5{
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.4);
+
+
+}
+
+.para{
+    width: 1115;
+    height: 948;
+
+}
+
+p{
+    font-size: 20;
+    line-height: 185.5%;
+    text-align: justify;
+    
+}
