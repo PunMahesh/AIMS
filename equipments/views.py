@@ -5,10 +5,10 @@ def equipments(request):
     # Fetch Equipments information from database and pass it in the context. The format should be as follows:
     context = {
         "equipments": [
-            {"name": "Equipment 1", "field1": "Field1 1", "field2": "Field2 1", "field3": "Field3 1", "field4": "Field4 1", "details": "Details 1"},
-            {"name": "Equipment 2", "field1": "Field1 2", "field2": "Field2 2", "field3": "Field3 2", "field4": "Field4 2", "details": "Details 2"},
-            {"name": "Equipment 3", "field1": "Field1 3", "field2": "Field2 3", "field3": "Field3 3", "field4": "Field4 3", "details": "Details 3"},
-            {"name": "Equipment 4", "field1": "Field1 4", "field2": "Field2 4", "field3": "Field3 4", "field4": "Field4 4", "details": "Details 4"},
+            {"name": "Equipment 1", "mfy": "2023", "market_value": "1000", "condition": "Brand New", "warranty": "6 Months", "details": "Details 1"},
+            {"name": "Equipment 2", "mfy": "2022", "market_value": "10000", "condition": "Used", "warranty": "10 Months", "details": "Details 2"},
+            {"name": "Equipment 3", "mfy": "2021", "market_value": "100000", "condition": "Brand New", "warranty": "12 Months", "details": "Details 3"},
+            {"name": "Equipment 4", "mfy": "2020", "market_value": "1000000", "condition": "Used", "warranty": "24 Months", "details": "Details 4"},
         ]
     }
 

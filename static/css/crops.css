@@ -52,6 +52,7 @@
 .crop-card-body {
   background-color:#F3FEF7;
   padding-left: 20px;
+  font-weight: bold;
 }
 
 .crop-card-body-item {
