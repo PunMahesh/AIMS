@@ -44,6 +44,7 @@ body {
 }
 .step.active {
     display: block;
+<<<<<<< HEAD
     position: relative;
 }
 
@@ -59,17 +60,28 @@ body {
     position: absolute;
     left: 210px;
     top: 150px;
+=======
+}
+
+.form-container {
+    border: 1px solid black;
+    margin: 15px;
+    padding: 15px;
+>>>>>>> Master
 }
 
 .form-body {
     margin: 20px;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     position: relative;
 }
 .profile-pic {
     position: absolute;
     right: 50px;
+=======
+>>>>>>> Master
 }
 
 .section-title {
@@ -89,13 +101,17 @@ body {
 .form-row-main {
     margin-bottom: 30px;
 }
+<<<<<<< HEAD
 .form-row-main.render {
     margin-bottom: 10px;
 }
+=======
+>>>>>>> Master
 
 .form-row {
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
     width: 100%;
 }
 .form-row.render-only {
@@ -107,10 +123,16 @@ body {
 
 .form-field {
     width: 33%;
+=======
+}
+
+.form-field {
+>>>>>>> Master
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+<<<<<<< HEAD
 .form-field.render-data {
     gap: 1px;
     width: 50%;
@@ -128,6 +150,12 @@ body {
 .form-field input {
     height: 40px;
     width: 90%;
+=======
+
+.form-field input {
+    height: 40px;
+    width: 400px;
+>>>>>>> Master
     background-color: rgb(229, 253, 245);
     border: 1px solid gray;
     padding: 10px;
@@ -139,6 +167,7 @@ body {
     height: auto;
     width: auto;
 }
+<<<<<<< HEAD
 .radio-options {
     display: flex;
     flex-direction: column;
@@ -155,6 +184,8 @@ body {
 .option-radio > label {
     order: 2;
 }
+=======
+>>>>>>> Master
 
 .next-prev-btn {
     display: flex;
@@ -198,6 +229,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+<<<<<<< HEAD
     width: 100%;
 }
 
@@ -209,3 +241,14 @@ body {
     width: 60%;
 }
 
+=======
+}
+
+.form-field.row label {
+    width: 250px
+}
+
+.form-field.row input {
+    width: 700px;
+}
+>>>>>>> Master

@@ -79,4 +79,8 @@ function readURL(input) {
 // check if string is only whitespace
 function isOnlyWhitespace(str) {
   return str.trim().length === 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> Master

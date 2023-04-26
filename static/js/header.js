@@ -5,12 +5,20 @@ class Header extends HTMLElement {
     }
 
     connectedCallback() {
+<<<<<<< HEAD
         this.innerHTML = `
+=======
+        this.innerHTML = 
+>>>>>>> Master
             <header>
                 <div class="header-div">
                 <div class ="header-div-content">
                     <div class="logo-container">
+<<<<<<< HEAD
                         <img src="static/assets/images/logo.png" alt="logo"/>
+=======
+                        <img src="../../assets/images/logo.png" alt="logo"/>
+>>>>>>> Master
                     </div>
                     <div class="nav-items-container">
                         <nav>
@@ -25,13 +33,22 @@ class Header extends HTMLElement {
                         </nav>
                     </div>
                     <div class="cart-search-container">
+<<<<<<< HEAD
                         <img src="static/assets/images/search.png" alt="search-button"/>
                         <img src="static/assets/images/shopping-bag.png" alt="cart-button"/>
+=======
+                        <img src="../../assets/images/search.png" alt="search-button"/>
+                        <img src="../../assets/images/shopping-bag.png" alt="cart-button"/>
+>>>>>>> Master
                     </div>
                     </div>
                 </div>
             </header>
+<<<<<<< HEAD
         `
+=======
+        
+>>>>>>> Master
     }
 }
 

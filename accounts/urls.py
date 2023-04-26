@@ -3,15 +3,6 @@ from accounts import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path("add-crop",views.add_crop,name='add_crop'),
-    path("crops",views.crops,name='crops'),
-    path("farmerHome",views.farmerHome,name='farmerHome'),
-    path("",views.index,name=''),
-    path("loginpage",views.login_view,name="loginpage"),
-    path("registrationpage",views.registration,name='registrationpage'),
-    path("kyc", views.kyc, name='kyc'),
-    path("404", views.not_found, name='404'),
-
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'), 
     name='password_change_done'),
     path('password_change/', auth_views.PasswordChangeView.as_view(template_name='registration/password_change.html'), 
@@ -23,5 +14,12 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
     name='password_reset_complete'),
 
+    path("",views.index,name=''),
+    path("farmer_kyc",views.farmer_kyc,name='farmer_kyc'),
+    path('crops_list',views.crops_list, name='crops_list'),
+    path("CropDetails",views.CropDetails,name='CropDetails'),
+    path("farmerHome",views.farmerHome,name='farmerHome'),
+    path("loginpage",views.login_view,name="loginpage"),
+    path("registrationpage",views.registration,name='registrationpage'),
 
 ]
