@@ -79,10 +79,13 @@ DATABASES = {
      'default': {
         'ENGINE':'django.db.backends.mysql',
         'NAME':'aims',
-        'HOST':'localhost',
-        'PORT':'3306',
         'USER':'root',
         'PASSWORD':'',
+        'HOST':'localhost',
+        'PORT':'3306',
+        'OPTIONS': {
+            'sql_mode': 'STRICT_TRANS_TABLES',
+            },
     }
 }
 

@@ -1,3 +1,4 @@
+from datetime import date
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
@@ -28,24 +29,36 @@ class User(AbstractUser):
     is_farmer = models.BooleanField(default=False)
     is_worker = models.BooleanField(default=False)
 
+class addcrop(models.Model):
+    CropName = models.CharField(max_length=225)
+    PesticideUsed = models.CharField(max_length=225)
+    MarketValue = models.CharField(max_length=10)
+    Disease = models.CharField(max_length=225,null=True, blank=True)
+    Season = models.CharField(max_length=225) 
+    Photo = models.ImageField(upload_to="images/crops")
+    Description = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.CropName
+
+
+class farmer(models.Model):
+    name = models.CharField(max_length=225)
+    age = models.CharField(max_length=225)
 
 #creating table for farmer kyc that extends User table where user id is in one to one relation
 class farmerKYC(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     first_name = models.CharField(max_length=225)
     MiddleName = models.CharField(max_length=225)
     Last_name = models.CharField(max_length=225)
-    Gender = models.CharField(max_length=50,choices=(("M","Male",),
-                                                    ("F","Female"),
-                                                    ("X","Others")))
-    MaritualStatus = models.CharField(max_length=225,choices=(("S","Single"),
-                                                              ("M","Married")))
-    Dob = models.DateField
+    Gender = models.CharField(max_length=50)
+    MaritualStatus = models.CharField(max_length=50)
+    Dob = models.DateField(default=date.today)
     Nationality = models.CharField(max_length=225)
-    Citizenship = models.IntegerField
-    Password = models.IntegerField
-    Residential = models.CharField(max_length=50,choices=(("NR","Non Resident"),
-                                            ("F","Foreign National")))
+    Citizenship = models.IntegerField(default=0)
+    Passport = models.IntegerField(default=0)
+    Residential = models.CharField(max_length=50)
     FatherName = models.CharField(max_length=225)
     MotherName = models.CharField(max_length=225)
     GrandfatherName = models.CharField(max_length=225)
@@ -59,24 +72,8 @@ class farmerKYC(models.Model):
     Municipality = models.CharField(max_length=225)
     WardNo = models.CharField(max_length=225)
     Street = models.CharField(max_length=225)
-    PassportPhoto = models.ImageField(upload_to="static/assets/docs")
-    CitizenProof = models.CharField(max_length=50,choices=(("C","Citizenship"),
-                                             ("P","Passport")))
-    FrontPic = models.ImageField(upload_to="static/assets/docs")
-    BackPic = models.ImageField(upload_to="static/assets/docs")
+    PassportPhoto = models.ImageField(upload_to="images/docs")
+    CitizenProof = models.CharField(max_length=50)
+    FrontPic = models.ImageField(upload_to="images/docs")
+    BackPic = models.ImageField(upload_to="images/docs")
     Verify = models.BooleanField(default=False)
-
-class addcrop(models.Model):
-    CropName = models.CharField(max_length=225)
-    PesticideUsed = models.CharField(max_length=225)
-    MarketValue = models.CharField(max_length=10)
-    Disease = models.CharField(max_length=225,null=True, blank=True)
-    Season = models.CharField(max_length=225) 
-    Photo = models.ImageField(upload_to="images/crops")
-    Description = models.CharField(max_length=500)
-
-    # def __str__(self):
-    #     return self.CropName
-
-
-        
