@@ -1,5 +1,4 @@
 from django.contrib import admin
-<<<<<<< HEAD
 from farmer.models import CropDetail
 
 # Register your models here.
