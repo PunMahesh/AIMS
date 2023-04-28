@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-from django.shortcuts import render, redirect
-from .form import RegisterForm, LoginForm
-from django.contrib.auth import authenticate,login
-from django.http import HttpResponse
-
-
-# Create your views here.
-def farmerHome(request):
-    return render(request, 'farmerHome.html')
-
-def index(request):
-    return render(request, 'index.html')
-=======
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from .form import RegisterForm, LoginForm
@@ -24,7 +10,6 @@ from accounts.models import User
 
 
 # Create your views here.
->>>>>>> Master
 
 def registration(request):
     if request.method == 'POST':
@@ -51,50 +36,6 @@ def login_view(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
-<<<<<<< HEAD
-            if request.POST.get("remember_me"):
-                response = HttpResponse("cookie example")
-                response.set_cookie("cid",request.POST["txtemail"])
-                response.set_cookie("cid2",request.POST["txtpass"])
-                return response
-            login(request,user)
-            return redirect('/')
-        else:
-            msg = 'error validating form'
-    return render(request, 'loginpage.html', {'form': form})
-
-def scookie(request):
-    response = HttpResponse("cookie example")
-    response.set_cookie("cid","abc@gmail.com")
-    response.set_cookie("cid2","xyz@gmail.com")
-def gcookie(request):
-    a = request.COOKIES["cid"]
-    b = request.COOKIES["cid2"]
-    return HttpResponse("value is "+ a + " value is " + b)
-
-def add_crop(request):
-    return render(request, "addcrop.html")
-
-def crops(request):
-    # Fetch Crops information from database and pass it in the context. The format should be as follows:
-    context = {
-        "crops": [
-            {"name": "Crop 1", "season": "Winter", "disease": "Disease 1", "pest": "Pest 1", "market_information": "Market Information 1", "details": "Details 1"},
-            {"name": "Crop 2", "season": "Summer", "disease": "Disease 2", "pest": "Pest 2", "market_information": "Market Information 2", "details": "Details 2"},
-            {"name": "Crop 3", "season": "Spring", "disease": "Disease 3", "pest": "Pest 3", "market_information": "Market Information 3", "details": "Details 3"},
-            {"name": "Crop 4", "season": "Spring", "disease": "Disease 4", "pest": "Pest 4", "market_information": "Market Information 4", "details": "Details 4"},
-        ]
-    }
-
-    return render(request, "crops.html", context)
-
-def kyc(request):
-    return render(request, "kyc_form.html")
-
-
-def not_found(request):
-    return render(request, "404.html")
-=======
             # Check the boolean value and assign the user to the appropriate group
             if user is not None and user.is_superuser:
                 login(request, user)
@@ -218,4 +159,3 @@ def crops_list(request):
 
                 
 
->>>>>>> Master

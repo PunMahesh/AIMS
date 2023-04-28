@@ -9,14 +9,3 @@ class CropDetail(models.Model):
     Season = models.CharField(max_length=225) 
     Photo = models.ImageField(upload_to="crops/assets/crops")
     Description = models.CharField(max_length=500)
-=======
-
-
-# Create your models here.
-
-
-
-
-
-
->>>>>>> Master
