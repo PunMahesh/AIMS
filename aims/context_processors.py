@@ -7,5 +7,6 @@ def sidebar_items(request):
             {'name': 'Market', 'url': "404", 'icon': 'store'},
             {'name': 'Worker', 'url': "404", 'icon': 'engineering'},
             {'name': 'Feed', 'url': "404", 'icon': 'article'},
+
         ]
     }
