@@ -29,7 +29,7 @@ class User(AbstractUser):
     is_farmer = models.BooleanField(default=False)
     is_worker = models.BooleanField(default=False)
 
-class Addcrop(models.Model):
+class AddCrop(models.Model):
     CropName = models.CharField(max_length=225)
     PesticideUsed = models.CharField(max_length=225)
     MarketValue = models.CharField(max_length=10)
@@ -42,12 +42,12 @@ class Addcrop(models.Model):
         return self.CropName
 
 
-class farmer(models.Model):
+class Farmer(models.Model):
     name = models.CharField(max_length=225)
     age = models.CharField(max_length=225)
 
 #creating table for farmer kyc that extends User table where user id is in one to one relation
-class farmerKYC(models.Model):
+class FarmerKYC(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     first_name = models.CharField(max_length=225)
     MiddleName = models.CharField(max_length=225)

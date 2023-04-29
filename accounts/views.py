@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from .form import RegisterForm, LoginForm
 from django.contrib.auth import authenticate,login
-from .models import User, Addcrop, farmerKYC
+from .models import User, AddCrop, FarmerKYC
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.contrib.auth.models import Group
@@ -22,7 +22,6 @@ def registration(request):
         form = RegisterForm()
     return render(request,'registration.html', {'form': form})
 
-    
 def login_view(request):
     form = LoginForm(request.POST)
     if request.method == 'POST':
@@ -68,7 +67,7 @@ def login_view(request):
 #                 User.save()
 
 
-def farmerHome(request):
+def farmer_home(request):
     return render(request, 'farmerHome.html')
 
 def index(request):
@@ -105,7 +104,7 @@ def farmer_kyc(request):
         submission.FrontPic = request.FILES.get("FrontPic")
         submission.BackPic = request.FILES.get("BackPic")
 
-        # kyc = farmerKYC(user=user,first_name=first_name,MiddleName=MiddleName,Last_name=Last_name,Gender=Gender,MaritualStatus=MaritualStatus,Dob=Dob,Nationality=Nationality,
+        # kyc = FarmerKYC(user=user,first_name=first_name,MiddleName=MiddleName,Last_name=Last_name,Gender=Gender,MaritualStatus=MaritualStatus,Dob=Dob,Nationality=Nationality,
         #                 Citizenship=Citizenship,Passport=Passport,Residential=Residential,FatherName=FatherName,MotherName=MotherName,GrandfatherName=GrandfatherName,
         #                 GrandMotherName=GrandMotherName,SpouseName=SpouseName,SonName=SonName,DaughterName=DaughterName,Country=Country,District=District,Province=Province,
         #                 Municipality=Municipality,WardNo=WardNo,Street=Street,PassportPhoto=PassportPhoto,CitizenProof=CitizenProof,FrontPic=FrontPic,BackPic=BackPic)
@@ -119,7 +118,7 @@ def kyc_recent(request, submission_id):
     context = {'submission': submission}
     return render(request, 'kyc_recent.html', context)
 
-def addcrop(request):
+def add_crop(request):
     if request.method == "POST":
         CropName = request.POST.get("CropName")
         PesticideUsed = request.POST.get("PesticideUsed")
@@ -129,29 +128,19 @@ def addcrop(request):
         Photo = request.FILES.get("Photo")
         Description = request.POST.get("Description")
 
-        details = Addcrop(CropName=CropName,PesticideUsed=PesticideUsed,MarketValue=MarketValue,
+        details = AddCrop(CropName=CropName,PesticideUsed=PesticideUsed,MarketValue=MarketValue,
                          Disease=Disease,Season=Season,Photo=Photo,Description=Description)
         details.save()
         return redirect("crops")
     return render(request, 'addcrop.html')
-    
+
 
 def crops_list(request):
     # Fetch Crops information here and pass it in the context. The format should be as follows:
-        crops = Addcrop.objects.all()
+        crops = AddCrop.objects.all()
         context = {'crops': crops}
         print (context)
         return render(request, 'crops.html',context)
 
 def error(request):
     return render(request, '404.html')
-
-
-    
-
-           
-
-
-
-                
-
