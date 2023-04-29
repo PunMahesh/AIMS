@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 
 {% block title %}Crops{% endblock %}
@@ -90,8 +91,113 @@
                 {% endfor %}
                 <div class="spacer"></div>
                 <div class="spacer"></div>
-            </div>
+=======
+<html>
+  <head>
+    <title>Crop details on farmer click</title>
+    <link rel="stylesheet" href="static/css/crops.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script>
+      function goToAddNewCrop() {
+        document.location.href = "{% url 'CropDetails' %}";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="profile-bar">
+        <div class="name-container">
+          <div class="logo">
+            <span class="material-symbols-outlined"> account_circle </span>
+          </div>
+          <div class="name-role">
+            <span class="name">User name</span>
+            <span class="role">Farmer</span>
+          </div>
         </div>
+      </div>
+      {% include 'sidebar.html' %}
+
+      <div class="content">
+        <div class="main-content">
+          <div class="content-title">
+            <span>Crops Details</span>
+            <div class="content-title-button">
+              <button onclick="goToAddNewCrop()">
+                <span class="material-symbols-outlined"> add </span>
+                Add New Crop
+              </button>
+>>>>>>> 3626a2e9a468b4363ce976cc5681086bed83feec
+            </div>
+          </div>
+          <div class="content-body">
+            <div class="crops-container">
+              <span>{{ forloop.counter }}</span>
+              {% for crop in crops %}
+              <div class="crop-card">
+                <div class="crop-card-header"></div>
+                <div class="crop-card-body">
+                  <div class="crop-card-body-item">
+                    <div class="bot item-label">
+                      <span>Crop: </span>
+                    </div>
+                    <div class="bot item-value">
+                      <span>{{ crop.CropName }}</span>
+                    </div>
+                  </div>
+                  <div class="crop-card-body-item">
+                    <div class="bot item-label">
+                      <span>Season: </span>
+                    </div>
+                    <div class="bot item-value">
+                      <span>{{ crop.season }}</span>
+                    </div>
+                  </div>
+                  <div class="crop-card-body-item">
+                    <div class="bot item-label">
+                      <span>Disease: </span>
+                    </div>
+                    <div class="bot item-value">
+                      <span>{{ crop.Disease }}</span>
+                    </div>
+                  </div>
+                  <div class="crop-card-body-item">
+                    <div class="bot item-label">
+                      <span>Pest: </span>
+                    </div>
+                    <div class="bot item-value">
+                      <span>{{ crop.PesticideUsed }}</span>
+                    </div>
+                  </div>
+                  <div class="crop-card-body-item">
+                    <div class="bot item-label">
+                      <span>Market Information: </span>
+                    </div>
+                    <div class="bot item-value">
+                      <span>{{ crop.MarketValue }}</span>
+                    </div>
+                  </div>
+                  <div class="crop-card-body-item">
+                    <div class="bot item-label">
+                      <span>Details: </span>
+                    </div>
+                    <div class="bot item-value">
+                      <span>{{ crop.Details }}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="crop-card-footer">
+                  <button>Show More</button>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+<<<<<<< HEAD
     </div>
 </div>
 {% endblock %}
@@ -202,5 +308,9 @@
         </div>
       </div>
     </div>
+=======
+      </div>
+    </div>
+>>>>>>> 3626a2e9a468b4363ce976cc5681086bed83feec
   </body>
 </html>
