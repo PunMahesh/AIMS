@@ -6,7 +6,7 @@ from farmer.models import Farmer_KYC
 def kyc(request):
     if request.method == "POST":
         # submission = FarmerKYC
-        user = request.user
+        User = request.user
         first_name = request.POST.get("first_name")
         MiddleName = request.POST.get("MiddleName")
         Last_name = request.POST.get("Last_name")
@@ -35,11 +35,11 @@ def kyc(request):
         FrontPic = request.FILES.get("FrontPic")
         BackPic = request.FILES.get("BackPic")
 
-        kyc = Farmer_KYC(user=user,first_name=first_name,MiddleName=MiddleName,Last_name=Last_name,Gender=Gender,MaritualStatus=MaritualStatus,Dob=Dob,Nationality=Nationality,
+        check_kyc = Farmer_KYC(User=User,first_name=first_name,MiddleName=MiddleName,Last_name=Last_name,Gender=Gender,MaritualStatus=MaritualStatus,Dob=Dob,Nationality=Nationality,
                         Citizenship=Citizenship,Passport=Passport,Residential=Residential,FatherName=FatherName,MotherName=MotherName,GrandfatherName=GrandfatherName,
                         GrandMotherName=GrandMotherName,SpouseName=SpouseName,SonName=SonName,DaughterName=DaughterName,Country=Country,District=District,Province=Province,
                         Municipality=Municipality,WardNo=WardNo,Street=Street,PassportPhoto=PassportPhoto,CitizenProof=CitizenProof,FrontPic=FrontPic,BackPic=BackPic)
         # if User.is_customer == True:
-        kyc.save()
+        check_kyc.save()
         return redirect("farmer_kyc")
     return render(request, 'kyc_form.html')
