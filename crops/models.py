@@ -6,7 +6,7 @@ class Crop(models.Model):
     pesticide_used = models.CharField(max_length=225)
     market_value = models.CharField(max_length=10)
     disease = models.CharField(max_length=225,null=True, blank=True)
-    season = models.CharField(max_length=225) 
+    season = models.CharField(max_length=225)
     crop_img = models.ImageField(upload_to="images/crops")
     description = models.CharField(max_length=500)
 
