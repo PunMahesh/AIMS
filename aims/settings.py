@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'farmer',
-    'equipments'
+    'equipments',
+    'crops',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,7 @@ DATABASES = {
         'ENGINE':'django.db.backends.mysql',
         'NAME':'aims',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'rootpass',
         'HOST':'localhost',
         'PORT':'3306',
         'OPTIONS': {
