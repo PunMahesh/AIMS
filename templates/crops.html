@@ -81,11 +81,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="crop-card-footer">
-                        <button>
+                    <a href="{% url 'get_crop' crop.id %}" class="footer-anchor">
+                        <div class="crop-card-footer">
                             Show More
-                        </button>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 {% endfor %}
                 <div class="spacer"></div>
