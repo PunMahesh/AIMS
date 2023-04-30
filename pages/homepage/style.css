@@ -1,0 +1,388 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: rgb(254, 255, 255);
+    color: darkslategray;
+}
+
+
+.header-div {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    gap: 0 90px;
+}
+.header-div-content{
+    display:flex;
+    align-items: center;
+    margin: auto;
+}
+
+.logo-container  img {
+    width: 100px;
+    height: 80px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.nav-items-container {
+    align-self: center;
+    font-size: medium;
+    margin: 0 40px 0 10px;
+}
+
+.nav-ul {
+    display: flex;
+    gap: 0 45px;
+    align-items: center;
+    margin-left: 300px;
+}
+
+.nav-ul  li {
+    list-style: none;
+    font-weight: 600;
+    cursor: pointer;
+
+   
+}
+
+.cart-search-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 120px;
+}
+
+.cart-search-container  img {
+    margin: 4px 2px 0 10px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    
+}
+
+/*First Content Styles*/
+.first-content {
+    display: flex;
+    height: 50vh;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    justify-content: space-evenly;
+}
+
+.content-img  img{
+    margin-left: 120px;
+    height: 100%;
+    width: 75%;
+    border-radius: 15px;
+}
+
+.content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+
+.content-first-item {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.content-first-item  img {
+    margin-left: 80px;
+    height: 60px;
+    width: 60px;
+    margin-bottom: 30px;
+}
+
+.content-first-item  p {
+    font-weight: bold;
+    font-size: medium;
+    letter-spacing: 2px;
+}
+
+.content-join-movement {
+    width: 70%;
+    margin: 20px 0 30px 0;
+}
+
+.join-text {
+    font-size: xx-large;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: capitalize;
+}
+
+.site-info {
+    margin-top: 20px;
+    font-weight: lighter;
+}
+
+.first-content-buttons {
+    display: flex;
+    gap: 0px 40px;
+    margin-left: 10px;
+}
+
+.icon-button {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 0 3px;
+    height: 40px;
+    width: 140px;
+    padding: 0;
+    background: #00ab41;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    overflow: hidden;
+    font-size: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+.button__text, .button__icon {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    background: none;
+}
+
+.button__text {
+    color: rgb(239, 238, 238);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 6px;
+}
+
+.button__icon_black {
+    margin-left: 10px;
+    color: black;
+}
+
+/* Mission container and items style */
+.mission-container {
+    margin: 30px 130px 30px 130px;
+    display: flex;
+    gap: 135px;
+}
+
+.mission-item {
+    width: 250px;
+    display: flex;
+}
+
+.mission-text {
+    margin: 2px 0 0 5px;
+}
+
+
+.mission-text  h5 {
+    margin-bottom: 3px;
+}
+
+.mission-text  p {
+    font-size: small;
+    font-weight: lighter;
+}
+
+/* Cards container and items styles */
+.cards-container {
+    margin: 20px 0 10px 130px;
+    display: flex;
+    gap: 90px;
+}
+
+.card-item {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    border: 2px solid rgba(220, 220, 220, 0.2);
+    border-radius: 4px;
+    padding: 15px;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.card-text  h4 {
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.card-text  p {
+    font-size: small;
+    font-weight: lighter;
+    line-height: 130%;
+}
+
+.card-button {
+    margin-top: 15px;
+    width: 140px;
+    border-radius: 30px;
+}
+
+.button__text_right-icon {
+    color: rgb(239, 238, 238);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 6px;
+    margin-left: 20px;
+}
+
+.button__icon_white {
+    color: white;
+    margin-left: 10px;
+}
+
+.card-image {
+    position: absolute;
+    left: 130px;
+    top: 50px;
+    z-index: -1;
+}
+
+.card-image  img {
+    width: 150px;
+    height: 150px;
+}
+
+
+.farmer-sell-container  {
+    height: 17vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0 0 0;
+}
+
+.farmer-sell-container  h4 {
+    background: none;
+    color:white ;
+    letter-spacing: 4px;
+    font-size:xx-large;
+}
+.with-tri:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 60px 30px 0 30px;
+    border-color: #000 transparent transparent transparent;
+    position: absolute;
+    top: 910px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.register-now-container {
+    height: 10vh;
+    background-color: rgba(198, 198, 198, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-now-container > h4 {
+    background: none;
+    color:black ;
+    letter-spacing: 4px;
+    font-size: xx-large;
+}
+
+.container {
+    margin: 20px 130px 10px 130px;
+    display: flex;
+    gap: 90px;
+    justify-content: center;
+}
+
+.container-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-div {
+    align-self: center;
+}
+
+.button-div  button   span {
+    margin: 30px;
+}
+
+
+.img-div {
+    height:220px;
+    object-fit: cover;
+    object-position: center center;
+    margin-bottom: 25px;
+    
+
+
+}
+
+.text-div  h4 {
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.text-div > p {
+    font-size: small;
+    font-weight: lighter;
+    line-height: 130%;
+}
+
+.button-div {
+    margin-top: 20px;
+}
+
+footer {
+    height: 35vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0 0 0;
+}
+
+.footer-col {
+    background-color: black;
+}
+
+.footer-col h4 {
+    color: white;
+    background-color: black;
+    margin-bottom: 50px;
+}
+
+.footer-col div {
+    background-color: black;
+}
+
+.footer-col div p{
+    margin-bottom: 15px;
+    background-color: black;
+    color: white;
+}
+
+.footer-col ul {
+    background-color: black;
+}
+
+.footer-col ul li {
+    list-style: none;
+    background-color: black;
+}

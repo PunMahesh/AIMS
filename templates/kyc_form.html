@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/kyc.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </script>
+    <title>KYC Form</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="step step-1 active">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                    <div class="page-counter">Page 1 of 4</div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>A. Identity Details</span></div>
+                </div>
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main with-title">
+                            <div class="section-title"><span>Name of the Applicant</span></div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="first_name">First Name</label>
+                                    <input type="text" name="first_name" />
+                                </div>
+                                <div class="form-field">
+                                    <label for="middle_name">Middle Name</label>
+                                    <input type="text" name="MiddleName" />
+                                </div>
+                                <div class="form-field">
+                                    <label for="last_name">Last Name</label>
+                                    <input type="text" name="Last_name" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label class="label">Gender</label>
+                                    <div class="radio-options">
+                                        <div class="option-radio">
+                                            <label for="male">Male</label>
+                                            <input type="radio" name="Gender" id="male" value="male" />
+                                        </div>
+                                        <div class="option-radio">
+                                            <label for="female">Female</label>
+                                            <input type="radio" name="Gender" id="female" value="female" />
+                                        </div>
+                                        <div class="option-radio">
+                                            <label for="others">Others</label>
+                                            <input type="radio" name="Gender" id="others" value="others" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label">Marital Status</label>
+                                    <div class="radio-options">
+                                        <div class="option-radio">
+                                            <label for="single">Single</label>
+                                            <input type="radio" name="MaritualStatus" id="single" value="single" />
+                                        </div>
+                                        <div class="option-radio">
+                                            <label for="married">Married</label>
+                                            <input type="radio" name="MaritualStatus" id="married" value="married" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="dob">Date of Birth</label>
+                                    <input type="date" name="Dob"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label class="label" for="nationality">Nationality</label>
+                                    <input type="text" name="Nationality" />
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="citizenship">Citizenship No.</label>
+                                    <input type="text" name="Citizenship" />
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="passport">Passport No.</label>
+                                    <input type="text" name="Passport" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label class="label">Residential Status</label>
+                                    <div class="radio-options">
+                                        <div class="option-radio">
+                                            <label for="resident">Resident Individual</label>
+                                            <input type="radio" name="Residential" id="resident" value="resident" />
+                                        </div>
+                                        <div class="option-radio">
+                                            <label for="non-resident">Non Resident</label>
+                                            <input type="radio" name="Residential" id="non-resident" value="non-resident" />
+                                        </div>
+                                        <div class="option-radio">
+                                            <label for="foreign">Foreign National</label>
+                                            <input type="radio" name="Residential" id="foreign" value="foreign" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn single">
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step step-2 ">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                    <div class="page-counter">Page 2 of 4</div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>B. Family Information</span></div>
+                </div>
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main">
+                            <div class="form-row reverse">
+                                <div class="form-field row">
+                                    <label class="label" for="father">Father's Name</label>
+                                    <input type="text" name="FatherName" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="mother">Mother's Name</label>
+                                    <input type="text" name="MotherName" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="grandfather">Grandfather's Name</label>
+                                    <input type="text" name="GrandfatherName" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="grandmother">Grandmother's Name</label>
+                                    <input type="text" name="GrandMotherName" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="spouse">Spouse's Name</label>
+                                    <input type="text" name="SpouseName" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="son">Sons's Name</label>
+                                    <input type="text" name="SonName" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="daughter">Daughter's Name</label>
+                                    <input type="text" name="DaughterName" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step step-3">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                    <div class="page-counter">Page 3 of 4</div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>C. Address Details</span></div>
+                </div>
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main">
+                            <div class="form-row reverse">
+                                <div class="form-field row">
+                                    <label class="label" for="country">Country</label>
+                                    <input type="text" name="Country" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="province">Province</label>
+                                    <input type="text" name="Province" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="district">District</label>
+                                    <input type="text" name="District" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="municipality">Rural Municipality/ Municipality</label>
+                                    <input type="text" name="Municipality" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="ward_no">Ward No.</label>
+                                    <input type="text" name="WardNo" />
+                                </div>
+                                <div class="form-field row">
+                                    <label class="label" for="street">Street/Village</label>
+                                    <input type="text" name="Street" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step step-4">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                    <div class="page-counter">Page 4 of 4</div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>D. Photo</span></div>
+                </div>
+                <div class="form-container">
+                    <div class="form-body">
+                        <div class="form-row-main">
+                            <div class="form-row reverse">
+                                <div class="form-field">
+                                    <label class="label" for="pp_photo">Passport Size Photo</label>
+                                    <input type="file" name="PassportPhoto" />
+                                </div>
+                                <div class="form-field">
+                                    <div class="option-radio">
+                                        <label for="citizenship_doc">Citizenship</label>
+                                        <input type="radio" name="CitizenProof"  value="citizenship" />
+                                    </div>
+                                    <div class="option-radio">
+                                        <label for="passport_doc">Passport</label>
+                                        <input type="radio" name="doc_type" id="passport_doc" value="passport" />
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="doc_front">Front of the Document</label>
+                                    <input type="file" name="FrontPic" />
+                                </div>
+                                <div class="form-field">
+                                    <label class="label" for="doc_back">Back of the Document</label>
+                                    <input type="file" name="BackPic" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn finish-btn">Finish</button>
+                    </div>
+                </div>
+            </div>
+            <div class="step step-5 confirm-details">
+                <div class="header">
+                    <div class="form-name"><span>KYC Form</span></div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>Personal Information</span></div>
+                </div>
+                <div class="form-container confirm-details-form-container" id="confirm-page">
+                    <div class="form-body">
+                        <div class="profile-pic">
+                            <img id="pp-render" src="https://via.placeholder.com/150" alt="Profile Picture" />
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Name</h3>
+                                    <p><span class="field-value" id="name"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Date of Birth</h3>
+                                    <p><span class="field-value" id="dob"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Gender</h3>
+                                    <p><span class="field-value" id="gender"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Marital Status</h3>
+                                    <p><span class="field-value" id="marital"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Nationality</h3>
+                                    <p><span class="field-value" id="nationality"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Residential Status</h3>
+                                    <p><span class="field-value" id="residential"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Citizenship No.</h3>
+                                    <p><span class="field-value" id="citizenship-val"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Passport No.</h3>
+                                    <p><span class="field-value" id="passport-val"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Father's Name</h3>
+                                    <p><span class="field-value" id="father"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Mother's Name</h3>
+                                    <p><span class="field-value" id="mother"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Grandfather's Name</h3>
+                                    <p><span class="field-value" id="grandfather"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Grandmother's Name</h3>
+                                    <p><span class="field-value" id="grandmother"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Spouse's Name</h3>
+                                    <p><span class="field-value" id="spouse"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Son's Name</h3>
+                                    <p><span class="field-value" id="son"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Daughter's Name</h3>
+                                    <p><span class="field-value" id="daughter"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Country</h3>
+                                    <p><span class="field-value" id="country"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">District</h3>
+                                    <p><span class="field-value" id="district"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Province</h3>
+                                    <p><span class="field-value" id="province"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Rural Municipality/Municipality</h3>
+                                    <p><span class="field-value" id="municipality"></span></p>
+                                </div>
+                                <div class="form-field render-data">
+                                    <h3 class="label">Ward No.</h3>
+                                    <p><span class="field-value" id="ward_no"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row-main render">
+                            <div class="form-row render-only">
+                                <div class="form-field render-data">
+                                    <h3 class="label">Street/Village</h3>
+                                    <p><span class="field-value" id="street"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-prev-btn single">
+                        <button type="submit" class="next-btn" id="submit-btn">Confirm Details</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="static/js/kyc.js" type="text/javascript"></script>
+</body>
+</html>

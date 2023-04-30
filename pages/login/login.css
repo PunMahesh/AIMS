@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.header-div {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    gap: 0 90px;
+}
+
+.logo-container  img {
+    margin-left: 150px;
+    width: 100px;
+    height: 80px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.nav-items-container {
+    align-self: center;
+    font-size: small;
+    margin: 0 40px 0 190px;
+}
+
+.nav-ul {
+    display: flex;
+    gap: 0 45px;
+}
+
+.nav-ul  li {
+    list-style: none;
+    font-weight: 600;
+    cursor: pointer;
+   
+}
+
+.cart-search-container {
+    display: flex;
+    justify-content: left;
+}
+
+.cart-search-container  img {
+    margin: 30px 10px 0 10px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: white;
+}
+::selection{
+  background: #4158d0;
+  color: #fff;
+}
+.login {
+  margin:auto;
+  width: 1250px;
+  height: 900px;
+  margin-bottom: 20px;
+  display: flex;
+  border: 2px solid rgba(12, 95, 55, 0.2);
+  border-radius: 6px;
+  padding: 15px;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+
+.wrapper{
+  margin-top: 20px;
+  width: 380px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  font-size: 18px;
+  font-weight: 550;
+  text-align: center;
+  line-height: 80px;
+  color: #fff;
+  user-select: none;
+  border-radius: 6px 6px 0 0;
+  background: green;
+}
+.wrapper form{
+  padding: 10px 30px 50px 30px;
+}
+.wrapper form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+.wrapper form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus,
+form .field input:valid{
+  border-color: #4158d0;
+}
+.wrapper form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #4158d0;
+  background: #fff;
+  transform: translateY(-50%);
+}
+form .content{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+form .content .checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .content input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+form .content label{
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+}
+form .content .pass-link{
+  color: "";
+}
+form .field input[type="submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: green;
+  /* c */
+  transition: all 0.3s ease;
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+}
+form .signup-link{
+  color: #262626;
+  margin-top: 20px;
+  text-align: center;
+}
+form .pass-link a,
+form .signup-link a{
+  color: #4158d0;
+  text-decoration: none;
+}
+form .pass-link a:hover,
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+#text1, #email_address {
+    margin: 0;
+    padding: 0;
+}
+
+#text2, #password{
+    margin: 0;
+    padding: 0;
+}
+
+#email_address {
+    margin: 0 0 0.4cm 0;
+}
+
+#sign_up, #forget_password {
+    color: green;
+}
+footer {
+  height: 35vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0 0 0;
+}
+
+.footer-col {
+  background-color: black;
+}
+
+.footer-col h4 {
+  color: white;
+  background-color: black;
+  margin-bottom: 50px;
+}
+
+.footer-col div {
+  background-color: black;
+}
+
+.footer-col div p{
+  margin-bottom: 15px;
+  background-color: black;
+  color: white;
+}
+
+.footer-col ul {
+  background-color: black;
+}
+
+.footer-col ul li {
+  list-style: none;
+  background-color: black;
+}
+.footer{
+  width: 100%;
+}
