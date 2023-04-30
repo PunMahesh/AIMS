@@ -39,7 +39,7 @@ def login_view(request):
                 group = Group.objects.get(name='is_farmer')  # replace with your group name
                 user.groups.add(group)
                 login(request, user)
-                return redirect('/')
+                return redirect('/') 
             elif  user is not None and user.is_worker:
                 group = Group.objects.get(name='is_worker')  # replace with your group name
                 user.groups.add(group)

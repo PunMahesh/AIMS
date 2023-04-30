@@ -1,5 +1,4 @@
-from django.shortcuts import redirect, render
-
+from django.shortcuts import redirect, render 
 from farmer.models import Farmer_KYC
 
 # Create your views here.
