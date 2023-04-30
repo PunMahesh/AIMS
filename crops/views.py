@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Crop
+from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
-
 def add_crop(request):
     if request.method == "POST":
         crop_name = request.POST.get("crop_name")
@@ -19,8 +19,14 @@ def add_crop(request):
         return redirect("crops")
     return render(request, 'add_crop.html')
 
-def crops_list(request):
+def get_crops(request):
     # Fetch Crops information here and pass it in the context. The format should be as follows:
     crops = Crop.objects.all()
     context = {'crops': crops}
     return render(request, 'crops.html', context)
+
+def get_crop(request, id):
+    crop = Crop.objects.get(id=id)
+    fss = FileSystemStorage()
+    context = {'crop': crop, 'crop_img_url': request.build_absolute_uri(fss.url(crop.crop_img))}
+    return render(request, 'crops_show_more.html', context)
