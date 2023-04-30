@@ -17,7 +17,6 @@ urlpatterns = [
     path("",views.index,name=''),
     path("crops",views.crops_list,name='crops'),
     path("404",views.error,name='404'),
-    path("farmer_kyc",views.farmer_kyc,name='farmer_kyc'),
     path("add_crop",views.add_crop,name='add_crop'),
     path("farmer_home",views.farmer_home,name='farmer_home'),
     path("loginpage",views.login_view,name="loginpage"),
