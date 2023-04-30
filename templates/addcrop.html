@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Add Crop Details{% endblock %}
+{% block content_css %}<link rel="stylesheet" href="static/css/addcrop.css" type="text/css">{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="main-content">
+        <div class="content-title">
+            <span>Add Crop Details</span>
+        </div>
+        <div class="content-body">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-field">
+                    <span class="form-label required" >Crop Name</span>
+                    <input type="text" name="CropName" placeholder="Enter crop name" />
+                </div>
+                <div class="form-field">
+                    <span class="form-label" >Pesticides Used</span>
+                    <input type="text" name="PesticideUsed" placeholder="If any" />
+                </div>
+                <div class="form-field">
+                    <span class="form-label" >Market Value</span>
+                    <select name ="MarketValue" >
+                        <option value=""  selected >Select</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                        <option value="5">Option 5</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <span class="form-label" >Disease</span>
+                    <input type="text" name="Disease" placeholder="If any" />
+                </div>
+                <div class="form-field">
+                    <span class="form-label required" >Season</span>
+                    <input type="text" name="Season" placeholder="Favourable Season" />
+                </div>
+                <div class="form-field">
+                    <span class="form-label" >Photo</span>
+                    <div class="img-upload">
+                        <input type="file" class="custom-img-upload" name="Photo" accept="image/png, image/jpeg" multiple/>
+                    </div>
+                </div>
+                <div class="form-field" id="textarea">
+                    <span class="form-label required" >Description</span>
+                    <textarea  placeholder="50-150 words" name="Description" rows="4" cols="50"></textarea>
+                </div>
+                <div class="form-field submit-btn">
+                    <span class="form-label" ></span>
+                    <input type="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
