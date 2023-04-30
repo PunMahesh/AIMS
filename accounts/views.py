@@ -2,7 +2,6 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from .form import RegisterForm, LoginForm
 from django.contrib.auth import authenticate,login
-from .models import AddCrop
 from django.contrib.auth.models import Group
 
 
@@ -74,30 +73,6 @@ def index(request):
 #     submission = farmer_kyc.objects.get(id=submission_id)
 #     context = {'submission': submission}
 #     return render(request, 'kyc_recent.html', context)
-
-def add_crop(request):
-    if request.method == "POST":
-        CropName = request.POST.get("CropName")
-        PesticideUsed = request.POST.get("PesticideUsed")
-        MarketValue = request.POST.get("MarketValue")
-        Disease = request.POST.get("Disease")
-        Season = request.POST.get("Season")
-        Photo = request.FILES.get("Photo")
-        Description = request.POST.get("Description")
-
-        details = AddCrop(CropName=CropName,PesticideUsed=PesticideUsed,MarketValue=MarketValue,
-                         Disease=Disease,Season=Season,Photo=Photo,Description=Description)
-        details.save()
-        return redirect("crops")
-    return render(request, 'addcrop.html')
-
-
-def crops_list(request):
-    # Fetch Crops information here and pass it in the context. The format should be as follows:
-        crops = AddCrop.objects.all()
-        context = {'crops': crops}
-        print (context)
-        return render(request, 'crops.html',context)
 
 def error(request):
     return render(request, '404.html')
