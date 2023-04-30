@@ -22,5 +22,5 @@ def add_equipment(request):
         details = equipments(EquipmentName=EquipmentName,ManufacturedYear=ManufacturedYear,MarketValue=MarketValue,
                          Condition=Condition,Warrenty=Warrenty,Photo=Photo,Description=Description)
         details.save()
-        return redirect("equipments.html")
+        return redirect("equipments")
     return render(request, "addequipment.html")

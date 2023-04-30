@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <form id="kycForm" method="post" action="">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="step step-1 active">
                 <div class="header">

@@ -7,7 +7,7 @@ class equipments(models.Model):
     MarketValue = models.CharField(max_length=10)
     Condition = models.CharField(max_length=225)
     Warrenty = models.CharField(max_length=225) 
-    Photo = models.ImageField(upload_to="images/crops")
+    Photo = models.ImageField(upload_to="images/equipments")
     Description = models.CharField(max_length=500)
 
     def __str__(self):

@@ -7,5 +7,5 @@ class CropDetail(models.Model):
     MarketValue = models.CharField(max_length=10,)
     Disease = models.CharField(max_length=225,null=True, blank=True)
     Season = models.CharField(max_length=225) 
-    Photo = models.ImageField(upload_to="crops/assets/crops")
+    Photo = models.ImageField(upload_to="crops/assets/equipments")
     Description = models.CharField(max_length=500)
