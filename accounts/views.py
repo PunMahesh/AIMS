@@ -63,12 +63,8 @@ def login_view(request):
 #                 User.groups.remove(group)
 #                 User.save()
 
-
-def farmer_home(request):
-    return render(request, 'farmerHome.html')
-
 def index(request):
-    return render(request, 'index.html')
+    return render(request,'index.html')
 
 # def kyc_recent(request, submission_id):
 #     submission = farmer_kyc.objects.get(id=submission_id)
