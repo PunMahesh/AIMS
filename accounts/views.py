@@ -63,14 +63,10 @@ def login_view(request):
 #                 User.save()
 
 def index(request):
-<<<<<<< HEAD
     return render(request,'index.html')
 
-=======
-    return render(request, 'index.html')
 def story(request):
     return render(request, 'story.html')
->>>>>>> eaf5d52b6690f1e099f0b644b5b623d996a0cf23
 # def kyc_recent(request, submission_id):
 #     submission = farmer_kyc.objects.get(id=submission_id)
 #     context = {'submission': submission}
