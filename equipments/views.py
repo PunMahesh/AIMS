@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import equipments
+from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
 def view_equipments(request):
@@ -24,3 +25,10 @@ def add_equipment(request):
         details.save()
         return redirect("equipments")
     return render(request, "addequipment.html")
+
+def get_equipment(request, id):
+    equip = equipments.objects.get(id=id)
+    fss = FileSystemStorage()
+    context = {'equipment': equip, 'equip_img_url': request.build_absolute_uri(fss.url(equip.Photo))}
+    return render(request, 'equipments_show_more.html', context)
+
