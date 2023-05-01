@@ -68,7 +68,8 @@ def farmer_home(request):
 
 def index(request):
     return render(request, 'index.html')
-
+def story(request):
+    return render(request, 'story.html')
 # def kyc_recent(request, submission_id):
 #     submission = farmer_kyc.objects.get(id=submission_id)
 #     context = {'submission': submission}
