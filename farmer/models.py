@@ -12,7 +12,11 @@ class CropDetail(models.Model):
     Description = models.CharField(max_length=500)
 
 class Farmer_KYC(models.Model):
+<<<<<<< HEAD
+    User = models.ForeignKey(User, on_delete=models.CASCADE,default=0)  
+=======
     User = models.ForeignKey(User,on_delete=models.CASCADE)  
+>>>>>>> eaf5d52b6690f1e099f0b644b5b623d996a0cf23
     first_name = models.CharField(max_length=225)
     MiddleName = models.CharField(max_length=225)
     Last_name = models.CharField(max_length=225)
@@ -41,3 +45,4 @@ class Farmer_KYC(models.Model):
     FrontPic = models.ImageField(upload_to="images/docs_Front")
     BackPic = models.ImageField(upload_to="images/docs_Back")
     Verify = models.BooleanField(default=False)
+

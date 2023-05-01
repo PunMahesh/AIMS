@@ -38,7 +38,7 @@ def login_view(request):
                 group = Group.objects.get(name='is_farmer')  # replace with your group name
                 user.groups.add(group)
                 login(request, user)
-                return redirect('/')
+                return redirect('/') 
             elif  user is not None and user.is_worker:
                 group = Group.objects.get(name='is_worker')  # replace with your group name
                 user.groups.add(group)
@@ -62,14 +62,15 @@ def login_view(request):
 #                 User.groups.remove(group)
 #                 User.save()
 
-
-def farmer_home(request):
-    return render(request, 'farmerHome.html')
-
 def index(request):
+<<<<<<< HEAD
+    return render(request,'index.html')
+
+=======
     return render(request, 'index.html')
 def story(request):
     return render(request, 'story.html')
+>>>>>>> eaf5d52b6690f1e099f0b644b5b623d996a0cf23
 # def kyc_recent(request, submission_id):
 #     submission = farmer_kyc.objects.get(id=submission_id)
 #     context = {'submission': submission}
