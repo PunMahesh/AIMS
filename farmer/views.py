@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+from django.contrib.auth.decorators import login_required
+=======
 
+>>>>>>> eaf5d52b6690f1e099f0b644b5b623d996a0cf23
 from django.shortcuts import redirect, render
 
 from farmer.models import Farmer_KYC
@@ -68,6 +72,45 @@ def kyc(request):
             FrontPic=FrontPic,
             BackPic=BackPic
         )
+<<<<<<< HEAD
+        context = {
+            'PassportPhoto':PassportPhoto,
+            'first_name':first_name,
+            'MiddleName':MiddleName,
+            'Last_name':Last_name,
+            'Gender':Gender,
+            'MaritualStatus':MaritualStatus,
+            'Dob':Dob,
+            'Nationality':Nationality,
+            'Citizenship':Citizenship,
+            'Passport':Passport,
+            'Residential':Residential,
+            'FatherName':FatherName,
+            'MotherName':MotherName,
+            'GrandfatherName':GrandfatherName,
+            'GrandMotherName':GrandMotherName,
+            'SpouseName':SpouseName,
+            'SonName':SonName,
+            'DaughterName':DaughterName,
+            'Country':Country,
+            'District':District,
+            'Province':Province,
+            'Municipality':Municipality,
+            'WardNo':WardNo,
+            'Street':Street
+        }
+
+        print (context)
+        # if User.is_customer == True:
+        check_kyc.save()
+        return render(request,'kyc_form.html',context=context)
+    # Return an empty context dictionary for the GET request
+    context = {}
+    return render(request, 'kyc_form.html',context)
+
+def farmer_home(request):
+    return render(request,'farmer_home.html')
+=======
 
         # if User.is_customer == True:
         check_kyc.save()
@@ -75,3 +118,4 @@ def kyc(request):
        
         return redirect("farmer_kyc")
     return render(request, 'kyc_form.html')
+>>>>>>> eaf5d52b6690f1e099f0b644b5b623d996a0cf23

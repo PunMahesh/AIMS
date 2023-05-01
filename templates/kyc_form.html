@@ -28,7 +28,7 @@
                             <div class="form-row">
                                 <div class="form-field">
                                     <label for="first_name">First Name</label>
-                                    <input type="text" name="first_name" />
+                                    <input name="first_name" value="{{ first_name }}">
                                 </div>
                                 <div class="form-field">
                                     <label for="middle_name">Middle Name</label>
@@ -277,11 +277,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Name</h3>
-                                    <p><span class="field-value" id="name"></span></p>
+                                    <p><span class="field-value">{{ first_name }}</span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Date of Birth</h3>
-                                    <p><span class="field-value" id="dob"></span></p>
+                                    <p><span class="field-value" id="dob">{{ Dob }}</span></p>
                                 </div>
                             </div>
                         </div>
@@ -289,11 +289,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Gender</h3>
-                                    <p><span class="field-value" id="gender"></span></p>
+                                    <p><span class="field-value" id="gender"></span>{{ Gender }}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Marital Status</h3>
-                                    <p><span class="field-value" id="marital"></span></p>
+                                    <p><span class="field-value" id="marital"></span>{{ MaritualStatus }}</p>
                                 </div>
                             </div>
                         </div>
@@ -301,11 +301,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Nationality</h3>
-                                    <p><span class="field-value" id="nationality"></span></p>
+                                    <p><span class="field-value" id="nationality"></span> {{Nationality}}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Residential Status</h3>
-                                    <p><span class="field-value" id="residential"></span></p>
+                                    <p><span class="field-value" id="residential" ></span>{{Residential}}</p>
                                 </div>
                             </div>
                         </div>
@@ -313,11 +313,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Citizenship No.</h3>
-                                    <p><span class="field-value" id="citizenship-val"></span></p>
+                                    <p><span class="field-value" id="citizenship-val"></span>{{Citizenship}}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Passport No.</h3>
-                                    <p><span class="field-value" id="passport-val"></span></p>
+                                    <p><span class="field-value" id="passport-val"></span>{{Passport}}</p>
                                 </div>
                             </div>
                         </div>
@@ -325,11 +325,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Father's Name</h3>
-                                    <p><span class="field-value" id="father"></span></p>
+                                    <p><span class="field-value" id="father"></span>{{FatherName}}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Mother's Name</h3>
-                                    <p><span class="field-value" id="mother"></span></p>
+                                    <p><span class="field-value" id="mother"></span>{{MotherName}}</p>
                                 </div>
                             </div>
                         </div>
@@ -337,11 +337,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Grandfather's Name</h3>
-                                    <p><span class="field-value" id="grandfather"></span></p>
+                                    <p><span class="field-value" id="grandfather" ></span>{{GrandfatherName}}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Grandmother's Name</h3>
-                                    <p><span class="field-value" id="grandmother"></span></p>
+                                    <p><span class="field-value" id="grandmother"></span> {{GrandMotherName}}</p>
                                 </div>
                             </div>
                         </div>
@@ -349,11 +349,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Spouse's Name</h3>
-                                    <p><span class="field-value" id="spouse"></span></p>
+                                    <p><span class="field-value" id="spouse"></span> {{SpouseName}}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Son's Name</h3>
-                                    <p><span class="field-value" id="son"></span></p>
+                                    <p><span class="field-value" id="son"></span>{{SonName}}</p>
                                 </div>
                             </div>
                         </div>
@@ -361,11 +361,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Daughter's Name</h3>
-                                    <p><span class="field-value" id="daughter"></span></p>
+                                    <p><span class="field-value" id="daughter"></span>{{DaughterName}}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Country</h3>
-                                    <p><span class="field-value" id="country"></span></p>
+                                    <p><span class="field-value" id="country" ></span>{{Country}}</p>
                                 </div>
                             </div>
                         </div>
@@ -373,11 +373,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">District</h3>
-                                    <p><span class="field-value" id="district"></span></p>
+                                    <p><span class="field-value" id="district"></span> {{District}}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Province</h3>
-                                    <p><span class="field-value" id="province"></span></p>
+                                    <p><span class="field-value" id="province"></span>{{Province}}</p>
                                 </div>
                             </div>
                         </div>
@@ -385,11 +385,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Rural Municipality/Municipality</h3>
-                                    <p><span class="field-value" id="municipality"></span></p>
+                                    <p><span class="field-value" id="municipality"></span>{{Municipality}}</p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Ward No.</h3>
-                                    <p><span class="field-value" id="ward_no"></span></p>
+                                    <p><span class="field-value" id="ward_no"></span>{{WardNo}}</p>
                                 </div>
                             </div>
                         </div>
@@ -397,7 +397,7 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Street/Village</h3>
-                                    <p><span class="field-value" id="street"></span></p>
+                                    <p><span class="field-value" id="street"></span>{{Street}}</p>
                                 </div>
                             </div>
                         </div>
