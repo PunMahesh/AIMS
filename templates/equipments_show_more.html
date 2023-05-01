@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Equipments Details{% endblock %}
+{% block content_css %}<link rel="stylesheet" href="/static/css/equipments_show_more.css" type="text/css" >{% endblock %}
+
+
+{% block content %}
+<div class="content">
+    <div class="main-content">
+        <div class="content-title">
+            <span>Equipments Details</span>
+            <div class="content-title-button">
+                <div class="edit-button">
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                </div>
+                <div class="delete-button">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="img-container">
+                <img src="{{ equip_img_url }}" alt="equipment image">
+            </div>
+            <div class="text-info">
+                <div class="info-field">
+                    <span class="title">Equipment:</span>
+                    <span class="value">{{ equipment.EquipmentName }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Manufactured Year:</span>
+                    <span class="value">{{ equipment.ManufacturedYear }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Market Value:</span>
+                    <span class="value">{{ equipment.MarketValue }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Condition:</span>
+                    <span class="value">{{ equipment.Condition }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Warranty:</span>
+                    <span class="value">{{ equipment.Warrenty }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Details:</span>
+                    <span class="value description">{{ equipment.Description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
