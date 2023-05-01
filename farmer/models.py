@@ -1,6 +1,4 @@
-from datetime import date
 from django.db import models
-
 from accounts.models import User
 
 # Create your models here.
@@ -14,7 +12,11 @@ class CropDetail(models.Model):
     Description = models.CharField(max_length=500)
 
 class Farmer_KYC(models.Model):
+<<<<<<< HEAD
     User = models.ForeignKey(User, on_delete=models.CASCADE,default=0)  
+=======
+    User = models.ForeignKey(User,on_delete=models.CASCADE)  
+>>>>>>> eaf5d52b6690f1e099f0b644b5b623d996a0cf23
     first_name = models.CharField(max_length=225)
     MiddleName = models.CharField(max_length=225)
     Last_name = models.CharField(max_length=225)
