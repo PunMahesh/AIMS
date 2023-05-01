@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
-=======
 
->>>>>>> eaf5d52b6690f1e099f0b644b5b623d996a0cf23
 from django.shortcuts import redirect, render
 
 from farmer.models import Farmer_KYC
@@ -72,7 +69,6 @@ def kyc(request):
             FrontPic=FrontPic,
             BackPic=BackPic
         )
-<<<<<<< HEAD
         context = {
             'PassportPhoto':PassportPhoto,
             'first_name':first_name,
@@ -110,12 +106,3 @@ def kyc(request):
 
 def farmer_home(request):
     return render(request,'farmer_home.html')
-=======
-
-        # if User.is_customer == True:
-        check_kyc.save()
-
-       
-        return redirect("farmer_kyc")
-    return render(request, 'kyc_form.html')
->>>>>>> eaf5d52b6690f1e099f0b644b5b623d996a0cf23

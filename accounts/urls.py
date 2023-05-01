@@ -15,9 +15,7 @@ urlpatterns = [
     name='password_reset_complete'),
 
     path("",views.index,name=''),
-    path("crops",views.crops_list,name='crops'),
     path("404",views.error,name='404'),
-    path("add_crop",views.add_crop,name='add_crop'),
     path("loginpage",views.login_view,name="loginpage"),
     path("registrationpage",views.registration,name='registrationpage'),
     path("story",views.story,name='story'),

@@ -89,10 +89,11 @@
   transform: scale(0.99);
 }
 
-.crop-card-footer > button {
+.footer-anchor{
   background: none;
   border: none;
-  color: white;
   font-size: 17px;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
