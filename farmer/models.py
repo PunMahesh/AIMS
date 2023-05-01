@@ -12,7 +12,7 @@ class CropDetail(models.Model):
     Description = models.CharField(max_length=500)
 
 class Farmer_KYC(models.Model):
-    User = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     first_name = models.CharField(max_length=225)
     MiddleName = models.CharField(max_length=225)
     Last_name = models.CharField(max_length=225)
