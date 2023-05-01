@@ -16,7 +16,6 @@ urlpatterns = [
 
     path("",views.index,name=''),
     path("404",views.error,name='404'),
-    path("farmer_home",views.farmer_home,name='farmer_home'),
     path("loginpage",views.login_view,name="loginpage"),
     path("registrationpage",views.registration,name='registrationpage'),
     path("story",views.story,name='story'),
