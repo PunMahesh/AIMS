@@ -1,4 +1,3 @@
-# AIMS 
-Hi its me Rajat here
-Updating more
-Please check it out
+# AIMS
+
+We are working together to creare a web application about Agrciculture Informatino Management System.

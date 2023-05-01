@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Add Equipment Details{% endblock %}
+{% block content_css %}<link rel="stylesheet" href="static/css/addequipment.css" type="text/css">{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="main-content">
+        <div class="content-title">
+            <span>Equipment Details</span>
+        </div>
+        <div class="content-body">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-field">
+                    <span class="form-label required" >Equipment Name</span>
+                    <input type="text" name="EquipmentName" placeholder="Enter equipment name" />
+                </div>
+                <div class="form-field">
+                    <span class="form-label" >Manufactured Year</span>
+                    <input type="text" name="ManufacturedYear" placeholder="2023" />
+                </div>
+                <div class="form-field">
+                    <span class="form-label" >Market Value</span>
+                    <input type="text" name="MarketValue" placeholder="Price" />
+                </div>
+                <div class="form-field">
+                    <span class="form-label" >Condition</span>
+                    <select name ="Condition" >
+                        <option value="">Brand New/Second Hand</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                        <option value="5">Option 5</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <span class="form-label required" >Warranty</span>
+                    <input type="text" name="Warrenty" placeholder="6 months" />
+                </div>
+                <div class="form-field">
+                    <span class="form-label" >Photo</span>
+                    <div class="img-upload">
+                        <input type="file" name="Photo" class="custom-img-upload" accept="image/png, image/jpeg" multiple/>
+                    </div>
+                </div>
+                <div class="form-field" id="textarea">
+                    <span class="form-label required" >Description</span>
+                    <textarea  placeholder="50-150 words" name="Description" rows="4" cols="50"></textarea>
+                </div>
+                <div class="form-field submit-btn">
+                    <span class="form-label" ></span>
+                    <input type="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

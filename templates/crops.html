@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Crops{% endblock %}
+{% block content_css %}<link rel="stylesheet" href="static/css/crops.css" type="text/css" >{% endblock %}
+{% block pre_script %}
+<script>
+    function goToAddNewCrop() {
+        document.location.href = "{% url 'add_crop' %}"
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="main-content">
+        <div class="content-title">
+            <span>Crops Details</span>
+            <div class="content-title-button">
+                <button onclick="goToAddNewCrop()">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                    Add New Crop
+                </button>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="crops-container">
+                {% for crop in crops %}
+                <div class="crop-card">
+                    <div class="crop-card-header">
+                        <span>{{ forloop.counter }}</span>
+                    </div>
+                    <div class="crop-card-body">
+                        <div class="crop-card-body-item">
+                            <div class="bot item-label">
+                                <span>Crop: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ crop.crop_name }}</span>
+                            </div>
+                        </div>
+                        <div class="crop-card-body-item">
+                            <div class="bot item-label">
+                                <span>Season: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ crop.season }}</span>
+                            </div>
+                        </div>
+                        <div class="crop-card-body-item">
+                            <div class="bot item-label">
+                                <span>Disease: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ crop.disease }}</span>
+                            </div>
+                        </div>
+                        <div class="crop-card-body-item">
+                            <div class="bot item-label">
+                                <span>Pest: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ crop.pesticide_used }}</span>
+                            </div>
+                        </div>
+                        <div class="crop-card-body-item">
+                            <div class="bot item-label">
+                                <span>Market Information: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ crop.market_value }}</span>
+                            </div>
+                        </div>
+                        <div class="crop-card-body-item">
+                            <div class="bot item-label">
+                                <span>Details: </span>
+                            </div>
+                            <div class="bot item-value">
+                                <span>{{ crop.description }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{% url 'get_crop' crop.id %}" class="footer-anchor">
+                        <div class="crop-card-footer">
+                            Show More
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                <div class="spacer"></div>
+                <div class="spacer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}
