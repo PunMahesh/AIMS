@@ -1,0 +1,89 @@
+/*main content starts here*/
+.form-field {
+    width: 60%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 140px;
+    padding: 0 5px 0 5px;
+    margin: 15px 0 15px 0;
+}
+
+.form-field input {
+    height:90%;
+    width: 60%;
+    padding-left: 10px;
+    background-color: #F3FEF7;
+    border: 1px solid black ;
+}
+
+.form-field select {
+    height:90%;
+    width: 60%;
+    padding-left: 5px;
+    background-color: #F3FEF7;
+    border: 1px solid black ;
+}
+
+
+.form-label {
+    font-weight: bold;
+    width: 200px;
+}
+
+.img-upload{
+    display: flex;
+    align-items: center;
+    height:90%;
+    width: 60%;
+    background-color: #F3FEF7;
+    border: 1px solid black ;
+}
+
+.img-upload input[type="file"]{
+    height:auto;
+    width: 100%;
+    border:none  ;
+}
+
+#textarea {
+    height: 150px;
+
+}
+
+#textarea .form-label {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+
+.form-field textarea {
+    height:90%;
+    width: 60%;
+    padding: 5px;
+    background-color: #F3FEF7;
+    resize: none;
+    border: 1px solid black ;
+}
+
+.required:after{
+    content:" *";
+    color: red;
+}
+
+.submit-btn {
+    gap: 130px;
+}
+
+.submit-btn input[type="submit"]{
+    width: 120px;
+    height: 35px;
+    border:none;
+    background-color:#4F9656;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.submit-btn input[type="submit"]:active{
+    transform: scale(0.95);
+}
