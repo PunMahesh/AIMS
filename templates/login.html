@@ -7,13 +7,12 @@
    </head>
    <body>
       <header>
-=======
+
       <title>Login</title>
       <link rel="stylesheet" href="static/css/login.css">
    </head>
    <body>
-      {% comment %} <header>
->>>>>>> Master
+     <header>
          <div class="header-div">
              <div class="logo-container">
                  <img src="static/assets/images/logo.png" alt="logo"/>
@@ -77,64 +76,6 @@
 
       <!-- footer begins -->
 
-=======
-                 <img src="assets/images/search.png" alt="search-button"/>
-                 <img src="assets/images/shopping-bag.png" alt="cart-button"/>
-             </div>
-         </div>
-     </header> {% endcomment %}
-
-
-
-
-
-
-     <div class="wrapper">
-      <div class="title">
-         LOG IN HERE
-      </div>
-      <form action="#" method = POST>
-        {% csrf_token %}
-         <DIV id="text1">Username or email address <span>*</span></DIV>
-  
-         <div class="field" id="email_address">
-            {{form.username}}
-         </div>
-         <DIV id="text1">Password <span>*</span></DIV>
-         <div class="field" id="password">
-            {{form.password}}
-         </div>
-         {% for message in messages %}
-         <p id="messages">{{message}}</p>
-         {% endfor %}
-         <div class="content">
-            <div class="checkbox">
-               <input type="checkbox" id="remember-me">
-               <label for="remember-me">Remember me</label>
-            </div>
-            <div class="pass-link">
-               <a href="password_reset" id="forget_password">Forgot Your Password?</a>
-            </div>
-         </div>
-         <div class="field" id="login">
-            <input type="submit" value="LOG IN">
-         </div>
-         <div class="signup-link">
-          <span id="dont-account">Don't Have an Account?</span>
-          <a href="registrationpage" id="sign_up">SIGN UP NOW</a>
-         </div>
-      </form>
-   </div>
-
-
-
-
-      
-
-
-      <!-- footer begins -->
-{% comment %} 
->>>>>>> Master
       <footer class="footer">
          <div class="footer-col">
              <h4>AIMS</h4>
@@ -166,8 +107,5 @@
             
          </div>
      </footer>
-=======
-     </footer> {% endcomment %}
->>>>>>> Master
    </body>
 </html>

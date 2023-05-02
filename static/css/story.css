@@ -1,0 +1,350 @@
+/* defining variables */
+:root {
+    --header-height: 5rem;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    width: 80%;
+    margin: auto;
+  }
+  .container {
+    position: relative;
+    height: 125vh;
+  }
+  
+  .front-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    top: var(--header-height);
+    flex-wrap: wrap;
+  }
+  .front-title {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+  }
+  .front-title h1 {
+    font-size: 64px;
+    font-weight: 600;
+    color: #266b50;
+  }
+  .front-title p {
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .image-story img {
+    width: 550px;
+    height: 550px;
+  }
+  .green-banner {
+    position: absolute;
+    top: 78vh;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: #266b50;
+    z-index: -1;
+  }
+  .info-container {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+  }
+  .info {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .our-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .our-info svg {
+    width: 32px;
+  }
+  .our-info h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+  }
+  .our-info p {
+    font-size: 20px;
+    font-weight: 100;
+    color: white;
+  }
+  .about {
+    height: 80vh;
+  }
+  .about-us {
+    display: flex;
+    margin: 100px;
+  }
+  
+  .about-left {
+    padding: 0 50px 0 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    height: 403px;
+    background-color: #fffefe;
+  }
+  .about-right {
+    padding: 0 50px 0 50px;
+    width: 50%;
+    background-color: #d5ead7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    height: 403px;
+  }
+  
+  .about-title {
+    display: flex;
+    padding-bottom: 20px;
+  }
+  .about-title p {
+    padding-left: 12px;
+    font-size: 24px;
+    font-weight: 100;
+  }
+  .about-subtitle {
+    padding-bottom: 20px;
+  }
+  .about-subtitle h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .about-text {
+    font-size: 18px;
+  }
+  .quote {
+    font-size: 20px;
+    font-weight: 100;
+  }
+  .identity {
+    display: flex;
+    padding-top: 50px;
+  }
+  .founder-name {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .founder-name h2 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .founder-name p {
+    font-size: 14px;
+    font-weight: 100;
+  }
+  .identity img {
+    width: 50px;
+    border-radius: 50%;
+  }
+  
+  /* History */
+  .history {
+    height: 100vh;
+    display: flex;
+    position: relative;
+  }
+  .history-left {
+    width: 50%;
+  }
+  .image-history-top {
+    position: absolute;
+    right: 50%;
+    z-index: 0;
+  }
+  .image-history-bottom {
+    position: absolute;
+    left: -50px;
+    z-index: -1;
+    top: 89px;
+  }
+  .history-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0 0 100px;
+  }
+  .history-title {
+    font-size: 26px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    line-height: 1.4;
+  }
+  /* TEAM */
+  
+  .team {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .team-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .team-subtitle {
+    font-size: 26px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    line-height: 1.4;
+    width: 550px;
+    text-align: center;
+  }
+  .team-text {
+    font-size: 18px;
+    font-weight: 100;
+    padding-bottom: 20px;
+    line-height: 1.4;
+    width: 550px;
+    text-align: center;
+  }
+  .team-container {
+    position: relative;
+    width: 1440px;
+    height: 1050px;
+  }
+  .team-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .team-member img {
+    width: 427px;
+    height: 512px;
+    z-index: -1;
+    padding-top: 30px;
+    
+  }
+  .team-member {
+    position: relative;
+  }
+  .team-member-name {
+    z-index: 0;
+    position: absolute;
+    bottom: 21px;
+    left: 28px;
+    width: 371px;
+    height: 100px;
+    background-color: #fffdfd;
+    opacity: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .team-member-name h2 {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 8px;
+  }
+  .team-member-name p {
+    font-size: 14px;
+    font-weight: 100;
+    padding-bottom: 8px;
+  }
+  .social-icons svg {
+    padding-right: 5px;
+  }
+  .social-icons svg:hover {
+    cursor: pointer;
+  }
+  
+  /* CONTACT */
+  .top-border {
+    position: absolute;
+    left: 0;
+    border-top: solid black 2px;
+    width: 1600px;
+    top: 150px;
+  }
+  .contact-border {
+    padding-top: 150px;
+      padding-bottom: 150px;
+  }
+  .contact {
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+    padding: 75px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .contact-slice {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .border-right {
+    border-right: solid black 2px;
+  }
+  .contact-title {
+    display: flex;
+    padding-bottom: 20px;
+  }
+  .contact-title p {
+    padding-left: 8px;
+    font-size: 20px;
+    font-weight: 100;
+  }
+  
+  .contact-subtitle h2 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .btn{
+      background-color: #266B50;
+      width: 173px;
+      height: 48px;
+      border-radius: 30px;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .btn a{
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 600;
+      padding-right: 10px;
+  }
+  .btn svg{
+      color: #ffffff;
+  }
+  .contact-btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .btn:hover{
+      cursor: pointer;
+      transition: all .3s;
+      background-color: #279E33;
+  }
+  

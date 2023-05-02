@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Crop Details{% endblock %}
+{% block content_css %}<link rel="stylesheet" href="/static/css/crops-show-more.css" type="text/css" >{% endblock %}
+
+
+{% block content %}
+<div class="content">
+    <div class="main-content">
+        <div class="content-title">
+            <span>Crops Details</span>
+            <div class="content-title-button">
+                <div class="edit-button">
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                </div>
+                <div class="delete-button">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <div class="img-container">
+                <img src="{{ crop_img_url }}" alt="crop image">
+            </div>
+            <div class="text-info">
+                <div class="info-field">
+                    <span class="title">Crop:</span>
+                    <span class="value">{{ crop.crop_name }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Season:</span>
+                    <span class="value">{{ crop.season }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Disease:</span>
+                    <span class="value">{{ crop.disease }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Pest:</span>
+                    <span class="value">{{ crop.pesticide_used }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Market Value:</span>
+                    <span class="value">{{ crop.market_value }}</span>
+                </div>
+                <div class="info-field">
+                    <span class="title">Details:</span>
+                    <span class="value description">{{ crop.description }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

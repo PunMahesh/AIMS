@@ -9,6 +9,7 @@ function getElemById(id) {
 }
 
 nextBtn.forEach((button) => {
+  // console.log ("nextBtn")
   button.addEventListener("click", () => {
     changeStep("next");
   });

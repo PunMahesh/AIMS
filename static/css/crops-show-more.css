@@ -1,0 +1,72 @@
+.content-title-button {
+    display: flex;
+    width: 80px;
+    margin-right: 50px;
+    margin-left: 10px;
+}
+.edit-button {
+    width: 50%;
+}
+
+.delete-button {
+    width: 50%;
+    color: red;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px;
+}
+.img-container > img {
+    width: 55%;
+    height: 400px;
+    border-radius: 10px;
+    object-fit : cover;
+}
+
+.text-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 5px;
+}
+
+.info-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.info-field > .title {
+    width: 120px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.info-field > .value {
+    width: auto;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.info-field > .value.description {
+    width: 70%;
+}

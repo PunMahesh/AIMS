@@ -37,7 +37,7 @@
                                 <span>Crop: </span>
                             </div>
                             <div class="bot item-value">
-                                <span>{{ crop.name }}</span>
+                                <span>{{ crop.crop_name }}</span>
                             </div>
                         </div>
                         <div class="crop-card-body-item">
@@ -61,7 +61,7 @@
                                 <span>Pest: </span>
                             </div>
                             <div class="bot item-value">
-                                <span>{{ crop.pest }}</span>
+                                <span>{{ crop.pesticide_used }}</span>
                             </div>
                         </div>
                         <div class="crop-card-body-item">
@@ -69,7 +69,7 @@
                                 <span>Market Information: </span>
                             </div>
                             <div class="bot item-value">
-                                <span>{{ crop.season }}</span>
+                                <span>{{ crop.market_value }}</span>
                             </div>
                         </div>
                         <div class="crop-card-body-item">
@@ -77,15 +77,15 @@
                                 <span>Details: </span>
                             </div>
                             <div class="bot item-value">
-                                <span>{{ crop.details }}</span>
+                                <span>{{ crop.description }}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="crop-card-footer">
-                        <button>
+                    <a href="{% url 'get_crop' crop.id %}" class="footer-anchor">
+                        <div class="crop-card-footer">
                             Show More
-                        </button>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 {% endfor %}
                 <div class="spacer"></div>
