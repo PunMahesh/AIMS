@@ -1,13 +1,13 @@
-{% comment %} {% extends "homebase.html" %} {% endcomment %}
+{% extends "homebase.html" %}
 
-{% comment %} {% block title %}Home{% endblock %} {% endcomment %}
+{% block title %}Home{% endblock %}
 {% block content_css %}<link rel="stylesheet" href="static/css/story.css" type="text/css" >{% endblock %}
 
-{% comment %} {% block content %} {% endcomment %}
+{% block content %}
 
 
     <section>
-        <div class="container">
+        <div class="container-body">
             <div class="front-view">
                 <div class="image-story">
                     <img src="static\assets\images\Tomato.png" alt="tomatoes" srcset="">
@@ -227,7 +227,7 @@
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="static\assets\images\kanchan.jpeg" alt="">
+                    <img src="static\assets\images\KanchanKarki.jpg" alt="">
                     <div class="team-member-name">
                         <h2>Kanchan Karki</h2>
                         <p>Founder of Farm</p>
@@ -428,4 +428,4 @@
 
     </section>
 
-{% comment %} {% endblock %} {% endcomment %}
+{% endblock %}
