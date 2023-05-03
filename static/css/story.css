@@ -243,6 +243,7 @@
     height: 512px;
     z-index: -1;
     padding-top: 30px;
+    object-fit: cover;
     
   }
   .team-member {
