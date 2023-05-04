@@ -175,5 +175,12 @@ cython_debug/
 
 # Vscode
 .vscode/
+
+# Idea
 .idea/
+
+# build
 .dist/
+
+# Extra
+.DS_Store
