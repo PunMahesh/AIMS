@@ -175,3 +175,5 @@ cython_debug/
 
 # Vscode
 .vscode/
+.idea/
+.dist/
