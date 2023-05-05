@@ -154,7 +154,7 @@ footer {
 .footer-col-content > p {
     background-color: inherit;
     font-weight: lighter;
-    font-size: small;
+    font-size: medium;
 }
 .footer-col-content > a {
     text-decoration: none;
@@ -219,7 +219,7 @@ footer {
     color: #757171;
     text-transform: uppercase;
     font-weight: lighter;
-    font-size: 12px;
+    font-size: `15px;
     letter-spacing: 2px;
 }
 .contact-col-title > span {
@@ -236,9 +236,10 @@ footer {
 }
 .contact-col-content > p {
     font-weight: bold;
-    font-size: smaller;
+    font-size: medium;
     margin-bottom: 5px;
 }
+
 .num-container > p {
     font-weight: bold;
     font-size: smaller;
