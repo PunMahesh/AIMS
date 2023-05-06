@@ -21,6 +21,8 @@
 .crops-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .crop-card {
@@ -96,4 +98,16 @@
   cursor: pointer;
   text-decoration: none;
   color: white;
+}
+
+.no-crops {
+  margin-top: 150px;
+}
+
+.no-crops > span {
+  font-size: 25px;
+  font-weight: bolder;
+  color: #4f9656;
+  margin: 0 auto;
+  padding: 10px;
 }

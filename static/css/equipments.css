@@ -21,6 +21,8 @@
 .equipments-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .equipment-card {
@@ -95,5 +97,18 @@
     cursor: pointer;
     text-decoration: none;
     color: white;
-  }
+}
+
+.no-equipments {
+    margin-top: 150px;
+}
+
+.no-equipments > span {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #4f9656;
+    margin: 0 auto;
+    padding: 10px;
+}
+  
 
