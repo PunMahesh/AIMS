@@ -16,7 +16,6 @@ body {
     width: 100%;
     align-content: center;
     gap: 0 90px;
-    box-shadow: 0 0 2px 3px rgb(179, 178, 178);
     height: 85px;
 }
 .header-div-content{
@@ -115,7 +114,6 @@ body {
     justify-content: center;
     width: 100%;
     height: auto;
-    margin: 10px;
 }
 
 /* footer stats here */
@@ -253,7 +251,7 @@ footer {
     border: none;
     width: 160px;
     height: 48px;
-    background-color: #10571B;
+    background-color: #266B50;
     color: white;
     border-radius: 30px;
     display: flex;
