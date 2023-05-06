@@ -388,6 +388,22 @@
     font-size: 14px;
     color: black;
 }
+.fifth-first-col-article-text {
+    margin: 10px 0 10px 0;
+}
+.fifth-first-col-article-text > h3 {
+    color: black;
+    letter-spacing: 2px;
+    margin: 5px 0 5px 0;
+
+}
+.fifth-first-col-article-text > p {
+    padding: 5px;
+    text-align: justify;
+    font-size: 15px;
+    width: 450px;
+    color: black;
+}
 
 .article-title {
     margin: 10px;
