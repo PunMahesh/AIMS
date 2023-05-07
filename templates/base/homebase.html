@@ -11,7 +11,13 @@
         <script>
             function goToRegister() {
                 document.location.href = "{% url 'registrationpage' %}"
-           }
+            }
+
+            function logout() {
+                localStorage.removeItem('user_info');
+                localStorage.removeItem('is_authenticated');
+                document.location.href = 'logout';
+            }
         </script>
         {% block pre_script %}{% endblock %}
     </head>
