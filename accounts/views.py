@@ -27,11 +27,14 @@ def login_view(request):
         if user is not None:
             login(request, user)
             user_info = {
-            "first_name": user.first_name,
-            "last_name": user.last_name,
-            "is_admin": user.is_admin,
-            "is_customer": user.is_customer,
-            "is_farmer": user.is_farmer
+                "is_authenticated": True,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "email": user.email,
+                "is_admin": user.is_admin,
+                "is_customer": user.is_customer,
+                "is_farmer": user.is_farmer,
+                "role": user.is_farmer and "Farmer" or user.is_customer and "Customer" or user.is_admin and "Admin"
             }
             request.session['user_info'] = user_info
             messages.success(request, 'Login Successful')
