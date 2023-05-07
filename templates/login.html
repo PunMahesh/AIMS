@@ -43,15 +43,15 @@
          <form action="#" method="POST">
             {% csrf_token %}
             <DIV id="text1">Username or email address </DIV>
-            <div class="field" id="" name = "txtemail" value = "{{cookie1}}">
-               {{form.username}}
+            <div class="field" id="">
+               {{ form.username }}
                <label>Email Address</label>
             </div>
 
             <DIV id="text2">Password *</DIV>
 
-            <div class="field" id="password" name = "txtpass" value= "{{cookie2 }}">
-               {{form.password}}
+            <div class="field" id="password">
+               {{ form.password }}
                <label>Password</label>
             </div>
             <div class="content">
@@ -63,7 +63,6 @@
                   <a href="password_reset" id="forget_password">Forgot Password?</a>
                </div>
             </div>   
-            {{fomr.error}}       
             <div class="field">
                <input type="submit" value="Login">
             </div>
