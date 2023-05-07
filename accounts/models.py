@@ -28,3 +28,6 @@ class User(AbstractUser):
     is_customer = models.BooleanField(default=True)
     is_farmer = models.BooleanField(default=False)
     is_worker = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.username
