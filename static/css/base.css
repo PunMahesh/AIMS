@@ -93,7 +93,7 @@ body {
 
 /* Sidebar styles */
 .sidebar {
-    background-color: #4F9656;
+    background-color:#266B50;
     width:210px;
     height: 100vh;
     padding-top:70px;
@@ -107,6 +107,9 @@ body {
     padding-left: 10px;
     cursor: pointer;
 }
+.sidebar-item:hover {
+    border-bottom: 1px solid #fff;
+}
 
 .sidebar-item a {
     text-decoration: none;
@@ -114,10 +117,6 @@ body {
     align-items: center;
     gap: 10px;
     color: inherit;
-}
-
-.sidebar-item:hover {
-    background-color: #10571B;
 }
 
 .sidebar-item .text {
