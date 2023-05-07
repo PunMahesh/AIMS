@@ -18,24 +18,29 @@
                             expand_more
                             </span>
                         </a>
+
                         {% if user.is_farmer %}
                         <div class="dropdown-options">
                             <a href="{% url 'farmer_home' %}">Dashboard</a>
                             <div class="h-line-dropdown"></div>
                             <a onclick="logout()">Logout</a>
                         </div>
+
                         {% elif user.is_customer %}
                         <div class="dropdown-options">
-                            <a href="{% url 'farmer_home' %}">Profile</a>
+                            <a href="#">Profile</a>
                             <div class="h-line-dropdown"></div>
-                            <a href="#">Verify KYC</a>
+                            <a href="{% url 'farmer_kyc' %}">Verify KYC</a>
                             <a onclick="logout()">Logout</a>
                         </div>
+
                         {% elif user.is_admin %}
                         <div class="dropdown-options">
-                            <a href="{% url 'admin_home' %}">Dashboard</a>
+                            <a href="{% url 'farmer_home' %}">Dashboard</a>
                             <div class="h-line-dropdown"></div>
-                            <a href="#">Logout</a>
+                            <a href="logout()">Logout</a>
+                        </div>
+
                         {% else %}
                         <div class="dropdown-options">
                             <a href="{% url 'loginpage' %}">Login</a>
