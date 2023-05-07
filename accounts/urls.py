@@ -16,7 +16,8 @@ urlpatterns = [
 
     path("",views.index,name=''),
     path("404",views.error,name='404'),
-    path("loginpage",views.login_view,name="loginpage"),
+    path("login",views.login_view,name="login"),
+    path("logout",views.logout_view,name="logout"),
     path("registrationpage",views.registration,name='registrationpage'),
     path("story",views.story,name='story'),
 

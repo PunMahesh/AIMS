@@ -60,6 +60,7 @@ body {
     text-decoration: none;
     padding: 10px 20px;
     margin: 5px 0 5px 0;
+    cursor: pointer;
 }
 .dropdown-options a:hover {
     background-color: #10571B;
@@ -71,11 +72,11 @@ body {
     gap: 1px;
 }
 
-.name-role .name {
+.name-role .user-name {
     font-weight: bold;
 }
 
-.name-role .role {
+.name-role .user-role {
     font-weight: bold;
     font-size: 12px;
 }

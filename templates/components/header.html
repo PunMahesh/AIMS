@@ -13,14 +13,40 @@
                     <li><a href="#">Equipment</a></li>
                     <li><a href="#">Market</a></li>
                     <li class="dropdown-item">
-                        <a href="#">Account
+                        <a>Account
                             <span class="material-symbols-outlined expand-more">
                             expand_more
                             </span>
                         </a>
+
+                        {% if user.is_farmer %}
                         <div class="dropdown-options">
-                            <a href="{% url 'loginpage' %}">Login</a>
+                            <a href="{% url 'farmer_home' %}">Dashboard</a>
+                            <div class="h-line-dropdown"></div>
+                            <a onclick="logout()">Logout</a>
                         </div>
+
+                        {% elif user.is_customer %}
+                        <div class="dropdown-options">
+                            <a href="#">Profile</a>
+                            <div class="h-line-dropdown"></div>
+                            <a href="{% url 'farmer_kyc' %}">Verify KYC</a>
+                            <a onclick="logout()">Logout</a>
+                        </div>
+
+                        {% elif user.is_admin %}
+                        <div class="dropdown-options">
+                            <a href="{% url 'farmer_home' %}">Dashboard</a>
+                            <div class="h-line-dropdown"></div>
+                            <a href="logout()">Logout</a>
+                        </div>
+
+                        {% else %}
+                        <div class="dropdown-options">
+                            <a href="{% url 'login' %}">Login</a>
+                            <div class="h-line-dropdown"></div>
+                        </div>
+                        {% endif %}
                     </li>
                 </ul>
             </nav>
