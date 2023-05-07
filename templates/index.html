@@ -1,6 +1,6 @@
 {% extends "base/homebase.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}AIMS | HOME{% endblock %}
 {% block content_css %}<link rel="stylesheet" href="static/css/style.css" type="text/css" >{% endblock %}
 
 {% block content %}
@@ -27,20 +27,24 @@
             </div>
             <div class="first-content-buttons">
                 <div class="shop-now-btn">
-                    <button>
-                        Shop Now
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
-                    </button>
+                    <a href="{% url '404'%}">
+                        <button>
+                            Shop Now
+                            <span class="material-symbols-outlined">
+                                arrow_forward
+                            </span>
+                        </button>
+                    
                 </div>
                 <div class="register-here-btn">
+                    <a href="{% url 'registrationpage'%}">
                     <button>
                         Register Here
                         <span class="material-symbols-outlined">
                             arrow_forward
                         </span>
                     </button>
+                </a>
                 </div>
             </div>
         </div>
@@ -65,12 +69,14 @@
             </div>
             <div class="second-content-button">
                 <div class="learn-more-btn">
-                    <button>
-                        Learn More
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
-                    </button>
+                    <a href="{% url 'story'%}" >
+                        <button>
+                            Learn More
+                            <span class="material-symbols-outlined">
+                                arrow_forward
+                            </span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -99,12 +105,14 @@
         </div>
         <div class="third-content-button">
             <div class="view-product-btn">
+                <a href="{% url '404'%}" >
                 <button>
-                    View Product
-                    <span class="material-symbols-outlined">
-                        arrow_forward
-                    </span>
-                </button>
+                        View Product
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </button>
+                </a>
             </div>
         </div>
     </div>
@@ -206,12 +214,14 @@
         <div class="fifth-second-col">
             <div class="second-col-btn">
                 <div class="learn-more-btn">
+                    <a href="{% url 'story'%}">
                     <button>
                         Learn More
                         <span class="material-symbols-outlined">
                             arrow_forward
                         </span>
                     </button>
+                    </a>
                 </div>
             </div>
             <div class="second-col-articles">

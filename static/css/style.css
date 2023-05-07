@@ -71,7 +71,7 @@
     justify-content: center;
     gap: 20px;
 }
-.shop-now-btn > button {
+.shop-now-btn > a > button {
     border: none;
     width: 170px;
     height: 48px;
@@ -86,14 +86,16 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.shop-now-btn > button:active {
+.shop-now-btn > a > button:active {
     transform: scale(0.97);
 }
-.shop-now-btn > button > span {
+.shop-now-btn > a > button > span {
     color: inherit;
 }
-
-.register-here-btn > button {
+.shop-now-btn > a {
+    text-decoration: none;
+}
+.register-here-btn > a > button {
     border: none;
     width: 180px;
     height: 48px;
@@ -108,13 +110,16 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.register-here-btn > button:active {
+.register-here-btn > a > button:active {
     transform: scale(0.97);
 }
-.register-here-btn > button > span {
+.register-here-btn > a > button > span {
     color: inherit;
 }
 
+.register-here-btn > a {
+    text-decoration: none;
+}
 /*Second Content Styles*/
 .second-content {
     margin-bottom: 10px;
@@ -189,8 +194,10 @@
     font-size: 13px;
     letter-spacing: 2px;
 }
-
-.learn-more-btn > button {
+.learn-more-btn > a{
+    text-decoration: none;
+}
+.learn-more-btn > a > button {
     border: none;
     width: 160px;
     height: 48px;
@@ -205,10 +212,10 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.learn-more-btn > button:active {
+.learn-more-btn > a > button:active {
     transform: scale(0.97);
 }
-.learn-more-btn > button > span {
+.learn-more-btn > a > button > span {
     color: inherit;
 }
 
@@ -256,7 +263,7 @@
     align-self: flex-end;
     margin-bottom: 27px;
 }
-.view-product-btn > button {
+.view-product-btn > a > button {
     border: none;
     width: 190px;
     height: 55px;
@@ -271,11 +278,14 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.view-product-btn > button:active {
+.view-product-btn > a > button:active {
     transform: scale(0.97);
 }
-.view-product-btn > button > span {
+.view-product-btn > a > button > span {
     color: inherit;
+}
+.view-product-btn > a {
+    text-decoration: none;
 }
 
 /*Fourth Content Styles*/
@@ -460,7 +470,7 @@
     margin: 10px;
     width: 600px;
 }
-.learn-more-btn > button {
+.learn-more-btn > a > button {
     border: none;
     width: 210px;
     height: 55px;
@@ -476,13 +486,16 @@
     letter-spacing: 1px;
     margin-left: 360px;
 }
-.learn-more-btn > button:active {
+.learn-more-btn > a > button:active {
     transform: scale(0.97);
 }
-.learn-more-btn > button > span {
+.learn-more-btn > a > button > span {
     color: inherit;
 }
 
+.learn-more-btn > a {
+    text-decoration: none;
+}
 .second-col-articles {
     display: flex;
     flex-direction: column;

@@ -1,75 +1,39 @@
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet" />
-</head>
-    <body>
-        <header>
-            <div class="header-div">
-                <div class="logo-container">
-                    <img src="/static/assets/images/logo.png" alt="Logo">
-                </div>
-                <div class="nav-items-container">
-                    <nav>
-                        <ul class="nav-ul">
-                            <li>Home</li>
-                            <li>Blogs</li>
-                            <li>Farmers Kit</li>
-                            <li>Market</li>
-                            <li>Hire</li>
-                            <li>Account</li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="cart-search-container">
-                    <img src="/static/assets/images/search.png" alt="search-button"/>
-                    <img src="/static/assets/images/shopping-bag.png" alt="cart-button"/>
-                </div>
-            </div>
-        </header>
-<div class="blog-section">
+{% extends "base/homebase.html" %}
+
+{% block title %}AIMS | BLOG{% endblock %}
+{% block content_css %}<link rel="stylesheet" href="static/css/blog.css" type="text/css" >{% endblock %}
+
+{% block content %}
         <section class="blog-section">
             <div class="blog-details">
                 <img src="/static/assets/images/ag1.png" alt="Blog Image">
-                <h2 class="blog-title">Raise agriculture productivity</h2>
+                <h2 class="blog-title">Raise Agriculture Productivity</h2>
                 <p class="blog-excerpt">The Challenge of Sustainable Agriculture The world needs to produce at least 50% more food by 2050 to feed a projected 9 billion people. To help meet this goal, the Bank is working with countries to boost the productivity of farms, livestock and fisheries.</p>
                 <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
               </div>
 
               <div class="blog-details">
                 <img src="/static/assets/images/ag2.png" alt="Blog Image">
-                <h2 class="blog-title">Modern Farming helps farmer improve their productivity</h2>
-                <p class="blog-excerpt2">Kurwa Nyaroche is among of the farmers at Guta village, Bunda District, Mara Region, who is seeing a big difference in his agricultural productivity after received a support from Millenium Development.</p>
+                <h2 class="blog-title">Modern Farmer Improve Their Productivity</h2>
+                <p class="blog-excerpt">Kurwa Nyaroche is among of the farmers at Guta village, Bunda District, Mara Region, who is seeing a big difference in his agricultural productivity after received a support from Millenium Development.</p>
                 <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
               </div>
 
               <div class="blog-details">
                 <img src="/static/assets/images/ag3.png" alt="Blog Image">
                 <h2 class="blog-title">Sustainable Agriculture Technique</h2>
-                <p class="blog-excerpt3">The Challenge of Sustainable Agriculture The world needs to produce at least 50% more food by 2050 to feed a projected 9 billion people.</p>
+                <p class="blog-excerpt">The Challenge of Sustainable Agriculture The world needs to produce at least 50% more food by 2050 to feed a projected 9 billion people.</p>
                 <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
             </div>
-
-        </div>
-          </section> 
-          </div>
-        </div>
-
-        <div class="blog-section">
-            <section class="blog-section">
+        
                 <div class="blog-details">
                     <img src="/static/assets/images/ag4.png" alt="Blog Image">
                     <h2 class="blog-title">An IT Revolution in Farming</h2>
-                    <p class="blog-excerpt">Kurwa Nyaroche is among of the farmers at Guta village, Bunda District, Mara Region, who is seeing a big difference in his agricultural productivity after received a support from Millenium Development.</p>
+                    <p class="blog-excerpt">Kurwa Nyaroche is among of the farmers at Guta village, Bunda District, Mara Region, who is seeing a big difference in his agricultural productivity.</p>
                     <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
                   </div>
-            </div>
+        
               </section> 
-              </div>
-            </div>
           
+          
+{% endblock %}
