@@ -1,0 +1,115 @@
+/* order details */
+
+.order-details {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    float: left;
+    width: 1600px;
+    color: #000000;
+  
+  }
+  
+  strong {
+    color: black;
+  }
+  
+  .order {
+  width: 1250px;
+  }
+  
+  
+  .order-details h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 1250px;
+    color: #000000;
+    align-items: center;
+  }
+  
+  .order-details table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+  .order-details th,
+  .order-details td {
+    border: none;
+    padding: 20px;
+    background-color: #D9D9D9;
+  }
+  
+  element.style {
+    background-color: white;
+  }
+  
+  
+  .order-details th {
+    background-color: #D9D9D9;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .order-details .order-again {
+    background-color: #DBDBDB;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .order-details .order-again img {
+    height: 15px;
+    margin-left: 10px;
+    vertical-align: middle;
+    background-color: #DBDBDB;
+  }
+  
+  /* sidebar for order history */
+  
+  .sidebar {
+    background-color: #43A54C;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+  }
+  
+  .sidebar ul {
+    background-color: #43A54C;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid #FFFFFF;
+    background-color: #43A54C
+  }
+  
+  
+  .sidebar ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #43A54C;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #ddd;
+  }
+  

@@ -48,12 +48,12 @@
                     <span class="value">{{ equipment.Warrenty }}</span>
                 </div>
                 <div class="info-field">
-                    <span class="title">Details:</span>
-                    <span class="value description">{{ equipment.Description }}</span>
+                    <span class="title">Posted By:</span>
+                    <span>{{ equipment.user.first_name }} {{ equipment.user.last_name }}</span>
                 </div>
                 <div class="info-field">
-                    <span class="title">Posted By:</span>
-                    <span class="value">{{ user_full_name }}</span>
+                    <span class="title">Details:</span>
+                    <span class="value description">{{ equipment.Description }}</span>
                 </div>
             </div>
         </div>

@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/contactus.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet" />
+    </head>
+
+    <div class="contact-us">
+        <ul>
+            <h4>Contact Us</h4>
+          <li>
+            <img src="/static/assets/images/messages.png" alt="logo">
+            <span>info@example.com</span>
+          </li>
+          <li>
+            <img src="/static/assets/images/phone.png" alt="logo">
+            <span>123-456-7890</span>
+          </li>
+        </ul>
+      </div>
+
+<div class="send-message">
+    <h2>Send a Message</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Write your message here.. </label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </div>

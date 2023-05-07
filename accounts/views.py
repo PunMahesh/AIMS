@@ -44,10 +44,7 @@ def login_view(request):
                 user.groups.add(group)
                 login(request, user)
                 return redirect('/')
-            else:
-                messages.info(request,"Username or Password Incorrect")
-                msg = { "message.info": messages.info }
-    return render(request, 'login.html',context, msg)
+    return render(request, 'login.html',context)
 
 # @receiver(post_save, sender=User)
 # def add_user_to_group(sender, User, created, **kwargs):

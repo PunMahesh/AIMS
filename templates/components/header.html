@@ -9,9 +9,9 @@
         <div class="nav-items-container">
             <nav>
                 <ul class="nav-ul">
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Equipment</a></li>
-                    <li><a href="#">Market</a></li>
+                    <li><a href="{% url 'blog'%}">Blogs</a></li>
+                    <li><a href="{% url 'equipments' %}">Equipment</a></li>
+                    <li><a href="{% url 'blog'%}">Market</a></li>
                     <li class="dropdown-item">
                         <a href="#">Account
                             <span class="material-symbols-outlined expand-more">
@@ -26,7 +26,6 @@
             </nav>
         </div>
         <div class="cart-search-container">
-            <img src="static/assets/images/search.png" alt="search-button"/>
             <img src="static/assets/images/shopping-bag.png" alt="cart-button"/>
         </div>
         </div>
