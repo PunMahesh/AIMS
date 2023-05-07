@@ -76,10 +76,16 @@
 }
 
 .submit-btn input[type="submit"]{
-    width: 120px;
+    width: 130px;
     height: 35px;
+    margin-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
     border:none;
-    background-color:#4F9656;
+    background-color:#266B50;
     color: white;
     border-radius: 6px;
     cursor: pointer;
