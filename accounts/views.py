@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from .form import RegisterForm, LoginForm
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
 
 
@@ -24,21 +24,23 @@ def login_view(request):
         password = request.POST.get('password')
         print("Username: ", username, "Password: ", password)
         user = authenticate(request, username=username, password=password)
-        user_info = {
+        if user is not None:
+            login(request, user)
+            user_info = {
             "first_name": user.first_name,
             "last_name": user.last_name,
             "is_admin": user.is_admin,
             "is_customer": user.is_customer,
             "is_farmer": user.is_farmer
-        }
-        request.session['user_info'] = user_info
-        print("Context: ", user_info)
-        if user is not None:
-            login(request, user)
+            }
+            request.session['user_info'] = user_info
             messages.success(request, 'Login Successful')
-            # return render(request, 'index.html', context)
             return redirect("/")
     return render(request, 'login.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
 
 # @receiver(post_save, sender=User)
 # def add_user_to_group(sender, User, created, **kwargs):
