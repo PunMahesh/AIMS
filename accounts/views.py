@@ -1,9 +1,8 @@
-from django.contrib import messages
 from django.shortcuts import render, redirect
 from .form import RegisterForm, LoginForm
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.models import Group
-
+from django.contrib import messages
 
 # Create your views here.
 
@@ -20,6 +19,7 @@ def registration(request):
 
 def login_view(request):
     form = LoginForm(request.POST)
+    context = {'form': form}
     if request.method == 'POST':
         if form.is_valid():
             username = form.cleaned_data.get('username')
@@ -44,9 +44,7 @@ def login_view(request):
                 user.groups.add(group)
                 login(request, user)
                 return redirect('/')
-            else:
-                messages.info(request,"Username or Password Incorrect")
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'login.html',context)
 
 # @receiver(post_save, sender=User)
 # def add_user_to_group(sender, User, created, **kwargs):
@@ -74,3 +72,9 @@ def story(request):
 
 def error(request):
     return render(request, '404.html')
+
+def home_view(request):
+    first_name = request.User.first_name
+    context = {'first_name': first_name}
+    print (request.user.first_name)
+    return render(request, 'base.html', context)

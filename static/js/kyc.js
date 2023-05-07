@@ -2,7 +2,7 @@ const steps = Array.from(document.querySelectorAll("form .step"));
 const nextBtn = document.querySelectorAll(".next-btn");
 const prevBtn = document.querySelectorAll(".prev-btn");
 const finishBtn = document.querySelector(".finish-btn");
-const kycForm = document.querySelector("#kycForm");
+const kyc_form = document.querySelector("#kyc_form");
 
 function getElemById(id) {
   return document.getElementById(id);
@@ -36,29 +36,29 @@ function changeStep(btn) {
 
 finishBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  const fullName = `${kycForm.elements.first_name.value} ${kycForm.elements.middle_name.value} ${kycForm.elements.last_name.value}`;
-  getElemById("name").textContent = isOnlyWhitespace(fullName) ? "N/A" : fullName;
-  getElemById("dob").textContent = kycForm.elements.dob.value || "N/A";
-  getElemById("gender").textContent = kycForm.elements.gender.value || "N/A";
-  getElemById("marital").textContent = kycForm.elements.marital.value || "N/A";
-  getElemById("nationality").textContent = kycForm.elements.nationality.value || "N/A";
-  getElemById("residential").textContent = kycForm.elements.residential.value || "N/A";
-  getElemById("citizenship-val").textContent = kycForm.elements.citizenship.value || "N/A";
-  getElemById("passport-val").textContent = kycForm.elements.passport.value || "N/A";
-  getElemById("father").textContent = kycForm.elements.father.value || "N/A";
-  getElemById("mother").textContent = kycForm.elements.mother.value || "N/A";
-  getElemById("grandfather").textContent = kycForm.elements.grandfather.value || "N/A";
-  getElemById("grandmother").textContent = kycForm.elements.grandmother.value || "N/A";
-  getElemById("spouse").textContent = kycForm.elements.spouse.value || "N/A";
-  getElemById("son").textContent = kycForm.elements.son.value || "N/A";
-  getElemById("daughter").textContent = kycForm.elements.daughter.value || "N/A";
-  getElemById("country").textContent = kycForm.elements.country.value || "N/A";
-  getElemById("district").textContent = kycForm.elements.district.value || "N/A";
-  getElemById("province").textContent = kycForm.elements.province.value || "N/A";
-  getElemById("municipality").textContent = kycForm.elements.municipality.value || "N/A";
-  getElemById("ward_no").textContent = kycForm.elements.ward_no.value || "N/A";
-  getElemById("street").textContent = kycForm.elements.street.value || "N/A";
-  const pp_photo = kycForm.elements.pp_photo;
+  const fullName = `${kyc_form.elements.first_name.value} ${kyc_form.elements.MiddleName.value} ${kyc_form.elements.Last_name.value}`;
+  getElemById("name-preview").textContent = isOnlyWhitespace(fullName) ? "N/A" : fullName;
+  getElemById("Dob-preview").textContent = kyc_form.elements.Dob.value || "N/A";
+  getElemById("Gender-preview").textContent = kyc_form.elements.Gender.value || "N/A";
+  getElemById("MaritualStatus-preview").textContent = kyc_form.elements.MaritualStatus.value || "N/A";
+  getElemById("Nationality-preview").textContent = kyc_form.elements.Nationality.value || "N/A";
+  getElemById("Residential-preview").textContent = kyc_form.elements.Residential.value || "N/A";
+  getElemById("Citizenship-preview").textContent = kyc_form.elements.Citizenship.value || "N/A";
+  getElemById("Passport-preview").textContent = kyc_form.elements.Passport.value || "N/A";
+  getElemById("FatherName-preview").textContent = kyc_form.elements.FatherName.value || "N/A";
+  getElemById("MotherName-preview").textContent = kyc_form.elements.MotherName.value || "N/A";
+  getElemById("GrandfatherName-preview").textContent = kyc_form.elements.GrandfatherName.value || "N/A";
+  getElemById("GrandMotherName-preview").textContent = kyc_form.elements.GrandMotherName.value || "N/A";
+  getElemById("SpouseName-preview").textContent = kyc_form.elements.SpouseName.value || "N/A";
+  getElemById("SonName-preview").textContent = kyc_form.elements.SonName.value || "N/A";
+  getElemById("DaughterName-preview").textContent = kyc_form.elements.DaughterName.value || "N/A";
+  getElemById("Country-preview").textContent = kyc_form.elements.Country.value || "N/A";
+  getElemById("District-preview").textContent = kyc_form.elements.District.value || "N/A";
+  getElemById("Province-preview").textContent = kyc_form.elements.Province.value || "N/A";
+  getElemById("Municipality-preview").textContent = kyc_form.elements.Municipality.value || "N/A";
+  getElemById("WardNo-preview").textContent = kyc_form.elements.WardNo.value || "N/A";
+  getElemById("Street-preview").textContent = kyc_form.elements.Street.value || "N/A";
+  const pp_photo = kyc_form.elements.PassportPhoto;
   readURL(pp_photo);
 });
 
@@ -67,9 +67,10 @@ function readURL(input) {
     var reader = new FileReader();
 
     reader.onload = function (e) {
-      const pp_render = getElemById("pp-render");
+      const pp_render = getElemById("pp_photo");
       pp_render.style.height = "150px";
       pp_render.style.width = "150px";
+      pp_render.style.objectFit = "cover";
       pp_render.setAttribute('src', e.target.result);
     };
 

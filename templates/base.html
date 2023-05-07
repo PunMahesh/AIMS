@@ -17,8 +17,14 @@
                         </span>
                     </div>
                     <div class="name-role">
-                        <span class="name">User name</span>
-                        <span class="role">Farmer</span>
+                        {% if request.user.is_authenticated %}
+                        <p>{{ first_name }}</p>
+                        {% endif %}
+                        {% if user.is_customer %}
+                        <p>Customer</p>
+                        {% else  %}
+                        <p>Farmer</p>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="dropdown-options">

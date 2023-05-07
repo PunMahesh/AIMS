@@ -1,7 +1,9 @@
 from django.db import models
+from accounts.models import User
 
 # Create your models here.
 class equipments(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     EquipmentName = models.CharField(max_length=225)
     ManufacturedYear = models.CharField(max_length=225)
     MarketValue = models.CharField(max_length=10)

@@ -48,6 +48,10 @@
                     <span class="value">{{ crop.market_value }}</span>
                 </div>
                 <div class="info-field">
+                    <span class="title">Posted By:</span>
+                    <span class="value">{{ crop.user.first_name }} {{ crop.user.last_name }}</span>
+                </div>
+                <div class="info-field">
                     <span class="title">Details:</span>
                     <span class="value description">{{ crop.description }}</span>
                 </div>

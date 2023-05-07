@@ -1,4 +1,4 @@
-{% extends "homebase.html" %}
+{% extends "base/homebase.html" %}
 
 {% block title %}Home{% endblock %}
 {% block content_css %}<link rel="stylesheet" href="static/css/style.css" type="text/css" >{% endblock %}
@@ -6,171 +6,265 @@
 {% block content %}
 <div class="content">
     <div class="first-content">
-        <div class="content-img">
-            <img src="static/assets/images/field.jpeg" alt="content image"/>  {% comment %} linked image {% endcomment %}
+        <div class="first-content-img">
+            <img src="static/assets/images/homepage-first-content-img.png" alt="farmers">
         </div>
-        <div class="content-text">
-            <div class="content-first-item">
-                <img src="static/assets/images/leaf.png" alt="leaf-content"/>
-                <p>Best Quality Products</p>
+        <div class="first-content-text">
+            <div class="leaf-img">
+                <img src="static/assets/images/leaf.png" alt="leaf">
             </div>
-            <div class="content-join-movement">
-                <p class="join-text">Join the organic <p class="join-text">movement!</p></p>
-                <p class="site-info">The agriculture management system is to help farmers by providing all kinds of agriculture-related information on the website.</p>
+            <div class="first-header">
+                <h3>Best Quality</h3>
+                <h3>Products</h3>
+            </div>
+            <div class="second-header">
+                <h4>Join The Organic</h4>
+                <h4>Movement!</h4>
+            </div>
+            <div class="text-detail">
+                <p>The agriculture management system is to help farmers by providing all kinds of agriculture-relate information on the website.</p>
+                <p>The agriculture management system is to help farmers.</p>
             </div>
             <div class="first-content-buttons">
-                <button class="icon-button">
-                    <span class="material-symbols-outlined button__icon button__icon_black">shopping_cart</span> {% comment %} icons used{% endcomment %}
-                    <span class="button__text">Shop Now</span>
-                </button>
-                <button class="icon-button">
-                    <span class="material-symbols-outlined button__icon button__icon_black">person</span>
-                    <span class="button__text">Farmer Sell</span>
+                <div class="shop-now-btn">
+                    <button>
+                        Shop Now
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </button>
+                </div>
+                <div class="register-here-btn">
+                    <button>
+                        Register Here
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second-content">
+        <div class="second-content-text">
+            <div class="second-content-title">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.1429 9.13636C24.4286 7.36364 30 8.18182 30 8.18182C26.1429 4.90909 21.6429 5.04545 18.4286 5.72727V5.45455C20.7857 3.27273 25.5 3.40909 25.5 3.40909C22.0714 1.5 19.0714 2.04545 17.1429 2.72727C16.0714 1.09091 15 0 15 0C14.1429 0.954545 13.5 1.90909 12.8571 2.86364C10.9286 2.04545 7.71429 1.5 4.28571 3.40909C4.28571 3.40909 9.21428 3.40909 11.5714 5.72727C8.35714 5.04545 3.85714 4.90909 0 8.18182C0 8.18182 5.57143 7.36364 9.85714 9.13636C5.35714 10.7727 2.14286 14.5909 2.14286 19.0909C2.14286 25.0909 7.92857 30 15 30C22.0714 30 27.8571 25.0909 27.8571 19.0909C27.8571 14.5909 24.6429 10.7727 20.1429 9.13636ZM23.1429 21.5455C22.9286 22.0909 22.7143 22.6364 22.2857 23.1818L19.2857 20.4545L16.0714 23.1818L19.5 26.0455C18.8571 26.3182 18.4286 26.5909 17.7857 26.8636L15 24.5455L12.2143 26.8636C11.5714 26.7273 10.9286 26.4545 10.5 26.0455L13.9286 23.1818L10.7143 20.4545L7.5 23.0455C7.28571 22.5 6.85714 21.9545 6.64286 21.4091L9.64286 19.0909L6.85714 16.6364C7.07143 16.0909 7.28571 15.5455 7.71429 15L10.7143 17.7273L13.9286 15L10.5 12.1364C11.1429 11.8636 11.5714 11.5909 12.2143 11.3182L15 13.6364L17.7857 11.3182C18.4286 11.4545 19.0714 11.7273 19.5 12.1364L16.0714 15L19.2857 17.7273L22.5 15.1364C22.7143 15.6818 23.1429 16.2273 23.3571 16.7727L20.3571 19.0909L23.1429 21.5455ZM15 16.3636L18.2143 19.0909L15 21.8182L11.7857 19.0909L15 16.3636Z" fill="#266B50"/>
+                </svg>
+                <h4>Our Farm</h4>
+            </div>
+            <div class="second-content-subject">
+                <h3>The story behind Farm</h3>
+            </div>
+            <div class="second-content-detail">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eleifend turpis lacus ornare quam non.
+                    Elementum tellus elit adipiscing iaculis urna, neque. Metus ultrices diam sed in. At lacus, nibh aliquam vel. 
+                    Vel quis est turpis auctor cras lacus et, mi a.
+                </p>
+            </div>
+            <div class="second-content-button">
+                <div class="learn-more-btn">
+                    <button>
+                        Learn More
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="second-content-video">
+            <img src="static/assets/images/Video.png" alt="video">
+        </div>
+    </div>
+    <div class="third-content">
+        <div class="third-content-text">
+            <div class="third-content-title">
+                <svg width="19" height="30" viewBox="0 0 19 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.7571 9.13636C15.4714 7.36364 19 8.18182 19 8.18182C16.5571 4.90909 13.7071 5.04545 11.6714 5.72727V5.45455C13.1643 3.27273 16.15 3.40909 16.15 3.40909C13.9786 1.5 12.0786 2.04545 10.8571 2.72727C10.1786 1.09091 9.5 0 9.5 0C8.95714 0.954545 8.55 1.90909 8.14286 2.86364C6.92143 2.04545 4.88571 1.5 2.71429 3.40909C2.71429 3.40909 5.83571 3.40909 7.32857 5.72727C5.29286 5.04545 2.44286 4.90909 0 8.18182C0 8.18182 3.52857 7.36364 6.24286 9.13636C3.39286 10.7727 1.35714 14.5909 1.35714 19.0909C1.35714 25.0909 5.02143 30 9.5 30C13.9786 30 17.6429 25.0909 17.6429 19.0909C17.6429 14.5909 15.6071 10.7727 12.7571 9.13636ZM14.6571 21.5455C14.5214 22.0909 14.3857 22.6364 14.1143 23.1818L12.2143 20.4545L10.1786 23.1818L12.35 26.0455C11.9429 26.3182 11.6714 26.5909 11.2643 26.8636L9.5 24.5455L7.73571 26.8636C7.32857 26.7273 6.92143 26.4545 6.65 26.0455L8.82143 23.1818L6.78571 20.4545L4.75 23.0455C4.61429 22.5 4.34286 21.9545 4.20714 21.4091L6.10714 19.0909L4.34286 16.6364C4.47857 16.0909 4.61429 15.5455 4.88571 15L6.78571 17.7273L8.82143 15L6.65 12.1364C7.05714 11.8636 7.32857 11.5909 7.73571 11.3182L9.5 13.6364L11.2643 11.3182C11.6714 11.4545 12.0786 11.7273 12.35 12.1364L10.1786 15L12.2143 17.7273L14.25 15.1364C14.3857 15.6818 14.6571 16.2273 14.7929 16.7727L12.8929 19.0909L14.6571 21.5455ZM9.5 16.3636L11.5357 19.0909L9.5 21.8182L7.46429 19.0909L9.5 16.3636Z" fill="#266B50"/>
+                </svg>
+                <h4>Our Product</h4>
+            </div>
+            <div class="third-content-subject">
+                <h3>High Quality Organic</h3>
+                <h3>Product</h3>
+            </div>
+            <div class="third-content-detail">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus et cras ut id consectetur.
+                Risus sit sit purus leo, nisl sed est. Mauris sit odio maecenas parturient.
+                Aliquam, in morbi in consequat volutpat lorem. Sed vulputate erat potenti nulla eu nisl turpis tortor.
+                Amet, neque mauris dictumst aliquet mattis nunc condimentum. Gravida.
+            </div>
+        </div>
+        <div class="third-content-button">
+            <div class="view-product-btn">
+                <button>
+                    View Product
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
                 </button>
             </div>
         </div>
     </div>
-
-    <div class="mission-container">
-        <div class="mission-item">
-            <div class="target-icon">
-                <span class="material-symbols-outlined">mode_standby</span>
+    <div class="fourth-content">
+        <div class="fourth-content-text">
+            <div class="fourth-content-card">
+                <div class="card-title">
+                    <svg width="23" height="28" viewBox="0 0 23 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23 19.3846C23 24.1374 17.8442 28 11.5 28C5.15583 28 0 24.1374 0 19.3846C0 15.0769 3.83333 15.0769 3.83333 10.7692C3.83333 8.70154 5.27083 6.77744 7.66667 5.74359C8.43333 5.41333 9.23833 5.19795 10.0625 5.08308V3.58974C10.0625 3.05846 9.90917 2.75692 9.64083 2.5559C9.39167 2.35487 8.87417 2.15385 7.66667 2.15385V0C9.35333 0 10.7333 0.330256 11.6725 1.03385C12.6117 1.73744 12.9375 2.69949 12.9375 3.58974V5.08308C13.7617 5.19795 14.5858 5.41333 15.3333 5.74359C17.7292 6.77744 19.1667 8.70154 19.1667 10.7692C19.1667 15.0769 23 15.0769 23 19.3846Z" fill="#266B50"/>
+                    </svg>
+                    <h4>Organic Fruits</h4>
+                </div>
+                <div class="card-detail">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus et cras ut id consectetur. 
+                    </p>
+                </div>
+                <div class="card-btn">
+                    <button>
+                        Buy Now
+                        <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 14.9883L6.18084 8.5L0 1.9975L1.90283 0L10 8.5L1.90283 17L0 14.9883Z" fill="#266B50"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="mission-text">
-                <h5>Our Aim</h5>
-                <p>To provide decent jobs for youth and women in agricultural value chains in Nepal.</p>
-            </div>
-        </div>
-        <div class="mission-item">
-            <div class="target-icon">
-                <span class="material-symbols-outlined">mode_standby</span>
-            </div>
-            <div class="mission-text">
-                <h5>Overall Objective</h5>
-                <p>Inclusive and sustainable growth is promoted in rural economy, in alignment with the priorities of the Government of Nepal.</p>
-            </div>
-        </div>
-        <div class="mission-item">
-            <div class="target-icon">
-                <span class="material-symbols-outlined">mode_standby</span>
-            </div>
-            <div class="mission-text">
-                <h5>Specific Objective</h5>
-                <p>Sustainable job opportunities for youth and women are created in agricultural value chains.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="cards-container">
-        <div class="card-item">
-            <div class="card-text">
-                <h4>Farm Fresh Fruits</h4>
-                <p>We have fresh fruits for you to take care of you and your family.</p>
-            </div>
-            <div class="card-button">
-                <button class="icon-button">
-                    <span class="button__text button__text_right-icon">Shop Now</span>
-                    <span class="material-symbols-outlined button__icon button__icon_white">arrow_forward</span>
-                </button>
-            </div>
-            <div class="card-image">
-                <img src="static/assets/images/lemon.jpg" alt="fruits"/>
+            <div class="fourth-content-card">
+                <div class="card-title">
+                    <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.3703 10.3909C25.0879 14.5432 18.294 27 15.5764 27C12.8588 27 12.8588 25.6159 11.5 25.6159C10.1412 25.6159 10.1412 27 7.42362 27C4.70604 27 -2.08793 14.5432 0.629659 10.3909C3.34724 6.23862 7.42362 6.23862 10.1412 7.62271V3.47044C2.50479 7.7196 0.779126 1.78184 0.779126 1.78184C0.779126 1.78184 4.39351 -3.18705 10.1412 3.47044V0.702253H12.8588V7.62271C15.5764 6.23862 19.6528 6.23862 22.3703 10.3909Z" fill="#266B50"/>
+                    </svg>
+                    <h4>Organic Vegetables</h4>
+                </div>
+                <div class="card-detail">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus et cras ut id consectetur. 
+                    </p>
+                </div>
+                <div class="card-btn">
+                    <button>
+                        Buy Now
+                        <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 14.9883L6.18084 8.5L0 1.9975L1.90283 0L10 8.5L1.90283 17L0 14.9883Z" fill="#266B50"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="card-item">
-            <div class="card-text">
-                <h4>Fresh Vegetables</h4>
-                <p>Farmers are selling fresh vegetables here. Without any doubt you can buy!</p>
+        <div class="fourth-content-images">
+            <div class="fourth-image-bottom">
+                <img src="static/assets/images/fourth_content_bottom.png" alt="vegetables">
             </div>
-            <div class="card-button">
-                <button class="icon-button">
-                    <span class="button__text button__text_right-icon">Shop Now</span>
-                    <span class="material-symbols-outlined button__icon button__icon_white">arrow_forward</span>
-                </button>
-            </div>
-            <div class="card-image">
-                <img src="static/assets/images/Cauli.jpg" alt="cauliflower"/>
-            </div>
-        </div>
-        <div class="card-item">
-            <div class="card-text">
-                <h4>Organic Legume</h4>
-                <p>We have dried fruits and nuts. First try then send a thank you message to us.</p>
-            </div>
-            <div class="card-button">
-                <button class="icon-button">
-                    <span class="button__text button__text_right-icon">Shop Now</span>
-                    <span class="material-symbols-outlined button__icon button__icon_white">arrow_forward</span>
-                </button>
-            </div>
-            <div class="card-image">
-                <img src="static/assets/images/daal.jpg" alt="legumes"/>
+            <div class="fourth-image-top">
+                <img src="static/assets/images/fourth_content_top.png" alt="grass">
             </div>
         </div>
     </div>
-
-    <div class="farmer-sell-container">
-        <div class="farmer-sell-orig">
-            <h4>You are a farmer and want to sell online?</h4>
-            <button class="icon-button">
-                <span class="material-symbols-outlined button__icon button__icon_black">person</span>
-                <span class="button__text">Farmer Sell</span>
-            </button>
-        </div>
-        <div class="with-tri">
-            <div class="arrow-down"></div>
-        </div>
-    </div>
-
-    <div class="register-now-container">
-        <h4>Register here Free Now.</h4>
-    </div>
-
-    <div class="container">
-        <div class="container-item">
-            <div class="img-div">
-                <img src="static/assets/images/grapes.jpg" alt="">
+    <div class="fifth-content">
+        <div class="fifth-first-col">
+            <div class="fifth-title">
+                <svg width="26" height="30" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.4571 9.13636C21.1714 7.36364 26 8.18182 26 8.18182C22.6571 4.90909 18.7571 5.04545 15.9714 5.72727V5.45455C18.0143 3.27273 22.1 3.40909 22.1 3.40909C19.1286 1.5 16.5286 2.04545 14.8571 2.72727C13.9286 1.09091 13 0 13 0C12.2571 0.954545 11.7 1.90909 11.1429 2.86364C9.47143 2.04545 6.68571 1.5 3.71429 3.40909C3.71429 3.40909 7.98571 3.40909 10.0286 5.72727C7.24286 5.04545 3.34286 4.90909 0 8.18182C0 8.18182 4.82857 7.36364 8.54286 9.13636C4.64286 10.7727 1.85714 14.5909 1.85714 19.0909C1.85714 25.0909 6.87143 30 13 30C19.1286 30 24.1429 25.0909 24.1429 19.0909C24.1429 14.5909 21.3571 10.7727 17.4571 9.13636ZM20.0571 21.5455C19.8714 22.0909 19.6857 22.6364 19.3143 23.1818L16.7143 20.4545L13.9286 23.1818L16.9 26.0455C16.3429 26.3182 15.9714 26.5909 15.4143 26.8636L13 24.5455L10.5857 26.8636C10.0286 26.7273 9.47143 26.4545 9.1 26.0455L12.0714 23.1818L9.28571 20.4545L6.5 23.0455C6.31429 22.5 5.94286 21.9545 5.75714 21.4091L8.35714 19.0909L5.94286 16.6364C6.12857 16.0909 6.31429 15.5455 6.68571 15L9.28571 17.7273L12.0714 15L9.1 12.1364C9.65714 11.8636 10.0286 11.5909 10.5857 11.3182L13 13.6364L15.4143 11.3182C15.9714 11.4545 16.5286 11.7273 16.9 12.1364L13.9286 15L16.7143 17.7273L19.5 15.1364C19.6857 15.6818 20.0571 16.2273 20.2429 16.7727L17.6429 19.0909L20.0571 21.5455ZM13 16.3636L15.7857 19.0909L13 21.8182L10.2143 19.0909L13 16.3636Z" fill="#266B50"/>
+                </svg>
+                <h4>News and Article</h4>
             </div>
-            <div class="text-div">
-                <h4>Customer</h4>
-                <p>Are you willing to purchase products from <br>Farmers?</p>
+            <div class="article-card">
+                <div class="article-title">
+                    <h3>Discover weekly content about</h3>
+                    <h3>organic food, recipes, and more</h3>
+                </div>
+                <div class="article-img">
+                    <img src="static/assets/images/article_chilli.png" alt="article chilli">
+                </div>
+                <div class="article-date-container">
+                    <div class="article-type">
+                        <svg width="17" height="16" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 0.00789348C0.734784 0.00789348 0.48043 0.11325 0.292893 0.300787C0.105357 0.488323 0 0.742677 0 1.00789V5.00789V6.50789C0 8.19789 1.03 9.63789 2.5 10.2279V16.5079C2.5 16.9057 2.65804 17.2872 2.93934 17.5686C3.22064 17.8499 3.60218 18.0079 4 18.0079C4.39782 18.0079 4.77936 17.8499 5.06066 17.5686C5.34196 17.2872 5.5 16.9057 5.5 16.5079V10.2279C6.97 9.63789 8 8.19789 8 6.50789V5.00789V1.00789C8 0.742677 7.89464 0.488323 7.70711 0.300787C7.51957 0.11325 7.26522 0.00789348 7 0.00789348C6.73478 0.00789348 6.48043 0.11325 6.29289 0.300787C6.10536 0.488323 6 0.742677 6 1.00789V5.00789C6 5.1405 5.94732 5.26768 5.85355 5.36145C5.75979 5.45522 5.63261 5.50789 5.5 5.50789C5.36739 5.50789 5.24021 5.45522 5.14645 5.36145C5.05268 5.26768 5 5.1405 5 5.00789V1.00789C5 0.742677 4.89464 0.488323 4.70711 0.300787C4.51957 0.11325 4.26522 0.00789348 4 0.00789348C3.73478 0.00789348 3.48043 0.11325 3.29289 0.300787C3.10536 0.488323 3 0.742677 3 1.00789V5.00789C3 5.1405 2.94732 5.26768 2.85355 5.36145C2.75979 5.45522 2.63261 5.50789 2.5 5.50789C2.36739 5.50789 2.24021 5.45522 2.14645 5.36145C2.05268 5.26768 2 5.1405 2 5.00789V1.00789C2 0.742677 1.89464 0.488323 1.70711 0.300787C1.51957 0.11325 1.26522 0.00789348 1 0.00789348ZM17.88 0.00789348C17.75 0.00789348 17.62 0.0978936 17.5 0.167894L14 2.25789V6.00789H10V8.00789H11L12 18.0079H18L19 8.00789H20V6.00789H16V3.34789L18.5 1.84789C19 1.56789 19.13 1.00789 18.84 0.507894C18.63 0.147893 18.26 -0.0421065 17.88 0.00789348Z" fill="#266B50"/>
+                        </svg>
+                        <p>Meals</p>
+                    </div>
+                    <div class="article-date">
+                        -
+                        <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19C7.14348 19 5.36301 18.2625 4.05025 16.9497C2.7375 15.637 2 13.8565 2 12C2 10.1435 2.7375 8.36301 4.05025 7.05025C5.36301 5.7375 7.14348 5 9 5C10.8565 5 12.637 5.7375 13.9497 7.05025C15.2625 8.36301 16 10.1435 16 12C16 13.8565 15.2625 15.637 13.9497 16.9497C12.637 18.2625 10.8565 19 9 19ZM16.03 6.39L17.45 4.97C17 4.46 16.55 4 16.04 3.56L14.62 5C13.07 3.74 11.12 3 9 3C6.61305 3 4.32387 3.94821 2.63604 5.63604C0.948211 7.32387 0 9.61305 0 12C0 14.3869 0.948211 16.6761 2.63604 18.364C4.32387 20.0518 6.61305 21 9 21C14 21 18 16.97 18 12C18 9.88 17.26 7.93 16.03 6.39ZM8 13H10V7H8M12 0H6V2H12V0Z" fill="#266B50"/>
+                        </svg>
+                        <p>September 1, 2022</p>
+                    </div>
+                </div>
             </div>
-            <div class="button-div">
-                <button class="icon-button">
-                    <span class="button__text">Click Here</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="container-item">
-            <div class="img-div">
-                <img src="static/assets/images/farmer.jpg" alt="">
-            </div>
-            <div class="text-div">
-                <h4>Farmer</h4>
-                <p> Online Market where you can Sell
-                    fruits &<br> vegetables, agri produce, etc…</p>
-            </div>
-            <div class="button-div">
-                <button class="icon-button">
-                    <span class="button__text">Click Here</span>
-                </button>
+            <div class="fifth-first-col-article-text">
+                <h3>6 Reasons why Eating Organic is </h3>
+                <h3>Better for you and Your Family</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus et cras ut id consectetur.
+                    Risus sit sit purus leo, nisl sed est.
+                </p>
             </div>
         </div>
-
-        <div class="container-item">
-            <div class="img-div">
-                <img src="static/assets/images/contact_us.jpg" alt="">
+        <div class="fifth-second-col">
+            <div class="second-col-btn">
+                <div class="learn-more-btn">
+                    <button>
+                        Learn More
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </button>
+                </div>
             </div>
-            <div class="text-div">
-                <h4>Contact Us</h4>
-                <p>We are here to support you. Feel free<br>
-                    to contact us.</p>
-            </div>
-            <div class="button-div">
-                <button class="icon-button">
-                    <span class="button__text">Click Here</span>
-                </button>
+            <div class="second-col-articles">
+                <div class="second-col-article-1">
+                    <div class="second-col-article-img">
+                        <img src="static/assets/images/second_col_article_img_1.png" alt="cilantro">
+                    </div>
+                    <div class="second-col-article-details">
+                        <div class="article-date-container">
+                            <div class="article-type">
+                                <svg width="17" height="16" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 0.00789348C0.734784 0.00789348 0.48043 0.11325 0.292893 0.300787C0.105357 0.488323 0 0.742677 0 1.00789V5.00789V6.50789C0 8.19789 1.03 9.63789 2.5 10.2279V16.5079C2.5 16.9057 2.65804 17.2872 2.93934 17.5686C3.22064 17.8499 3.60218 18.0079 4 18.0079C4.39782 18.0079 4.77936 17.8499 5.06066 17.5686C5.34196 17.2872 5.5 16.9057 5.5 16.5079V10.2279C6.97 9.63789 8 8.19789 8 6.50789V5.00789V1.00789C8 0.742677 7.89464 0.488323 7.70711 0.300787C7.51957 0.11325 7.26522 0.00789348 7 0.00789348C6.73478 0.00789348 6.48043 0.11325 6.29289 0.300787C6.10536 0.488323 6 0.742677 6 1.00789V5.00789C6 5.1405 5.94732 5.26768 5.85355 5.36145C5.75979 5.45522 5.63261 5.50789 5.5 5.50789C5.36739 5.50789 5.24021 5.45522 5.14645 5.36145C5.05268 5.26768 5 5.1405 5 5.00789V1.00789C5 0.742677 4.89464 0.488323 4.70711 0.300787C4.51957 0.11325 4.26522 0.00789348 4 0.00789348C3.73478 0.00789348 3.48043 0.11325 3.29289 0.300787C3.10536 0.488323 3 0.742677 3 1.00789V5.00789C3 5.1405 2.94732 5.26768 2.85355 5.36145C2.75979 5.45522 2.63261 5.50789 2.5 5.50789C2.36739 5.50789 2.24021 5.45522 2.14645 5.36145C2.05268 5.26768 2 5.1405 2 5.00789V1.00789C2 0.742677 1.89464 0.488323 1.70711 0.300787C1.51957 0.11325 1.26522 0.00789348 1 0.00789348ZM17.88 0.00789348C17.75 0.00789348 17.62 0.0978936 17.5 0.167894L14 2.25789V6.00789H10V8.00789H11L12 18.0079H18L19 8.00789H20V6.00789H16V3.34789L18.5 1.84789C19 1.56789 19.13 1.00789 18.84 0.507894C18.63 0.147893 18.26 -0.0421065 17.88 0.00789348Z" fill="#266B50"/>
+                                </svg>
+                                <p>Meals</p>
+                            </div>
+                            <div class="article-date right">
+                                -
+                                <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 19C7.14348 19 5.36301 18.2625 4.05025 16.9497C2.7375 15.637 2 13.8565 2 12C2 10.1435 2.7375 8.36301 4.05025 7.05025C5.36301 5.7375 7.14348 5 9 5C10.8565 5 12.637 5.7375 13.9497 7.05025C15.2625 8.36301 16 10.1435 16 12C16 13.8565 15.2625 15.637 13.9497 16.9497C12.637 18.2625 10.8565 19 9 19ZM16.03 6.39L17.45 4.97C17 4.46 16.55 4 16.04 3.56L14.62 5C13.07 3.74 11.12 3 9 3C6.61305 3 4.32387 3.94821 2.63604 5.63604C0.948211 7.32387 0 9.61305 0 12C0 14.3869 0.948211 16.6761 2.63604 18.364C4.32387 20.0518 6.61305 21 9 21C14 21 18 16.97 18 12C18 9.88 17.26 7.93 16.03 6.39ZM8 13H10V7H8M12 0H6V2H12V0Z" fill="#266B50"/>
+                                </svg>
+                                <p>September 1, 2022</p>
+                            </div>
+                        </div>
+                        <div class="second-col-article-title">
+                            <p>6 Reasons why Eating Organic is Better for you and Your Family</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-col-article-2">
+                    <div class="second-col-article-img">
+                        <img src="static/assets/images/second_col_article_img_2.png" alt="cilantro">
+                    </div>
+                    <div class="second-col-article-details">
+                        <div class="article-date-container">
+                            <div class="article-type">
+                                <svg width="17" height="16" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 0.00789348C0.734784 0.00789348 0.48043 0.11325 0.292893 0.300787C0.105357 0.488323 0 0.742677 0 1.00789V5.00789V6.50789C0 8.19789 1.03 9.63789 2.5 10.2279V16.5079C2.5 16.9057 2.65804 17.2872 2.93934 17.5686C3.22064 17.8499 3.60218 18.0079 4 18.0079C4.39782 18.0079 4.77936 17.8499 5.06066 17.5686C5.34196 17.2872 5.5 16.9057 5.5 16.5079V10.2279C6.97 9.63789 8 8.19789 8 6.50789V5.00789V1.00789C8 0.742677 7.89464 0.488323 7.70711 0.300787C7.51957 0.11325 7.26522 0.00789348 7 0.00789348C6.73478 0.00789348 6.48043 0.11325 6.29289 0.300787C6.10536 0.488323 6 0.742677 6 1.00789V5.00789C6 5.1405 5.94732 5.26768 5.85355 5.36145C5.75979 5.45522 5.63261 5.50789 5.5 5.50789C5.36739 5.50789 5.24021 5.45522 5.14645 5.36145C5.05268 5.26768 5 5.1405 5 5.00789V1.00789C5 0.742677 4.89464 0.488323 4.70711 0.300787C4.51957 0.11325 4.26522 0.00789348 4 0.00789348C3.73478 0.00789348 3.48043 0.11325 3.29289 0.300787C3.10536 0.488323 3 0.742677 3 1.00789V5.00789C3 5.1405 2.94732 5.26768 2.85355 5.36145C2.75979 5.45522 2.63261 5.50789 2.5 5.50789C2.36739 5.50789 2.24021 5.45522 2.14645 5.36145C2.05268 5.26768 2 5.1405 2 5.00789V1.00789C2 0.742677 1.89464 0.488323 1.70711 0.300787C1.51957 0.11325 1.26522 0.00789348 1 0.00789348ZM17.88 0.00789348C17.75 0.00789348 17.62 0.0978936 17.5 0.167894L14 2.25789V6.00789H10V8.00789H11L12 18.0079H18L19 8.00789H20V6.00789H16V3.34789L18.5 1.84789C19 1.56789 19.13 1.00789 18.84 0.507894C18.63 0.147893 18.26 -0.0421065 17.88 0.00789348Z" fill="#266B50"/>
+                                </svg>
+                                <p>Meals</p>
+                            </div>
+                            <div class="article-date right">
+                                -
+                                <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 19C7.14348 19 5.36301 18.2625 4.05025 16.9497C2.7375 15.637 2 13.8565 2 12C2 10.1435 2.7375 8.36301 4.05025 7.05025C5.36301 5.7375 7.14348 5 9 5C10.8565 5 12.637 5.7375 13.9497 7.05025C15.2625 8.36301 16 10.1435 16 12C16 13.8565 15.2625 15.637 13.9497 16.9497C12.637 18.2625 10.8565 19 9 19ZM16.03 6.39L17.45 4.97C17 4.46 16.55 4 16.04 3.56L14.62 5C13.07 3.74 11.12 3 9 3C6.61305 3 4.32387 3.94821 2.63604 5.63604C0.948211 7.32387 0 9.61305 0 12C0 14.3869 0.948211 16.6761 2.63604 18.364C4.32387 20.0518 6.61305 21 9 21C14 21 18 16.97 18 12C18 9.88 17.26 7.93 16.03 6.39ZM8 13H10V7H8M12 0H6V2H12V0Z" fill="#266B50"/>
+                                </svg>
+                                <p>September 1, 2022</p>
+                            </div>
+                        </div>
+                        <div class="second-col-article-title">
+                            <p>6 Reasons why Eating Organic is Better for you and Your Family</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

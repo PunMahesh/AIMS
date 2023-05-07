@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    {% load custom_filters %}
+  <head>
+    <meta charset="utf-8">
+    <title>My PDF</title>
+  </head>
+  <body>
+    <div><h1>My KYC Information</h1></div>
+    <div><h2>A. Personal Information: </h2></div>
+    <div>
+        <label for="first_name">Name: </label>
+        {{ farmer_kyc.first_name }} {{ farmer_kyc.MiddleName }} {{ farmer_kyc.Last_name }}
+    </div>
+    <div>
+        <label class="label">Gender: </label>
+        {{ farmer_kyc.Gender }}
+    </div>
+    <div>
+        <label class="label">Marital Status: </label>
+        {{ farmer_kyc.MaritualStatus }}
+    </div>
+    <div>
+        <label class="label" for="dob">Date of Birth: </label>
+        {{ farmer_kyc.Dob }}
+    </div>
+    <div>
+        <label class="label" for="nationality">Nationality: </label>
+        {{ farmer_kyc.Nationality }}
+    </div>
+    <div>
+        <label class="label" for="citizenship">Citizenship No.: </label>
+        {{ farmer_kyc.Citizenship }}
+    </div>
+    <div>
+        <label class="label" for="passport">Passport No.: </label>
+        {{ farmer_kyc.Passport }}
+    </div>
+    <div>
+        <label class="label">Residential Status: </label>
+        {{ farmer_kyc.Residential }}
+    </div>
+<div><h2>B. Family Information: </h2></div>
+    <div>
+        <label class="label" for="father">Father's Name: </label>
+        {{ farmer_kyc.FatherName }}
+    </div>
+    <div>
+        <label class="label" for="mother">Mother's Name: </label>
+        {{ farmer_kyc.MotherName }}
+    </div>
+    <div>
+        <label class="label" for="grandfather">Grandfather's Name: </label>
+        {{ farmer_kyc.GrandfatherName }}
+    </div>
+    <div>
+        <label class="label" for="grandmother">Grandmother's Name: </label>
+        {{ farmer_kyc.GrandMotherName }}
+    </div>
+    <div>
+        <label class="label" for="spouse">Spouse's Name: </label>
+        {{ farmer_kyc.SpouseName }}
+    </div>
+    <div>
+        <label class="label" for="son">Sons's Name: </label>
+        {{ farmer_kyc.SonName }}
+    </div>
+    <div>
+        <label class="label" for="daughter">Daughter's Name: </label>
+        {{ farmer_kyc.DaughterName }}
+    </div>
+    <div><h2>C. Address Details: </h2></div>
+    <div>
+        <label class="label" for="country">Country: </label>
+        {{ farmer_kyc.Country }}
+    </div>
+    <div>
+        <label class="label" for="province">Province: </label>
+        {{ farmer_kyc.Province }}
+    </div>
+    <div>
+        <label class="label" for="district">District: </label>
+        {{ farmer_kyc.District }}
+    </div>
+    <div>
+        <label class="label" for="municipality">Rural Municipality/ Municipality: </label>
+        {{ farmer_kyc.Municipality }}
+    </div>
+    <div>
+        <label class="label" for="ward_no">Ward No.: </label>
+        {{ farmer_kyc.WardNo }}
+    </div>
+    <div>
+        <label class="label" for="street">Street/Village: </label>
+        {{ farmer_kyc.Street }}
+    </div>
+    <div><h2>D. Documents: </h2></div>
+    <div>
+        <label for="citizenship_doc">Documentation Type: </label>
+        {{ farmer_kyc.CitizenProof }}
+    </div>
+    <div>
+        <br><label for="front_Pic">Passport Size Photo: </label><br/>
+        {% if image1_data %}
+        <img src="data:image/{{ farmer_kyc.PassportPhoto.name|get_file_extension }};base64,{{ image1_data }}" />
+        {% else %}
+            <p>No image found</p>
+        {% endif %}
+    </div>
+    <div>
+        <br><label for="front_Pic">Front of Document: </label><br/>
+        {% if image2_data %}
+        <img src="data:image/{{ farmer_kyc.FrontPic.name|get_file_extension }};base64,{{ image1_data }}" />
+        {% else %}
+            <p>No image found</p>
+        {% endif %}
+    </div>
+    <div>
+        <br><label for="front_Pic">Back of Document: </label><br/>
+        {% if image3_data %}
+        <img src="data:image/{{ farmer_kyc.BackPic.name|get_file_extension }};base64,{{ image1_data }}" />
+        {% else %}
+            <p>No image found</p>
+        {% endif %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+
+.shop-section {
+    display: flex;
+    margin-bottom: 50px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    width: 50%;
+  }
+  
+ 
+h2 {
+    color: #4F9656;
+    margin-right: 50%;
+    margin-top: 2px;
+}
+
+
+  .shop-image {
+    width: 50%;
+    margin-right: 30px;
+  }
+  
+  
+    .shop-image img {
+        max-width: 100%;
+        margin-top: 100px;
+        width: 100%;
+        height: 50%;
+    }
+  
+  
+  .shop-details {
+    width: 60%;
+    padding: 100px;
+  }
+  
+  .shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .underline {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  .shop-header a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .shop-price p {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .shop-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    border: 2px solid #000000
+  }
+  
+  .quantity button,
+  .quantity input {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+  }
+
+  
+  .quantity input {
+    text-align: center;
+    border: none;
+  }
+  
+  .add-to-cart {
+    background-color: #4F9656;
+    color: #fff;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+  
