@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family:sans-serif;
 }
 
 .header {
@@ -25,7 +25,7 @@ body {
 }
 
 .title {
-    background-color:  #4F9656;
+    background-color:#266B50;
     height: 50px;
     display: flex;
     align-items: center;
@@ -50,19 +50,18 @@ body {
 .form-container {
     width: 70%;
     border: 1px solid black;
-    margin: 15px;
     padding: 15px;
-    height: 650px;
+    height: 630px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    left: 210px;
-    top: 150px;
+    left: 250px;
+    top: 130px;
 }
 
 .form-body {
-    margin: 20px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -82,7 +81,7 @@ body {
 }
 .label {
     font-size: 20px;
-    font-weight: semibold;
+    font-weight: bold;
     letter-spacing: 1px;
 }
 
@@ -141,8 +140,7 @@ body {
 }
 .radio-options {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 .option-radio {
     display: flex;
@@ -159,7 +157,7 @@ body {
 .next-prev-btn {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .single {
     justify-content: flex-end;
@@ -167,7 +165,7 @@ body {
 
 .next-btn {
     border: none;
-    background-color: #4F9656;
+    background-color: #266B50;
     height: 40px;
     width: 150px;
     border-radius: 7px;
@@ -182,12 +180,19 @@ body {
 
 .prev-btn {
     border: none;
-    background: none;
+    background-color: #266B50;
+    height: 40px;
+    width: 150px;
+    border-radius: 7px;
+    color: white;
     font-size: 17px;
     font-weight: bold;
-    color: #4F9656;
     cursor: pointer;
 }
+.prev-btn:active {
+    transform: scale(0.96);
+}
+
 
 .form-row.reverse {
     flex-direction: column;
