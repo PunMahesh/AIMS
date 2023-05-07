@@ -27,8 +27,10 @@ def add_equipment(request):
     return render(request, "addequipment.html")
 
 def get_equipment(request, id):
+    user = request.user
+    user_full_name = f"{user.first_name} {user.last_name}"
     equip = equipments.objects.get(id=id)
     fss = FileSystemStorage()
-    context = {'equipment': equip, 'equip_img_url': request.build_absolute_uri(fss.url(equip.Photo))}
+    context = {'equipment': equip, 'equip_img_url': request.build_absolute_uri(fss.url(equip.Photo)),"user_full_name":user_full_name}
     return render(request, 'equipments_show_more.html', context)
 

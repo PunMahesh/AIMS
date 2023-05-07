@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'farmer',
     'equipments',
     'crops',
+    'main',
 ]
 
 MIDDLEWARE = [

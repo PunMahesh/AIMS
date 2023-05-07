@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('farmer.urls')),
     path('', include('equipments.urls')),
     path('', include('crops.urls')),
+    path('',include('main.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
