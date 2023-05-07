@@ -24,17 +24,15 @@ def login_view(request):
         password = request.POST.get('password')
         print("Username: ", username, "Password: ", password)
         user = authenticate(request, username=username, password=password)
-        print("User: ", user.__dict__)
-        context = {
-            "role": {
-                "first_name": user.first_name,
-                "last_name": user.last_name,
-                "is_admin": user.is_admin,
-                "is_customer": user.is_customer,
-                "is_farmer": user.is_farmer
-            }
+        user_info = {
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "is_admin": user.is_admin,
+            "is_customer": user.is_customer,
+            "is_farmer": user.is_farmer
         }
-        print("Context: ", context)
+        request.session['user_info'] = user_info
+        print("Context: ", user_info)
         if user is not None:
             login(request, user)
             messages.success(request, 'Login Successful')
@@ -57,7 +55,12 @@ def login_view(request):
 #                 User.save()
 
 def index(request):
-    print("This Called")
+    user_info = request.session.get('user_info')
+    if user_info:
+        context = {
+            "user": user_info,
+        }
+        return render(request, 'index.html', context)
     return render(request,'index.html')
 
 def story(request):
