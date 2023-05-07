@@ -22,14 +22,12 @@
                         {% if user.is_farmer %}
                         <div class="dropdown-options">
                             <a href="{% url 'farmer_home' %}">Dashboard</a>
-                            <div class="h-line-dropdown"></div>
                             <a onclick="logout()">Logout</a>
                         </div>
 
                         {% elif user.is_customer %}
                         <div class="dropdown-options">
                             <a href="#">Profile</a>
-                            <div class="h-line-dropdown"></div>
                             <a href="{% url 'farmer_kyc' %}">Verify KYC</a>
                             <a onclick="logout()">Logout</a>
                         </div>
@@ -37,14 +35,12 @@
                         {% elif user.is_admin %}
                         <div class="dropdown-options">
                             <a href="{% url 'farmer_home' %}">Dashboard</a>
-                            <div class="h-line-dropdown"></div>
                             <a href="logout()">Logout</a>
                         </div>
 
                         {% else %}
                         <div class="dropdown-options">
                             <a href="{% url 'login' %}">Login</a>
-                            <div class="h-line-dropdown"></div>
                         </div>
                         {% endif %}
                     </li>
