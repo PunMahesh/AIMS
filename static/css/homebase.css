@@ -53,6 +53,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .nav-ul li a:active {
     transform: scale(0.97);
@@ -66,7 +67,7 @@ body {
     position: absolute;
     overflow: auto;
     width: 150px;
-    padding: 10px;
+    padding: 5px;
     background-color: white !important;
     color: black;
     border-radius:5px;
@@ -84,6 +85,7 @@ body {
     margin: 3px 0 3px 0;
     color: black;
     letter-spacing: 1px;
+    font-weight: lighter;
 }
 .dropdown-options a:hover {
     background-color: #9c9c9c8e;

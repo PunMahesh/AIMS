@@ -18,12 +18,24 @@
                             expand_more
                             </span>
                         </a>
-                        {% if role.is_farmer %}
+                        {% if user.is_farmer %}
                         <div class="dropdown-options">
                             <a href="{% url 'farmer_home' %}">Dashboard</a>
                             <div class="h-line-dropdown"></div>
                             <a href="#">Logout</a>
                         </div>
+                        {% elif user.is_customer %}
+                        <div class="dropdown-options">
+                            <a href="{% url 'farmer_home' %}">Profile</a>
+                            <div class="h-line-dropdown"></div>
+                            <a href="#">Verify KYC</a>
+                            <a href="#">Logout</a>
+                        </div>
+                        {% elif user.is_admin %}
+                        <div class="dropdown-options">
+                            <a href="{% url 'admin_home' %}">Dashboard</a>
+                            <div class="h-line-dropdown"></div>
+                            <a href="#">Logout</a>
                         {% else %}
                         <div class="dropdown-options">
                             <a href="{% url 'loginpage' %}">Login</a>
