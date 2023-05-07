@@ -16,7 +16,6 @@ def validate_contact(value):
 
 #creating a User which extends Django Abstract User table
 class User(AbstractUser):
-    email = models.EmailField(max_length=225, unique=True)
     first_name = models.CharField(max_length=225)
     last_name = models.CharField(max_length=225)
     contact = models.CharField(max_length=10,validators=[validate_contact])
@@ -31,4 +30,4 @@ class User(AbstractUser):
     is_worker = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.email
+        return self.username
