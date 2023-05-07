@@ -7,7 +7,8 @@
         <title>{% block title %}AIMS{% endblock %}</title>
         <link rel="stylesheet" href="static/css/homebase.css">
         {% block content_css %}{% endblock %}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />        <script src="static/js/header.js" type="text/javascript" defer></script> {% comment %} linked with header js {% endcomment %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />        
+        {% block pre_script %}{% endblock %}
     </head>
     <body>
         {% comment %} using reusable header component {% endcomment %}
@@ -18,5 +19,6 @@
 
         {% include 'components/footer.html' %} {% comment %} using resuable footer component {% endcomment %}
         <script src="static/js/index.js" type="text/javascript"></script>
+        {% block post_script %}{% endblock %}
     </body>
 </html>
