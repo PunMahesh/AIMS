@@ -1,28 +1,49 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from .form import RegisterForm, LoginForm
+from .form import RegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
+from .models import User
 
+
+# check if string is email
+def is_email(string):
+    if '@' in string:
+        return True
+    return False
 
 # Create your views here.
 
 def registration(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request,user)
-            return redirect('loginpage')
-    else:
-        form = RegisterForm()
-    return render(request,'registration.html', {'form': form})
+        username = request.POST.get('username')
+        first_name = request.POST.get("first_name")
+        last_name = request.POST.get("last_name")
+        email = request.POST.get('email')
+        dob = request.POST.get('dob')
+        address = request.POST.get('address')
+        contact = request.POST.get('contact')
+        gender = request.POST.get('gender')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        if password1 == password2:
+            user = User(username=username, first_name=first_name, last_name=last_name, email=email, address=address, contact=contact, gender=gender)
+            user.set_password(password1)
+            user.save()
+            messages.success(request, 'Registration Successful')
+            return redirect('login')
+    return render(request, 'registration.html')
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username_or_email')
+        username_or_email = request.POST.get('username_or_email')
         password = request.POST.get('password')
-        print("Username: ", username, "Password: ", password)
+
+        if is_email(username_or_email):
+            username = User.objects.get(email=username_or_email).username
+        else:
+            username = username_or_email
+
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
