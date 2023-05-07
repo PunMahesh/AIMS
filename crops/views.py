@@ -26,7 +26,15 @@ def get_crops(request):
     return render(request, 'crops.html', context)
 
 def get_crop(request, id):
+    user = request.user
+    user_full_name = f"{user.first_name} {user.last_name}"
     crop = Crop.objects.get(id=id)
     fss = FileSystemStorage()
-    context = {'crop': crop, 'crop_img_url': request.build_absolute_uri(fss.url(crop.crop_img))}
+    context = {'crop': crop, 'crop_img_url': request.build_absolute_uri(fss.url(crop.crop_img)),"user_full_name":user_full_name}
     return render(request, 'crops_show_more.html', context)
+
+def delete_crop(request, id):
+    crop = Crop.objects.get(id=id)
+    crop.delete()
+    return render(request, "crops_show_more.html")
+
