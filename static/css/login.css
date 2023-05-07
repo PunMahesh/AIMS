@@ -54,7 +54,7 @@ form {
 .form-field > input {
   height: 35px;
   padding: 5px;
-  font-size: large;
+  font-size: medium;
 }
 
 .form-field.remember-me {

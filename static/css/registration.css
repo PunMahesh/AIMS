@@ -56,7 +56,7 @@ form {
 .form-field > input {
   height: 30px;
   padding: 5px;
-  font-size: large;
+  font-size: small;
 }
 
 .form-field input[type="radio"] {
