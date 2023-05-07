@@ -5,14 +5,13 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
-  body {
+  section {
     width: 80%;
     margin: auto;
   }
   .container{
     display: block !important;
     margin:0 !important;
-
   }
   .container-body {
     position: relative;
@@ -280,76 +279,13 @@
     cursor: pointer;
   }
   
-  /* CONTACT */
-  .top-border {
-    position: absolute;
-    left: 0;
-    border-top: solid black 2px;
-    width: 1600px;
-    top: 150px;
+  footer{
+    position: absolute !important;
+    left: 0 !important;
+    width: -webkit-fill-available !important;
   }
-  .contact-border {
-    padding-top: 150px;
-      padding-bottom: 150px;
-  }
-  .contact {
-    border-top: solid black 2px;
-    border-bottom: solid black 2px;
-    padding: 75px 0;
-    display: flex;
-    justify-content: center;
-  }
-  .contact-slice {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  .border-right {
-    border-right: solid black 2px;
-  }
-  .contact-title {
-    display: flex;
-    padding-bottom: 20px;
-  }
-  .contact-title p {
-    padding-left: 8px;
-    font-size: 20px;
-    font-weight: 100;
-  }
-  
-  .contact-subtitle h2 {
-    font-size: 22px;
-    font-weight: 600;
-  }
-  .btn{
-      background-color: #266B50;
-      width: 173px;
-      height: 48px;
-      border-radius: 30px;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .btn a{
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 18px;
-      font-weight: 600;
-      padding-right: 10px;
-  }
-  .btn svg{
-      color: #ffffff !important;
-  }
-  .contact-btn{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .btn:hover{
-      cursor: pointer;
-      transition: all .3s;
-      background-color: #279E33;
-  }
-  
+  /* header{
+    position: absolute !important;
+    left: 0 !important;
+    width: -webkit-fill-available !important;
+    } */
