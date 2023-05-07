@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect
 from .form import RegisterForm, LoginForm
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.models import Group
-from .models import User
-
+from django.contrib import messages
 
 # Create your views here.
 
@@ -45,7 +44,10 @@ def login_view(request):
                 user.groups.add(group)
                 login(request, user)
                 return redirect('/')
-    return render(request, 'login.html',context)
+            else:
+                messages.info(request,"Username or Password Incorrect")
+                msg = { "message.info": messages.info }
+    return render(request, 'login.html',context, msg)
 
 # @receiver(post_save, sender=User)
 # def add_user_to_group(sender, User, created, **kwargs):
