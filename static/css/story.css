@@ -340,7 +340,7 @@
       padding-right: 10px;
   }
   .btn svg{
-      color: #ffffff;
+      color: #ffffff !important;
   }
   .contact-btn{
       display: flex;
