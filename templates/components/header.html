@@ -13,14 +13,23 @@
                     <li><a href="#">Equipment</a></li>
                     <li><a href="#">Market</a></li>
                     <li class="dropdown-item">
-                        <a href="#">Account
+                        <a>Account
                             <span class="material-symbols-outlined expand-more">
                             expand_more
                             </span>
                         </a>
+                        {% if role.is_farmer %}
+                        <div class="dropdown-options">
+                            <a href="{% url 'farmer_home' %}">Dashboard</a>
+                            <div class="h-line-dropdown"></div>
+                            <a href="#">Logout</a>
+                        </div>
+                        {% else %}
                         <div class="dropdown-options">
                             <a href="{% url 'loginpage' %}">Login</a>
+                            <div class="h-line-dropdown"></div>
                         </div>
+                        {% endif %}
                     </li>
                 </ul>
             </nav>

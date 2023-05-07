@@ -19,16 +19,28 @@ def registration(request):
     return render(request,'registration.html', {'form': form})
 
 def login_view(request):
-    form = LoginForm(request.POST)
     if request.method == 'POST':
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            print("Username: ", username, "Password: ", password)
-            user = authenticate(request, username=username, password=password)
-            # Check the boolean value and assign the user to the appropriate group
-            print("User: ", user)
-    return render(request, 'login.html', {'form': form})
+        username = request.POST.get('username_or_email')
+        password = request.POST.get('password')
+        print("Username: ", username, "Password: ", password)
+        user = authenticate(request, username=username, password=password)
+        print("User: ", user.__dict__)
+        context = {
+            "role": {
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "is_admin": user.is_admin,
+                "is_customer": user.is_customer,
+                "is_farmer": user.is_farmer
+            }
+        }
+        print("Context: ", context)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Login Successful')
+            # return render(request, 'index.html', context)
+            return redirect("/")
+    return render(request, 'login.html')
 
 # @receiver(post_save, sender=User)
 # def add_user_to_group(sender, User, created, **kwargs):
@@ -45,6 +57,7 @@ def login_view(request):
 #                 User.save()
 
 def index(request):
+    print("This Called")
     return render(request,'index.html')
 
 def story(request):
