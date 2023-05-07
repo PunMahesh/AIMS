@@ -6,6 +6,12 @@ from django.contrib.auth.models import Group
 from .models import User
 
 
+# check if string is email
+def is_email(string):
+    if '@' in string:
+        return True
+    return False
+
 # Create your views here.
 
 def registration(request):
@@ -30,11 +36,15 @@ def registration(request):
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
+        username_or_email = request.POST.get('username_or_email')
         password = request.POST.get('password')
-        print("Email: ", username, "Password: ", password)
+
+        if is_email(username_or_email):
+            username = User.objects.get(email=username_or_email).username
+        else:
+            username = username_or_email
+
         user = authenticate(request, username=username, password=password)
-        print("User: ", user)
         if user is not None:
             login(request, user)
             user_info = {
