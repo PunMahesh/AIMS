@@ -123,3 +123,35 @@ form {
   text-shadow: #266B50 0 1px 0;
   cursor: pointer;
 }
+
+.password-field {
+  position: relative;
+}
+.view-show {
+  width: 28px;
+  content: url("../assets/images/eye_show.svg");
+  background-color: rgba(204, 204, 204, 0.4);
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  top: 31px;
+  right: 5px;
+  cursor: pointer;
+}
+.view-hide {
+  width: 28px;
+  content: url("../assets/images/eye_hide.svg");
+  background-color: rgba(204, 204, 204, 0.4);
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  top: 31px;
+  right: 5px;
+  cursor: pointer;
+}
+.password-field > img:hover {
+  background-color: rgba(204, 204, 204, 0.7);
+}
+.password-field > img:active {
+  transform: scale(0.98);
+}

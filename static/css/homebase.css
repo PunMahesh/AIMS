@@ -88,16 +88,8 @@ body {
     font-weight: lighter;
 }
 .dropdown-options a:hover {
-    background-color: #9c9c9c8e;
+    border-bottom: 1px solid #266B50;
 }
-.h-line-dropdown {
-    width: 80%;
-    height: 1px;
-    background-color:#266B50;
-    margin: auto;
-}
-
-
 .expand-more {
   font-variation-settings:
   'FILL' 0,
