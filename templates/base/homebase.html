@@ -7,7 +7,12 @@
         <title>{% block title %}AIMS{% endblock %}</title>
         <link rel="stylesheet" href="static/css/homebase.css">
         {% block content_css %}{% endblock %}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script>
+            function goToRegister() {
+                document.location.href = "{% url 'registrationpage' %}"
+           }
+        </script>
         {% block pre_script %}{% endblock %}
     </head>
     <body>
