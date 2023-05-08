@@ -30,14 +30,16 @@ class RegisterForm(UserCreationForm):
     password1 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                "class": "form-control"
+                "class": "form-control",
+                "autocomplete": "new-password"
             }
         )
     )
     password2 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                "class": "form-control"
+                "class": "form-control",
+                "autocomplete": "new-password"
             }
         )
     )
@@ -76,8 +78,14 @@ class RegisterForm(UserCreationForm):
             }
         )
     )
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other')
+    )
+    gender = forms.ChoiceField(choices=GENDER_CHOICES, widget=forms.RadioSelect)
 
-
+    dob = forms.DateField(label='Date of birth')
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2','first_name','last_name','contact','address','gender')
+        fields = ('username', 'email', 'password1', 'password2','first_name','last_name','contact','address','gender','dob')

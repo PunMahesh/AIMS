@@ -2,20 +2,20 @@ from django.shortcuts import render, redirect
 from .form import RegisterForm, LoginForm
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.models import Group
-from django.contrib import messages
 
 # Create your views here.
 
 def registration(request):
+    form = RegisterForm()  # Define form before checking the request method
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
+            # Save the form data to the database
             user = form.save()
-            login(request,user)
+            login(request, user)
             return redirect('loginpage')
-    else:
-        form = RegisterForm()
-    return render(request,'registration.html', {'form': form})
+    print("Registration function called")
+    return render(request, 'registration.html', {'form': form})
 
 def login_view(request):
     form = LoginForm(request.POST)
