@@ -1,9 +1,12 @@
+{% load static %}
 <header>
     <div class="header-div">
         <div class ="header-div-content">
             <div class="logo-container">
                 <a href="{% url '' %}">
-                    <img src="static/assets/images/logo.png" alt="logo"/>
+                    <link rel="stylesheet" href="{% static 'assets/images/logo.png' %}">
+
+                    <img src= "{% static 'assets/images/logo.png' %}" alt="logo"/>
                 </a>
             </div>
             <div class="nav-items-container">
@@ -27,7 +30,7 @@
 
                             {% elif user.is_customer %}
                             <div class="dropdown-options">
-                                <a href="{% url 'Account_details' %}">Profile</a>
+                                <a href="{% url 'password_change' %}">Profile</a>
                                 <a href="{% url 'farmer_kyc' %}">Verify KYC</a>
                                 <a onclick="logout()">Logout</a>
                             </div>
