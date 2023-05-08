@@ -44,13 +44,14 @@ section{
 .image img{
     max-width: 425px;
     height: 310px;
+    border: 1px rgba(0, 0, 0, 0.2) solid;
 }
 .image{
     position: relative;
 }
 .identifier{
     position: absolute;
-    bottom: 12px;
+    top: 12px;
     left: 6px;
     padding: 7px 18px;
     background-color: #F1F1F1;

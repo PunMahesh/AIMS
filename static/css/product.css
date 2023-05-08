@@ -36,6 +36,7 @@
 .shop-image img {
   width: 657px;
   height: 408px;
+  object-fit: cover;
 }
 .shop-price {
   display: flex;
