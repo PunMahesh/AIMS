@@ -22,3 +22,8 @@ def success(request):
 
 def thankyou(request):
     return render(request,'thankyou.html')
+
+def market(request):
+    return render(request,'market.html')
+def Account_details(request):
+    return render(request,'Account_details.html')
