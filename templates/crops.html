@@ -26,6 +26,11 @@
         </div>
         <div class="content-body">
             <div class="crops-container">
+                {% if crops|length == 0 %}
+                <div class="no-crops">
+                    <span>No Crops Found</span>
+                </div>
+                {% else %}
                 {% for crop in crops %}
                 <div class="crop-card">
                     <div class="crop-card-header">
@@ -90,8 +95,9 @@
                 {% endfor %}
                 <div class="spacer"></div>
                 <div class="spacer"></div>
-              </div>
+                {% endif %}
             </div>
-          </div>
         </div>
+    </div>
+</div>
 {% endblock %}

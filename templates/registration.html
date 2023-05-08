@@ -9,63 +9,60 @@
         <div class="form-title">
             <h3>User Registration</h3>
         </div>
-        <form method="post" action="{% url 'registrationpage' %}">
+        <form action="" method="POST">
             {% csrf_token %}
             <div class="form-field required">
                 <label for="username">Username</label>
-                {{ form.username }}
-                <div class="error">{{form.username.errors}}</div>
+                <input type="text" name="username"/>
             </div>
             <div class="form-field required">
                 <label for="first_name">First Name</label>
-                {{ form.first_name }}
-                <div class="error">{{form.first_name.errors}}</div>
+                <input type="text" name="first_name"/>
             </div>
             <div class="form-field required">
                 <label for="last_name">Last Name</label>
-                {{ form.last_name }}
-                <div class="error">{{form.last_name.errors}}</div>
+                <input type="text" name="last_name"/>
             </div>
             <div class="form-field required">
                 <label for="email">Email</label>
-                {{ form.email }}
-                <div class="error">{{form.email.errors}}</div>
+                <input type="email" name="email"/>
             </div>
             <div class="form-field required">
                 <label for="dob">Date of Birth</label>
-                {{ form.dob }}
-                <div class="error">{{form.dob.errors}}</div>
+                <input type="date" min="1950-12-31" name="dob"/>
             </div>
             <div class="form-field required">
                 <label for="address">Address</label>
-                {{ form.address }}
-                <div class="error">{{form.address.errors}}</div>
+                <input type="text" name="address"/>
             </div>
             <div class="form-field required">
                 <label for="contact">Contact Number</label>
-                {{ form.contact }}
-                <div class="error">{{form.contact.errors}}</div>
+                <input type="text" name="contact"/>
             </div>
             <div class="form-field required">
                 <label class="label">Gender</label>
-                    {% for radio in form.gender %}
-                      <div class="radio">
-                        <label>
-                          {{ radio.tag }}
-                          {{ radio.choice_label }}
-                        </label>
-                    {% endfor %}
-                <div class="error">{{form.gender.errors}}</div>
+                <div class="radio-options">
+                    <div class="option-radio">
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" id="male" value="M" />
+                    </div>
+                    <div class="option-radio">
+                        <label for="female">Female</label>
+                        <input type="radio" name="gender" id="female" value="F" />
+                    </div>
+                    <div class="option-radio">
+                        <label for="others">Others</label>
+                        <input type="radio" name="gender" id="others" value="X" />
+                    </div>
+                </div>
             </div>
             <div class="form-field required">
                 <label for="password1">Create Password</label>
-                {{ form.password1 }}
-                <div class="error">{{form.password1.errors}}</div>
+                <input type="password" name="password1"/>
             </div>
             <div class="form-field required">
                 <label for="password2">Confirm Password</label>
-                {{ form.password2 }}
-                <div class="error">{{form.password2.errors}}</div>
+                <input type="password" name="password2"/>
             </div>
             <div class="form-field">
                 <input type="submit" value="Register" />
@@ -76,7 +73,7 @@
                 <h4>Have an account?</h4>
             </div>
             <div class="redirect">
-                <a href="{% url 'loginpage' %}">Login Here</a>
+                <a href="{% url 'login' %}">Login Here</a>
             </div>
         </div>
     </div>

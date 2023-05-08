@@ -33,4 +33,5 @@ class User(AbstractUser):
     is_farmer = models.BooleanField(default=False)
     is_worker = models.BooleanField(default=False)
 
-
+    def __str__(self):
+        return self.username

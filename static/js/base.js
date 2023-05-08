@@ -15,3 +15,17 @@ window.onclick = (event) => {
         }
     }
 }
+
+function setNameRole(name, role) {
+    const nameContainer = document.querySelector('.user-name');
+    const roleContainer = document.querySelector('.user-role');
+
+    const userFirstName = JSON.parse(localStorage.getItem('user_info')).firstName;
+    const userLastName = JSON.parse(localStorage.getItem('user_info')).lastName;
+    const userRole = JSON.parse(localStorage.getItem('user_info')).role;
+
+    nameContainer.innerHTML = `${userFirstName} ${userLastName}`;
+    roleContainer.innerHTML = `${userRole}`;
+}
+
+setNameRole();

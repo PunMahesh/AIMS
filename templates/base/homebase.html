@@ -11,7 +11,13 @@
         <script>
             function goToRegister() {
                 document.location.href = "{% url 'registrationpage' %}"
-           }
+            }
+
+            function logout() {
+                localStorage.removeItem('user_info');
+                localStorage.removeItem('is_authenticated');
+                document.location.href = 'logout';
+            }
         </script>
         {% block pre_script %}{% endblock %}
     </head>
@@ -24,6 +30,22 @@
 
         {% include 'components/footer.html' %} {% comment %} using resuable footer component {% endcomment %}
         <script src="static/js/index.js" type="text/javascript"></script>
+        <script src="static/js/header.js" type="text/javascript"></script>
+        {% if user.is_authenticated %}
+        <script>
+            const userInfo = {
+                firstName: "{{ user.first_name }}",
+                lastName: "{{ user.last_name }}",
+                email: "{{ user.email }}",
+                isAdmin: "{{ user.is_admin }}",
+                is_customer: "{{ user.is_customer }}",
+                isFarmer: "{{ user.is_farmer }}",
+                role: "{{ user.role }}",
+            }
+            localStorage.setItem("user_info", JSON.stringify(userInfo));
+            localStorage.setItem("is_authenticated", "{{ user.is_authenticated }}");
+        </script>
+        {% endif %}
         {% block post_script %}{% endblock %}
     </body>
 </html>

@@ -60,6 +60,7 @@ body {
     text-decoration: none;
     padding: 10px 20px;
     margin: 5px 0 5px 0;
+    cursor: pointer;
 }
 .dropdown-options a:hover {
     background-color: #10571B;
@@ -71,11 +72,11 @@ body {
     gap: 1px;
 }
 
-.name-role .name {
+.name-role .user-name {
     font-weight: bold;
 }
 
-.name-role .role {
+.name-role .user-role {
     font-weight: bold;
     font-size: 12px;
 }
@@ -89,7 +90,7 @@ body {
 }
 /* Sidebar styles */
 .sidebar {
-    background-color: #4F9656;
+    background-color:#266B50;
     width:210px;
     height: 100vh;
     padding-top:70px;
@@ -103,6 +104,9 @@ body {
     padding-left: 10px;
     cursor: pointer;
 }
+.sidebar-item:hover {
+    border-bottom: 1px solid #fff;
+}
 
 .sidebar-item a {
     text-decoration: none;
@@ -110,10 +114,6 @@ body {
     align-items: center;
     gap: 10px;
     color: inherit;
-}
-
-.sidebar-item:hover {
-    background-color: #10571B;
 }
 
 .sidebar-item .text {

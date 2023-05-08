@@ -5,8 +5,10 @@
 .content-title-button button {
     width: 180px;
     height: 35px;
+    margin-right: 20px;
+    letter-spacing: 1px;
     border:none;
-    background-color:#4F9656;
+    background-color:#266B50;
     color: white;
     border-radius: 6px;
     cursor: pointer;
@@ -21,6 +23,8 @@
 .equipments-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .equipment-card {
@@ -35,7 +39,7 @@
 }
 
 .equipment-card-header {
-    background-color:#4F9656;
+    background-color:#266B50;
     height: 35px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -95,5 +99,18 @@
     cursor: pointer;
     text-decoration: none;
     color: white;
-  }
+}
+
+.no-equipments {
+    margin-top: 150px;
+}
+
+.no-equipments > span {
+    font-size: 25px;
+    font-weight: bolder;
+    color: #266B50;
+    margin: 0 auto;
+    padding: 10px;
+}
+  
 
