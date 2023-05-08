@@ -28,7 +28,7 @@ def registration(request):
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
         if password1 == password2:
-            user = User(username=username, first_name=first_name, last_name=last_name, email=email, address=address, contact=contact, gender=gender)
+            user = User(username=username, first_name=first_name, last_name=last_name, dob = dob, email=email, address=address, contact=contact, gender=gender)
             user.set_password(password1)
             user.save()
             messages.success(request, 'Registration Successful')
