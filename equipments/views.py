@@ -32,6 +32,3 @@ def get_equipment(request, id):
     context = {'equipment': equip, 'equip_img_url': request.build_absolute_uri(fss.url(equip.Photo))}
     return render(request, 'equipments_show_more.html', context)
 
-
-def equipments_market(request):
-    return render(request, 'equipment.html')
