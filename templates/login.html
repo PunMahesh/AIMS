@@ -12,13 +12,15 @@
         <form action="" method="POST">
             {% csrf_token %}
             <div class="form-field required">
-                <label for="username_or_email">Username or email address</label>
-                <input type="text" name="username_or_email"/>
+                <label for="username_or_email" id="username-label">Username or Email</label>
+                <input type="text" name="username_or_email" id="username-input-field"/>
+                <div class="error-render username-error"></div>
             </div>
             <div class="form-field required password-field">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password-input-field"/>
                 <img src="" alt="" id="show-icon" class="view-show">
+                <div class="error-render password-error"></div>
             </div>
             <div class="form-field remember-me forgot-pass">
                 <div class="remember">
@@ -30,7 +32,7 @@
                 </div>
             </div>
             <div class="form-field">
-                <input type="submit" value="Log In" />
+                <input type="submit" value="Log In" id="submit-btn"/>
             </div>
         </form>
         <div class="register-redirect">
