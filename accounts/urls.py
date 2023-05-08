@@ -20,5 +20,6 @@ urlpatterns = [
     path("logout",views.logout_view,name="logout"),
     path("registrationpage",views.registration,name='registrationpage'),
     path("story",views.story,name='story'),
+    path("success",views.success,name='success'),
 
 ]
