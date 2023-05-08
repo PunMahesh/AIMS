@@ -18,8 +18,7 @@ passwordVisibilityIcon.addEventListener('click', () => {
     }
 });
 
-let usernameIsValid;
-let passwordIsValid;
+let usernameIsValid, passwordIsValid;
 
 // function to check is string contains @
 function checkForAtSign(string) {
