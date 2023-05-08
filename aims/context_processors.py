@@ -5,6 +5,7 @@ def sidebar_items(request):
             {'name': 'Crops', 'url': 'crops', 'icon': 'psychiatry'},
             {'name': 'Equipments', 'url': "equipments", 'icon': 'agriculture'},
             {'name': 'Market', 'url': "404", 'icon': 'store'},
+            {'name': 'Article', 'url': "article", 'icon': 'newspaper'},
 
         ]
     }

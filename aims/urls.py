@@ -26,4 +26,5 @@ urlpatterns = [
     path('', include('crops.urls')),
     path('',include('main.urls')),
     path('', include('market.urls')),
+    path('', include('article.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
