@@ -13,31 +13,39 @@
             {% csrf_token %}
             <div class="form-field required">
                 <label for="username">Username</label>
-                <input type="text" name="username"/>
+                <input type="text" name="username" id="username-field"/>
+                <div class="error-render username-error"></div>
             </div>
             <div class="form-field required">
                 <label for="first_name">First Name</label>
-                <input type="text" name="first_name"/>
+                <input type="text" name="first_name" id="firstname-field"/>
+                <div class="error-render firstname-error"></div>
             </div>
             <div class="form-field required">
                 <label for="last_name">Last Name</label>
-                <input type="text" name="last_name"/>
+                <input type="text" name="last_name" id="lastname-field"/>
+                <div class="error-render lastname-error"></div>
+
             </div>
             <div class="form-field required">
                 <label for="email">Email</label>
-                <input type="email" name="email"/>
+                <input type="email" name="email" id="email-field"/>
+                <div class="error-render email-error"></div>
             </div>
-            <div class="form-field required">
+            <div class="form-field">
                 <label for="dob">Date of Birth</label>
-                <input type="date" min="1950-12-31" name="dob"/>
+                <input type="date" min="1950-12-31" name="dob" id="dob-field"/>
+                <div class="error-render dob-error"></div>
             </div>
             <div class="form-field required">
                 <label for="address">Address</label>
-                <input type="text" name="address"/>
+                <input type="text" name="address" id="address-field"/>
+                <div class="error-render address-error"></div>
             </div>
             <div class="form-field required">
                 <label for="contact">Contact Number</label>
-                <input type="text" name="contact"/>
+                <input type="text" name="contact" id="contact-field"/>
+                <div class="error-render contact-error"></div>
             </div>
             <div class="form-field required">
                 <label class="label">Gender</label>
@@ -58,14 +66,16 @@
             </div>
             <div class="form-field required">
                 <label for="password1">Create Password</label>
-                <input type="password" name="password1"/>
+                <input type="password" name="password1" id="password1-field"/>
+                <div class="error-render password1-error"></div>
             </div>
             <div class="form-field required">
                 <label for="password2">Confirm Password</label>
-                <input type="password" name="password2"/>
+                <input type="password" name="password2" id="password2-field"/>
+                <div class="error-render password2-error"></div>
             </div>
             <div class="form-field">
-                <input type="submit" value="Register" />
+                <input type="submit" value="Register" id="submit-btn" />
             </div>
         </form>
         <div class="login-redirect">
@@ -79,4 +89,7 @@
     </div>
 </div>
 {% endblock %}
-
+{% block post_script %}
+<script src="static/js/registration.js" type="text/javascript"></script>
+{% endblock %}
+```

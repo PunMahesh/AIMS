@@ -43,7 +43,9 @@ form {
   display: flex;
   flex-direction: column;
   margin: 6px;
+  margin-bottom: 15px;
   gap: 6px;
+  position: relative;
 }
 .form-field > label {
   font-size: 15px;
@@ -95,6 +97,13 @@ form {
 .form-field > input[type="submit"]:active {
     transform: scale(0.98);
 }
+.form-field > input[type="submit"]:disabled {
+  background-color: rgba(38, 107, 80, 0.5);
+  cursor: not-allowed;
+}
+.form-field > input[type="submit"]:disabled:active {
+  transform: scale(1);
+}
 
 
 .login-redirect {
@@ -123,3 +132,11 @@ form {
     cursor: pointer;
 }
 
+.error-render {
+  color: red;
+  font-size: 11px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 55px;
+  left: 5px;
+}
