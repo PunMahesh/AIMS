@@ -15,7 +15,13 @@
       padding: 20px 0 20px 20px;
       border-bottom: 1px solid white;
   }
-  
+ .change-heading{
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: underline #266B50; 
+    margin: 0;
+    padding: 0 0 20px 20px;
+ }
   .contact-sidebar li{
     padding: 20px 0 20px 39px;
     list-style: none;
@@ -102,4 +108,16 @@
     top: 44px;
     right: -11px;
     cursor: pointer;
+  }
+  .error-msg{
+    color: red;
+    margin: -10px 0 10px 20px;
+    font-size: 12px;
+  }
+  #first-name,#last-name,#email{
+    border: 1px solid #266B50;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    margin: 20px 0 20px 20px;
+   font-size: 16px;
   }
