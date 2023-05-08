@@ -35,3 +35,6 @@ def get_equipment(request, id):
 
 def equipments_market(request):
     return render(request, 'equipment.html')
+
+def equipment_item(request):
+    return render(request, 'equipment_item.html')
