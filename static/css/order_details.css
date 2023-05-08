@@ -4,7 +4,7 @@
   .contact-sidebar{
       position: absolute;
       left: 59px;
-      top:133px;
+      top:100px;
       height: 590px;
       width: 316px;
       background-color: #266B50;
@@ -30,7 +30,7 @@
   .send-message{
     position: absolute;
     left: 400px;
-    top: 133px;
+    top: 100px;
     height: 70vh;
     width: 800px;
     padding-top:10px ;

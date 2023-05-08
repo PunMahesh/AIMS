@@ -67,19 +67,7 @@ def logout_view(request):
     logout(request)
     return redirect('/')
 
-# @receiver(post_save, sender=User)
-# def add_user_to_group(sender, User, created, **kwargs):
-#     if not created:  # only do this on user updates, not creations
-#         if User.is_admin:  # replace with your boolean field name
-#             group = Group.objects.get(name='is_admin')  # replace with the name of the group you want to add the user to
-#             if group not in User.groups():  # only add the user to the group if they're not already a member
-#                 User.groups.add(group)
-#                 User.save()
-#         else:
-#             group = Group.objects.get(name='is_customer')  # replace with the name of the group for non-admin users
-#             if group in User.groups():  # remove the user from the group if they're already a member
-#                 User.groups.remove(group)
-#                 User.save()
+     
 
 def index(request):
     user_info = request.session.get('user_info')
@@ -92,10 +80,6 @@ def index(request):
 
 def story(request):
     return render(request, 'story.html')
-# def kyc_recent(request, submission_id):
-#     submission = farmer_kyc.objects.get(id=submission_id)
-#     context = {'submission': submission}
-#     return render(request, 'kyc_recent.html', context)
 
 def error(request):
     return render(request, '404.html')
@@ -105,3 +89,5 @@ def home_view(request):
     context = {'first_name': first_name}
     print (request.user.first_name)
     return render(request, 'base.html', context)
+def success(request):
+    return render(request, 'success.html')
