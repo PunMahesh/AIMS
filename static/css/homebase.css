@@ -262,7 +262,7 @@ footer {
     font-size: smaller;
     margin-bottom: 5px;
 }
-.contact-us-btn > button {
+.contact-us-btn > a > button {
     border: none;
     width: 160px;
     height: 48px;
@@ -277,10 +277,10 @@ footer {
     font-size: 16px;
     letter-spacing: 1px;
 }
-.contact-us-btn > button:active {
+.contact-us-btn > a > button:active {
     transform: scale(0.97);
 }
-.contact-us-btn > button > span {
+.contact-us-btn > a > button > span {
     color: inherit;
 }
 

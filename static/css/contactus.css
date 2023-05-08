@@ -1,91 +1,85 @@
-/* contactus */
-.send-message {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .send-message h2 {
-    margin-top: 40%;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #000000;
-  }
-  
-  .send-message label {
-    color: #000000;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .send-message input[type="text"],
-  .send-message input[type="email"],
-  .send-message textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    background-color: #DBDBDB;
-  }
-  
-  .send-message button[type="submit"] {
-    background-color: #DBDBDB;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 18px;
-    width: 40%;
-    font-weight: bold;
-  }
-  
-  /* contactus .sidebar */
-  
-  h4 {
-    background-color:#43A54C;
-    color: #FFFFFF;
-    border-bottom: 1px solid #FFFFFF;
-    padding: 20px;
-    font-size: 24px;
-  }
-  
-  .contact-us {
-    background-color: #43A54C;
-    color: #FFFFFF;
-    width: 250px;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px;
-  }
-  
-  .contact-us ul {
-    background-color: #43A54C;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .contact-usul li {
-    padding: 10px;
-    border-bottom: 1px solid #FFFFFF;
-    background-color: #43A54C
-  }
-  
-  
-  .contact-us ul li a {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: #43A54C;
-    color: #FFFFFF;
-    font-weight: bold;
-  }
-  
-  .contact-us ul li a:hover {
-    background-color: #ddd;
-  }
-  
-  
+.contact-container{
+  height: 70vh;
+}
+.contact-sidebar{
+    position: absolute;
+    left: 59px;
+    top:133px;
+    height: 70vh;
+    width: 316px;
+    background-color: #266B50;
+}
+
+.contact-sidebar h4{
+    color: white;
+    padding: 20px 0 20px 20px;
+    border-bottom: 1px solid white;
+}
+
+.contact-sidebar li{
+  padding: 20px 0 20px 39px;
+  list-style: none;
+}
+.contact-sidebar li span{
+  color: white;
+  font-size: 20px;
+  vertical-align: top;
+  margin: 5px 0 0 10px;
+}
+
+.send-message{
+  position: absolute;
+  left: 400px;
+  top: 133px;
+  height: 70vh;
+  width: 800px;
+  /* background-color: #F2F2F2; */
+}
+.send-message h2{
+  font-size: 24px;
+  font-weight: 600;
+  padding: 20px 0 20px 20px;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+.upper-half{
+  display: flex;
+  justify-content: space-between;
+}
+.half-display {
+  width: 40%;
+}
+label{
+  font-size: 16px;
+  padding: 20px 0 17px  20px;
+}
+input{
+  width: 90%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #266B50;
+  padding: 0 0 0 10px;
+  margin-left: 20px;
+}
+textarea{
+  width: 770px;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid #266B50;
+  padding: 10px 0 0 10px;
+  margin:0 0 33px 20px;
+}
+button{
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #266B50;
+  background-color: #266B50;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 20px;
+  cursor: pointer;
+}
