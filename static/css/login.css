@@ -42,6 +42,7 @@ form {
   flex-direction: column;
   margin: 10px;
   gap: 10px;
+  position: relative;
 }
 .form-field > label {
   font-size: 15px;
@@ -63,6 +64,7 @@ form {
   align-items: center;
   justify-content: space-evenly;
   gap: 80px;
+  margin-top: 20px;
 }
 .remember {
   display: flex;
@@ -96,6 +98,13 @@ form {
 }
 .form-field > input[type="submit"]:active {
   transform: scale(0.98);
+}
+.form-field > input[type="submit"]:disabled {
+  background-color: rgba(38, 107, 80, 0.5);
+  cursor: not-allowed;
+}
+.form-field > input[type="submit"]:disabled:active {
+  transform: scale(1);
 }
 
 .register-redirect {
@@ -154,4 +163,13 @@ form {
 }
 .password-field > img:active {
   transform: scale(0.98);
+}
+
+.error-render {
+  color: red;
+  font-size: 11px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 65px;
+  left: 5px;
 }
