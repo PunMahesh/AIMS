@@ -27,7 +27,7 @@ class User(AbstractUser):
         ('O', 'Other')
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null=True, blank=True)
-    dob = models.DateField(default=datetime.date.today)
+    dob = models.DateField()
     is_admin = models.BooleanField(default=False)
     is_customer = models.BooleanField(default=True)
     is_farmer = models.BooleanField(default=False)
