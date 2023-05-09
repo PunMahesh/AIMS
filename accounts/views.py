@@ -61,13 +61,14 @@ def login_view(request):
             request.session['user_info'] = user_info
             messages.success(request, 'Login Successful')
             return redirect("/")
+        elif user is not None and user.is_superuser and user.is_staff:
+            login(request, user)
+            return redirect("admin")
     return render(request, 'login.html')
 
 def logout_view(request):
     logout(request)
     return redirect('/')
-
-     
 
 def index(request):
     user_info = request.session.get('user_info')
@@ -89,5 +90,6 @@ def home_view(request):
     context = {'first_name': first_name}
     print (request.user.first_name)
     return render(request, 'base.html', context)
+
 def success(request):
     return render(request, 'success.html')

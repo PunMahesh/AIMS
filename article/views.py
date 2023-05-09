@@ -12,7 +12,7 @@ def add_article(request):
 
         details = Article(user=user,ArticleName=ArticleName, Article_Photo=Article_Photo, Description=Description)
         details.save()
-        return redirect("Articel_added")
+        return redirect("Article_added")
     return render(request, 'article.html')
 
 def get_article(request):
