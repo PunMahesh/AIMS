@@ -13,14 +13,22 @@
             {% csrf_token %}
             <div class="form-field required">
                 <label for="username_or_email" id="username-label">Username or Email</label>
-                <input type="text" name="username_or_email" id="username-input-field"/>
-                <div class="error-render username-error"></div>
+                <input type="text" name="username_or_email" id="username-input-field" value="{% if username_or_email %}{{ username_or_email }}{% endif %}" />
+                <div class="error-render username-error">
+                    {% if error %}
+                        {{ error }}
+                    {% endif %}
+                </div>
             </div>
             <div class="form-field required password-field">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password-input-field"/>
+                <input type="password" name="password" id="password-input-field" value="{% if password %}{{ password }}{% endif %}" />
                 <img src="" alt="" id="show-icon" class="view-show">
-                <div class="error-render password-error"></div>
+                <div class="error-render password-error">
+                    {% if pwerror %}
+                        {{ pwerror }}
+                    {% endif %}
+                </div>
             </div>
             <div class="form-field remember-me forgot-pass">
                 <div class="remember">

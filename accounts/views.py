@@ -40,34 +40,54 @@ def login_view(request):
         username_or_email = request.POST.get('username_or_email')
         password = request.POST.get('password')
 
+
         if is_email(username_or_email):
             username = User.objects.get(email=username_or_email).username
+            user_exists = User.objects.filter(email=username_or_email).exists()
         else:
+            user_exists = User.objects.filter(username=username_or_email).exists()
             username = username_or_email
 
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            user_info = {
-                "is_authenticated": True,
-                "first_name": user.first_name,
-                "last_name": user.last_name,
-                "email": user.email,
-                "is_admin": user.is_admin,
-                "is_customer": user.is_customer,
-                "is_farmer": user.is_farmer,
-                "role": user.is_farmer and "Farmer" or user.is_customer and "Customer" or user.is_admin and "Admin"
+        if not user_exists:
+            messages.error(request, 'User does not exist')
+            context = {
+                "username_or_email": username_or_email,
+                "password": password,
+                "error": "User does not exist"
             }
-            request.session['user_info'] = user_info
-            messages.success(request, 'Login Successful')
-            return redirect("/")
+            return render(request, 'login.html', context)
+
+        user = authenticate(request, username=username, password=password)
+        if user is None:
+            messages.error(request, 'Invalid Credentials')
+            context = {
+                "username_or_email": username_or_email,
+                "password": password,
+                "pwerror": "Invalid Credentials"
+            }
+            return render(request, 'login.html', context)
+
+        login(request, user)
+        user_info = {
+            "is_authenticated": True,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "email": user.email,
+            "is_admin": user.is_admin,
+            "is_customer": user.is_customer,
+            "is_farmer": user.is_farmer,
+            "role": user.is_farmer and "Farmer" or user.is_customer and "Customer" or user.is_admin and "Admin"
+        }
+        request.session['user_info'] = user_info
+        messages.success(request, 'Login Successful')
+        return redirect("/")
+
     return render(request, 'login.html')
 
 def logout_view(request):
     logout(request)
     return redirect('/')
 
-     
 
 def index(request):
     user_info = request.session.get('user_info')

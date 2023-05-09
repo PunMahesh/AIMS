@@ -59,6 +59,9 @@ function validateUsername() {
 }
 usernameInputField.addEventListener('input', () => {
     validateUsername();
+    if (passwordInputField.value !== '') {
+        validatePassword();
+    };
 });
 
 
@@ -119,6 +122,9 @@ function validatePassword() {
 }
 passwordInputField.addEventListener('input', () => {
     validatePassword();
+    if (usernameInputField.value !== '') {
+        validateUsername();
+    };
 });
 
 const validateLogin = () => {
