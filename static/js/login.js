@@ -89,21 +89,21 @@ function validatePassword() {
             submitBtn.setAttribute('disabled', '');
             return;
         }
-        if(passwordInputField.value.length < 8) {
-            passwordError.textContent = 'Password must be at least 8 characters';
-            submitBtn.setAttribute('disabled', '');
-            return;
-        }
-        if(!checkPasswordForUppercase(passwordInputField.value)) {
-            passwordError.textContent = 'Password must contain at least one uppercase letter';
-            submitBtn.setAttribute('disabled', '');
-            return;
-        }
-        if(!checkPasswordForNumber(passwordInputField.value)) {
-            passwordError.textContent = 'Password must contain at least a number';
-            submitBtn.setAttribute('disabled', '');
-            return;
-        }
+        // if(passwordInputField.value.length < 8) {
+        //     passwordError.textContent = 'Password must be at least 8 characters';
+        //     submitBtn.setAttribute('disabled', '');
+        //     return;
+        // }
+        // if(!checkPasswordForUppercase(passwordInputField.value)) {
+        //     passwordError.textContent = 'Password must contain at least one uppercase letter';
+        //     submitBtn.setAttribute('disabled', '');
+        //     return;
+        // }
+        // if(!checkPasswordForNumber(passwordInputField.value)) {
+        //     passwordError.textContent = 'Password must contain at least a number';
+        //     submitBtn.setAttribute('disabled', '');
+        //     return;
+        // }
         // if(!checkPasswordForSpecialCharacter(passwordInputField.value)) {
         //     passwordError.textContent = 'Password must contain at least a special character';
         //     submitBtn.setAttribute('disabled', '');
