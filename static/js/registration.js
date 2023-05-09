@@ -276,9 +276,6 @@ const validateRegisterForm = () => {
 
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('Register form', dobField.value);
-    // print all form data
-    console.log('Form data', new FormData(registerForm));
     validateRegisterForm();
     if (usernameIsValid && firstnameIsValid && lastnameIsValid && emailIsValid && addressIsValid && contactIsValid && password1IsValid && password2IsValid) {
         registerForm.submit();
