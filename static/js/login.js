@@ -8,6 +8,8 @@ const passwordError = document.querySelector('.password-error');
 const usernameLabel = document.querySelector('#username-label');
 const submitBtn = document.querySelector('#submit-btn');
 
+const loginForm = document.querySelector('form');
+
 passwordVisibilityIcon.addEventListener('click', () => {
     if (passwordInputField.type === 'password') {
         passwordInputField.type = 'text';
@@ -33,31 +35,34 @@ function validateEmail(email) {
 }
 
 function validateUsername() {
-    usernameInputField.addEventListener('input', () => {
-        usernameIsValid = false;
-        usernameLabel.textContent = 'Username or Email';
-        if (usernameInputField.value === '') {
-            usernameError.textContent = 'Username or Email is required';
+    usernameIsValid = false;
+    usernameLabel.textContent = 'Username or Email';
+    if (usernameInputField.value === '') {
+        usernameError.textContent = 'Username or Email is required';
+        submitBtn.setAttribute('disabled', '');
+        return;
+    }
+    if(checkForAtSign(usernameInputField.value)) {
+        usernameLabel.textContent = 'Email';
+        if(!validateEmail(usernameInputField.value)) {
+            usernameError.textContent = 'Invalid Email';
             submitBtn.setAttribute('disabled', '');
             return;
         }
-        if(checkForAtSign(usernameInputField.value)) {
-            usernameLabel.textContent = 'Email';
-            if(!validateEmail(usernameInputField.value)) {
-                usernameError.textContent = 'Invalid Email';
-                submitBtn.setAttribute('disabled', '');
-                return;
-            }
-        }
-        usernameError.textContent = '';
-        usernameIsValid = true;
-        if (passwordIsValid) {
-            submitBtn.removeAttribute('disabled');
-        }
-        return;
-    });
+    }
+    usernameError.textContent = '';
+    usernameIsValid = true;
+    if (passwordIsValid) {
+        submitBtn.removeAttribute('disabled');
+    }
+    return;
 }
-validateUsername();
+usernameInputField.addEventListener('input', () => {
+    validateUsername();
+    if (passwordInputField.value !== '') {
+        validatePassword();
+    };
+});
 
 
 // regex to check if string contains at least one uppercase letter
@@ -114,7 +119,55 @@ function validatePassword() {
         if (usernameIsValid) {
             submitBtn.removeAttribute('disabled');
         }
+    passwordIsValid = false;
+    if (passwordInputField.value === '') {
+        passwordError.textContent = 'Password is required';
+        submitBtn.setAttribute('disabled', '');
         return;
-    });
+    }
+    if(passwordInputField.value.length < 8) {
+        passwordError.textContent = 'Password must be at least 8 characters';
+        submitBtn.setAttribute('disabled', '');
+        return;
+    }
+    if(!checkPasswordForUppercase(passwordInputField.value)) {
+        passwordError.textContent = 'Password must contain at least one uppercase letter';
+        submitBtn.setAttribute('disabled', '');
+        return;
+    }
+    if(!checkPasswordForNumber(passwordInputField.value)) {
+        passwordError.textContent = 'Password must contain at least a number';
+        submitBtn.setAttribute('disabled', '');
+        return;
+    }
+    // if(!checkPasswordForSpecialCharacter(passwordInputField.value)) {
+    //     passwordError.textContent = 'Password must contain at least a special character';
+    //     submitBtn.setAttribute('disabled', '');
+    //     return;
+    // }
+    passwordError.textContent = '';
+    passwordIsValid = true;
+    if (usernameIsValid) {
+        submitBtn.removeAttribute('disabled');
+    }
+    return;
 }
-validatePassword();
+passwordInputField.addEventListener('input', () => {
+    validatePassword();
+    if (usernameInputField.value !== '') {
+        validateUsername();
+    };
+});
+
+const validateLogin = () => {
+    validateUsername();
+    validatePassword();
+};
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validateLogin();
+    if (usernameIsValid && passwordIsValid) {
+        loginForm.submit();
+    }
+});
