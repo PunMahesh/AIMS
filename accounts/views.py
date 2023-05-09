@@ -15,7 +15,6 @@ def is_email(string):
 # Create your views here.
 
 def registration(request):
-    form = RegisterForm()  # Define form before checking the request method
     if request.method == 'POST':
         username = request.POST.get('username')
         first_name = request.POST.get("first_name")
@@ -27,6 +26,25 @@ def registration(request):
         gender = request.POST.get('gender')
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
+
+        # check if user exists
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username already exists')
+            context = {
+                "username": username,
+                "first_name": first_name,
+                "last_name": last_name,
+                "email": email,
+                "dob": dob,
+                "address": address,
+                "contact": contact,
+                "gender": gender,
+                "password1": password1,
+                "password2": password2,
+                "username_error": "User already exists"
+            }
+            return render(request, 'registration.html', context=context)
+
         if password1 == password2:
             user = User(username=username, first_name=first_name, last_name=last_name, dob = dob, email=email, address=address, contact=contact, gender=gender)
             user.set_password(password1)

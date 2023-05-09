@@ -13,38 +13,42 @@
             {% csrf_token %}
             <div class="form-field required">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username-field"/>
-                <div class="error-render username-error"></div>
+                <input type="text" name="username" id="username-field" value="{% if username %}{{ username }}{% endif %}"/>
+                <div class="error-render username-error">
+                    {% if username_error %}
+                        {{ username_error }}
+                    {% endif %}
+                </div>
             </div>
             <div class="form-field required">
                 <label for="first_name">First Name</label>
-                <input type="text" name="first_name" id="firstname-field"/>
+                <input type="text" name="first_name" id="firstname-field" value="{% if first_name %}{{ first_name }}{% endif %}"/>
                 <div class="error-render firstname-error"></div>
             </div>
             <div class="form-field required">
                 <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" id="lastname-field"/>
+                <input type="text" name="last_name" id="lastname-field" value="{% if last_name %}{{ last_name }}{% endif %}"/>
                 <div class="error-render lastname-error"></div>
 
             </div>
             <div class="form-field required">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email-field"/>
+                <input type="email" name="email" id="email-field" value="{% if email %}{{ email }}{% endif %}"/>
                 <div class="error-render email-error"></div>
             </div>
             <div class="form-field">
                 <label for="dob">Date of Birth</label>
-                <input type="date" min="1950-12-31" name="dob" id="dob-field"/>
+                <input type="date" min="1950-12-31" name="dob" id="dob-field" value="{% if dob %}{{ dob }}{% endif %}"/>
                 <div class="error-render dob-error"></div>
             </div>
             <div class="form-field required">
                 <label for="address">Address</label>
-                <input type="text" name="address" id="address-field"/>
+                <input type="text" name="address" id="address-field" value="{% if address %}{{ address }}{% endif %}"/>
                 <div class="error-render address-error"></div>
             </div>
             <div class="form-field required">
                 <label for="contact">Contact Number</label>
-                <input type="text" name="contact" id="contact-field"/>
+                <input type="text" name="contact" id="contact-field" value="{% if contact %}{{ contact }}{% endif %}"/>
                 <div class="error-render contact-error"></div>
             </div>
             <div class="form-field required">
@@ -66,12 +70,12 @@
             </div>
             <div class="form-field required">
                 <label for="password1">Create Password</label>
-                <input type="password" name="password1" id="password1-field"/>
+                <input type="password" name="password1" id="password1-field" value="{% if password1 %}{{ password1 }}{% endif %}"/>
                 <div class="error-render password1-error"></div>
             </div>
             <div class="form-field required">
                 <label for="password2">Confirm Password</label>
-                <input type="password" name="password2" id="password2-field"/>
+                <input type="password" name="password2" id="password2-field" value="{% if password2 %}{{ password2 }}{% endif %}"/>
                 <div class="error-render password2-error"></div>
             </div>
             <div class="form-field">
