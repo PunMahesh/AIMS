@@ -63,8 +63,17 @@ header{
     cursor: pointer;
 }
 .nav-ul li a:active {
-    transform: scale(0.97);
+    transform: scale(0.97); 
 }
+.nav-ul > li > a:hover {
+    transform: scale(0.97); 
+    color: #A3A533; 
+} 
+.nav-ul > li > a:hover > span {
+    transform: scale(0.97); 
+    color: #A3A533; 
+}
+
 .dropdown-item {
     position: relative;
     display: inline-block;
