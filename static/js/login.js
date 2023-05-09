@@ -118,8 +118,7 @@ function validatePassword() {
         passwordIsValid = true;
         if (usernameIsValid) {
             submitBtn.removeAttribute('disabled');
-        }
-    passwordIsValid = false;
+        }    passwordIsValid = false;
     if (passwordInputField.value === '') {
         passwordError.textContent = 'Password is required';
         submitBtn.setAttribute('disabled', '');
@@ -151,7 +150,7 @@ function validatePassword() {
         submitBtn.removeAttribute('disabled');
     }
     return;
-}
+});
 passwordInputField.addEventListener('input', () => {
     validatePassword();
     if (usernameInputField.value !== '') {
@@ -171,3 +170,4 @@ loginForm.addEventListener('submit', (e) => {
         loginForm.submit();
     }
 });
+}
