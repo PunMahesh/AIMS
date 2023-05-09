@@ -88,7 +88,6 @@ def logout_view(request):
     logout(request)
     return redirect('/')
 
-
 def index(request):
     user_info = request.session.get('user_info')
     if user_info:
@@ -109,5 +108,6 @@ def home_view(request):
     context = {'first_name': first_name}
     print (request.user.first_name)
     return render(request, 'base.html', context)
+
 def success(request):
     return render(request, 'success.html')

@@ -26,7 +26,10 @@ const password2Field = document.getElementById('password2-field');
 const password2Error = document.querySelector('.password2-error');
 
 const submitBtn = document.querySelector('#submit-btn');
+<<<<<<< HEAD
 const registerForm = document.querySelector('form');
+=======
+>>>>>>> ca346d5171c05bf09c8187802505daf322f7f9e4
 
 let usernameIsValid, firstnameIsValid, lastnameIsValid, emailIsValid, dobIsValid, addressIsValid, contactIsValid, password1IsValid, password2IsValid;
 
@@ -36,6 +39,7 @@ function checkForAtSign(string) {
 }
 
 function validateUsername() {
+<<<<<<< HEAD
     usernameIsValid = false;
     if (usernameField.value === '') {
         usernameError.textContent = 'Username is required';
@@ -96,6 +100,68 @@ function validateLastname() {
 lastnameField.addEventListener('input', () => {
     validateLastname();
 });
+=======
+    usernameField.addEventListener('input', () => {
+        usernameIsValid = false;
+        if (usernameField.value === '') {
+            usernameError.textContent = 'Username is required';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        if(checkForAtSign(usernameField.value)) {
+            usernameError.textContent = 'Username cannot contain @';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+
+        usernameError.textContent = '';
+        usernameIsValid = true;
+        if (firstnameIsValid && lastnameIsValid && emailIsValid && addressIsValid && contactIsValid && password1IsValid && password2IsValid) {
+            submitBtn.removeAttribute('disabled');
+        }
+        return;
+    });
+}
+validateUsername();
+
+function validateFirstname() {
+    firstnameField.addEventListener('input', () => {
+        firstnameIsValid = false;
+        if (firstnameField.value === '') {
+            firstnameError.textContent = 'Firstname is required';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+
+        firstnameError.textContent = '';
+        firstnameIsValid = true;
+        if (usernameIsValid && lastnameIsValid && emailIsValid && addressIsValid && contactIsValid && password1IsValid && password2IsValid) {
+            submitBtn.removeAttribute('disabled');
+        }
+        return;
+    });
+}
+validateFirstname();
+
+function validateLastname() {
+    lastnameField.addEventListener('input', () => {
+        lastnameIsValid = false;
+        if (lastnameField.value === '') {
+            lastnameError.textContent = 'Lastname is required';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+
+        lastnameError.textContent = '';
+        lastnameIsValid = true;
+        if (usernameIsValid && firstnameIsValid && emailIsValid && addressIsValid && contactIsValid && password1IsValid && password2IsValid) {
+            submitBtn.removeAttribute('disabled');
+        }
+        return;
+    });
+}
+validateLastname();
+>>>>>>> ca346d5171c05bf09c8187802505daf322f7f9e4
 
 // regex to check valid email format
 let emailRegex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
@@ -105,6 +171,7 @@ function validateEmail(email) {
 }
 
 function validateEmail() {
+<<<<<<< HEAD
     emailIsValid = false;
     if (emailField.value === '') {
         emailError.textContent = 'Email is required';
@@ -180,6 +247,83 @@ function validateContact() {
 contactField.addEventListener('input', () => {
     validateContact();
 });
+=======
+    emailField.addEventListener('input', () => {
+        emailIsValid = false;
+        if (emailField.value === '') {
+            emailError.textContent = 'Email is required';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        // if(!validateEmail(emailField.value)) {
+        //     emailError.textContent = 'Invalid Email';
+        //     submitBtn.setAttribute('disabled', '');
+        //     return;
+        // }
+
+        emailError.textContent = '';
+        emailIsValid = true;
+        if (usernameIsValid && firstnameIsValid && lastnameIsValid && addressIsValid && contactIsValid && password1IsValid && password2IsValid) {
+            submitBtn.removeAttribute('disabled');
+        }
+        return;
+    });
+}
+validateEmail();
+
+function validateAddress() {
+    addressField.addEventListener('input', () => {
+        addressIsValid = false;
+        if (addressField.value === '') {
+            addressError.textContent = 'Address is required';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+
+        addressError.textContent = '';
+        addressIsValid = true;
+        if (usernameIsValid && firstnameIsValid && lastnameIsValid && emailIsValid && contactIsValid && password1IsValid && password2IsValid) {
+            submitBtn.removeAttribute('disabled');
+        }
+        return;
+    });
+}
+validateAddress();
+
+function validateContact() {
+    contactField.addEventListener('input', () => {
+        contactIsValid = false;
+        if (contactField.value === '') {
+            contactError.textContent = 'Contact is required';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        if (isNaN(contactField.value)) {
+            contactError.textContent = 'Contact must be a number';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        if (contactField.value[0] !== '9' && contactField.value[1] !== '8') {
+            contactError.textContent = 'Contact must start with 98';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        if (contactField.value.length !== 10) {
+            contactError.textContent = 'Contact must be 10 digits';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+
+        contactError.textContent = '';
+        contactIsValid = true;
+        if (usernameIsValid && firstnameIsValid && lastnameIsValid && emailIsValid && addressIsValid && password1IsValid && password2IsValid) {
+            submitBtn.removeAttribute('disabled');
+        }
+        return;
+    });
+}
+validateContact();
+>>>>>>> ca346d5171c05bf09c8187802505daf322f7f9e4
 
 // regex to check if string contains at least one uppercase letter
 const uppercaseRegex = /[A-Z]/;
@@ -203,6 +347,7 @@ function checkPasswordForSpecialCharacter(password) {
 }
 
 function validatePassword1() {
+<<<<<<< HEAD
     password1IsValid = false;
     if (password1Field.value === '') {
         password1Error.textContent = 'Password is required';
@@ -281,3 +426,64 @@ registerForm.addEventListener('submit', (e) => {
         registerForm.submit();
     }
 });
+=======
+    password1Field.addEventListener('input', () => {
+        password1IsValid = false;
+        if (password1Field.value === '') {
+            password1Error.textContent = 'Password is required';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        if(password1Field.value.length < 8) {
+            password1Error.textContent = 'Password must be at least 8 characters';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        if(!checkPasswordForUppercase(password1Field.value)) {
+            password1Error.textContent = 'Password must contain at least one uppercase letter';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        if(!checkPasswordForNumber(password1Field.value)) {
+            password1Error.textContent = 'Password must contain at least a number';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        // if(!checkPasswordForSpecialCharacter(password1Field.value)) {
+        //     password1Error.textContent = 'Password must contain at least a special character';
+        //     submitBtn.setAttribute('disabled', '');
+        //     return;
+        // }
+        password1Error.textContent = '';
+        password1IsValid = true;
+        if (usernameIsValid && firstnameIsValid && lastnameIsValid && emailIsValid && addressIsValid && contactIsValid && password2IsValid) {
+            submitBtn.removeAttribute('disabled');
+        }
+        return;
+    });
+}
+validatePassword1();
+
+function validatePassword2() {
+    password2Field.addEventListener('input', () => {
+        password2IsValid = false;
+        if (password2Field.value === '') {
+            password2Error.textContent = 'Confirm Password is required';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        if(password2Field.value !== password1Field.value) {
+            password2Error.textContent = 'Password does not match';
+            submitBtn.setAttribute('disabled', '');
+            return;
+        }
+        password2Error.textContent = '';
+        password2IsValid = true;
+        if (usernameIsValid && firstnameIsValid && lastnameIsValid && emailIsValid && addressIsValid && contactIsValid && password1IsValid) {
+            submitBtn.removeAttribute('disabled');
+        }
+        return;
+    });
+}
+validatePassword2();
+>>>>>>> ca346d5171c05bf09c8187802505daf322f7f9e4
