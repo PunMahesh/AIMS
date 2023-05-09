@@ -46,7 +46,7 @@ def login_view(request):
             username = username_or_email
 
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        if user is not None and user.is_farmer and user.is_customer and user.is_admin:
             login(request, user)
             user_info = {
                 "is_authenticated": True,
@@ -63,7 +63,7 @@ def login_view(request):
             return redirect("/")
         elif user is not None and user.is_superuser and user.is_staff:
             login(request, user)
-            return redirect("admin")
+            return redirect("/admin")
     return render(request, 'login.html')
 
 def logout_view(request):
