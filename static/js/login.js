@@ -119,7 +119,7 @@ function validatePassword() {
         submitBtn.removeAttribute('disabled');
     }
     return;
-}
+};
 passwordInputField.addEventListener('input', () => {
     validatePassword();
     if (usernameInputField.value !== '') {
