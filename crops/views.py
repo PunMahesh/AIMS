@@ -24,7 +24,7 @@ def get_crops(request):
     # Fetch Crops information here and pass it in the context. The format should be as follows:
     crops = Crop.objects.all()
     context = {'crops': crops}
-    return render(request, 'crops.html', context,)
+    return render(request, 'crops.html', context)
 
 def get_crop(request, id):
     crop = Crop.objects.get(id=id)
