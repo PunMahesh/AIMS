@@ -25,3 +25,7 @@ def thankyou(request):
 
 def market(request):
     return render(request,'market.html')
+def Account_details(request):
+    return render(request,'Account_details.html')
+def blog_read_more(request):
+    return render(request,'blog_read_more.html')

@@ -1,135 +1,378 @@
 {% extends "base.html" %}
 
-{% block title %}Dashboard{% endblock %}
-{% block content_css %}<link rel="stylesheet" href="static/css/farmerHome.css">{% endblock %}
+{% block title %}AIMS | FARMER DASHBOARD{% endblock %}
+{% block content_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.css">
+<link rel="stylesheet" href="static/css/farmerHome.css">
+{% endblock %}
 
 {% block content %}
 <div class="content">
     <div class="main-content">
-        <div class="content-title">
-            <span>Dashboard</span>
+      
+      <div class="content-body">
+        <div class="weather-container">
+          <!-- weather widget code -->
+          <script>
+            (function(d, s, id) {
+                if (d.getElementById(id)) {
+                    if (window.__TOMORROW__) {
+                        window.__TOMORROW__.renderWidget();
+                    }
+                    return;
+                }
+                const fjs = d.getElementsByTagName(s)[0];
+                const js = d.createElement(s);
+                js.id = id;
+                js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+                fjs.parentNode.insertBefore(js, fjs);
+            })(document, 'script', 'tomorrow-sdk');
+        </script>
+
+        <div class="tomorrow"
+        data-location-id=""
+        data-language="EN"
+        data-unit-system="METRIC"
+        data-skin="light"
+        data-widget-type="aqiPollen"
+        style="padding-bottom:22px;position:relative;"
+        >
+            <a
+                href="https://www.tomorrow.io/weather-api/"
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+            >
+                <img
+                alt="Powered by the Tomorrow.io Weather API"
+                src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+                width="250"
+                height="18"
+                />
+            </a>
         </div>
-        <div class="content-body">
-            <div class="weather-container">
-                <script>
-                    (function(d, s, id) {
-                        if (d.getElementById(id)) {
-                            if (window.__TOMORROW__) {
-                                window.__TOMORROW__.renderWidget();
-                            }
-                            return;
-                        }
-                        const fjs = d.getElementsByTagName(s)[0];
-                        const js = d.createElement(s);
-                        js.id = id;
-                        js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-
-                        fjs.parentNode.insertBefore(js, fjs);
-                    })(document, 'script', 'tomorrow-sdk');
-                </script>
-
-                <div class="tomorrow"
-                data-location-id=""
-                data-language="EN"
-                data-unit-system="METRIC"
-                data-skin="light"
-                data-widget-type="aqiPollen"
-                style="padding-bottom:22px;position:relative;"
-                >
-                    <a
-                        href="https://www.tomorrow.io/weather-api/"
-                        rel="nofollow noopener noreferrer"
-                        target="_blank"
-                        style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
-                    >
-                        <img
-                        alt="Powered by the Tomorrow.io Weather API"
-                        src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
-                        width="250"
-                        height="18"
-                        />
-                    </a>
-                </div>
+        </div>
+  
+        <div class="chart-container">
+          <!-- bar chart -->
+          <div class="chart barChart">
+            <h2 class="chart-title">Sales per Month</h2>
+            <canvas id="barChart"></canvas>
+          </div>
+  
+          <!-- area chart -->
+          <div class="chart">
+              <h2 class="chart-title">Temperature and Humidity</h2>
+              <canvas id="areaChart"></canvas>
             </div>
-            <div>
-                <canvas id="barChart"></canvas>
-                <canvas id="areaChart"></canvas>
-                <canvas id="myChart"></canvas>
-
-              </div>
-              
-              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-              
-              <script>
-                // Bar chart
-                const ctxBar = document.getElementById('barChart').getContext('2d');
-                const barChart = new Chart(ctxBar, {
-                type: 'bar',
-                data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                    datasets: [{
-                    label: 'Sales',
-                    data: [12, 19, 3, 5, 2, 3, 9],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true
-                }
-                });
-
-                // Area chart
-                const ctxArea = document.getElementById('areaChart').getContext('2d');
-                const areaChart = new Chart(ctxArea, {
-                type: 'line',
-                data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                    datasets: [{
-                    label: 'Sales',
-                    data: [12, 19, 3, 5, 2, 3, 9],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1,
-                    fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true
-                }
-                });
-                // Get the canvas element and create a new Chart object
-                const ctx = document.getElementById('myChart').getContext('2d');
-                const myChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow'],
-                    datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 205, 86, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 205, 86, 1)'
-                    ],
-                    borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true
-                }
-                });
-              </script>
+            <!-- pie chart -->
+            <div class="chart">
+              <h2 class="chart-title">Crop Distribution</h2>
+              <canvas id="pieChart"></canvas>
+            </div>
+  
+            <!-- scatter plot -->
+            <div class="chart">
+              <h2 class="chart-title">Product Rating vs. Price</h2>
+              <canvas id="scatterChart"></canvas>
+            </div>
+          
+            <!-- line chart -->
+            <div class="chart">
+              <h2 class="chart-title">Website Traffic</h2>
+              <canvas id="lineChart"></canvas>
+            </div>
+          <!-- bar chart -->
+          <div class="chart">
+            <h2 class="chart-title">Total Crop Production per Month</h2>
+            <canvas id="barChart2"></canvas>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // dummy data
+  const salesData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [
+      {
+        label: "Monthly Sales in Rs",
+        data: [120000, 190000, 300000, 50000, 200000, 300000, 150000, 220000, 250000, 180000, 280000, 320000, 200000, 270000, 400000, 70000, 250000, 380000, 190000, 320000, 350000, 280000, 420000, 480000],
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 1,
+      },
+    ],
+  };
+  
+
+  const tempData = {
+    labels: [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December",
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ],
+    datasets: [
+      {
+        label: "Temperature",
+        data: [22, 24, 25, 26, 27, 29, 30, 31, 32, 29, 27, 26,22, 24, 26, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38],
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 1,
+        fill: true,
+      },
+      {
+        label: "Humidity",
+        data: [60, 58, 55, 50, 45, 42, 40, 38, 35, 40, 45, 50, 60, 58, 55, 50, 45, 42, 40, 38, 35, 40, 45, 50, 60],
+        backgroundColor: "rgba(255, 205, 86, 0.2)",
+        borderColor: "rgba(255, 205, 86, 1)",
+        borderWidth: 1,
+        fill: true,
+      },
+    ],
+  };
+  
+
+  const cropData = {
+    labels: ["Rice", "Wheat", "Maize", "Sugarcane", "Cotton", "Barley", "Soybean", "Potatoes", "Tomatoes", "Oranges", "Bananas", "Apples"],
+    datasets: [
+      {
+        label: "Crop Distribution",
+        data: [20, 30, 15, 10, 25, 18, 22, 12, 9, 35, 28, 20],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 205, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+          "rgba(255, 0, 255, 0.2)",
+          "rgba(255, 192, 203, 0.2)",
+          "rgba(0, 255, 0, 0.2)",
+          "rgba(255, 165, 0, 0.2)",
+          "rgba(255, 255, 0, 0.2)",
+          "rgba(255, 0, 0, 0.2)"
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 205, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+          "rgba(255, 0, 255, 1)",
+          "rgba(255, 192, 203, 1)",
+          "rgba(0, 255, 0, 1)",
+          "rgba(255, 165, 0, 1)",
+          "rgba(255, 255, 0, 1)",
+          "rgba(255, 0, 0, 1)"
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+  
+  // Scatter plot data
+const scatterData = {
+    datasets: [{
+      label: 'Product Rating vs. Price',
+      data: [{
+          x: 10,
+          y: 20
+        },
+        {
+          x: 15,
+          y: 10
+        },
+        {
+          x: 20,
+          y: 30
+        },
+        {
+          x: 25,
+          y: 15
+        },
+        {
+          x: 30,
+          y: 25
+        },
+        {
+          x: 35,
+          y: 20
+        },
+        {
+          x: 40,
+          y: 35
+        }
+      ],
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 1
+    }]
+  };
+  
+  // Scatter plot options
+  const scatterOptions = {
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'X Axis'
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Y Axis'
+        }
+      }
+    }
+  };
+  
+ // Line chart data
+const lineData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+    datasets: [{
+      label: 'Monthly Pageviews',
+      data: [500, 1000, 750, 1200, 900, 1500],
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1,
+      fill: false
+    }]
+  };
+  
+  
+  // Line chart options
+  const lineOptions = {
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Month'
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Sales'
+        }
+      }
+    }
+  };
+  
+ 
+    // bar chart
+    var barChart = new Chart(document.getElementById("barChart"), {
+        type: "bar",
+        data: salesData,
+        options: {
+        indexAxis: "x",
+        },
+    });
+
+    // area chart
+    var areaChart = new Chart(document.getElementById("areaChart"), {
+        type: "line",
+        data: tempData,
+        options: {
+        indexAxis: "x",
+        },
+    });
+
+    // pie chart
+    var pieChart = new Chart(document.getElementById("pieChart"), {
+        type: "pie",
+        data: cropData,
+        options: {
+        indexAxis: "x",
+        },
+    });
+    // scatter plot
+const scatterChart = new Chart(document.getElementById("scatterChart"), {
+  type: "scatter",
+  data: scatterData,
+  options: {
+    responsive: true,
+    title: {
+      display: true,
+      text: "Scatter Plot"
+    },
+    scales: {
+      xAxes: [{
+        type: 'linear',
+        position: 'bottom',
+        scaleLabel: {
+          display: true,
+          labelString: 'X Axis Label'
+        }
+      }],
+      yAxes: [{
+        type: 'linear',
+        position: 'left',
+        scaleLabel: {
+          display: true,
+          labelString: 'Y Axis Label'
+        }
+      }]
+    }
+  }
+});
+
+// line chart
+const lineChart = new Chart(document.getElementById("lineChart"), {
+  type: "line",
+  data: lineData,
+  options: {
+    responsive: true,
+    title: {
+      display: true,
+      text: "Line Chart"
+    },
+    scales: {
+      xAxes: [{
+        type: 'time',
+        distribution: 'series',
+        time: {
+          unit: 'month'
+        }
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Y Axis Label'
+        }
+      }]
+    }
+  }
+});
+// Bar chart data
+const barData2 = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    datasets: [{
+      label: 'Crop Production in KGs',
+      data: [1200, 1800, 2200, 1500, 2500, 2100, 1900, 2700, 2300, 2600, 2400, 2000],
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  };
+  
+  // Bar chart options
+  const barOptions2 = {
+    indexAxis: "x",
+  };
+  
+  // Initialize the chart
+  const barChart2 = new Chart(document.getElementById('barChart2'), {
+    type: 'bar',
+    data: barData2,
+    options: barOptions2
+  });
+  
+
+</script>
 {% endblock %}

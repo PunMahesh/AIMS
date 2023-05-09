@@ -1,3 +1,4 @@
+{% load static %}
 <footer class="footer">
     <div class="footer-contact">
         <div class="footer-contact-col">
@@ -27,7 +28,7 @@
                 <h4>Email Us</h4>
             </div>
             <div class="contact-col-content">
-                <p>info@aims.com</p>
+                <p>nepal.aims@gmail.com</p>
             </div>
         </div>
         <div class="v-line"></div>
@@ -46,12 +47,14 @@
                     <p>+977 9818161959</p>
                 </div>
                 <div class="contact-us-btn">
-                    <button>
-                        Contact Us
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
-                    </button>
+                    <a href="{% url 'contactus' %}" >
+                        <button>
+                            Contact Us
+                            <span class="material-symbols-outlined">
+                                arrow_forward
+                            </span>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -67,17 +70,17 @@
             <div class="h-line half"></div>
             <div class="footer-col-content">
                 <p>Kathmandu, Nepal</p>
-                <p>Phone:+977 9819057663</p>
-                <p>Email:info@aims.com</p>
+                <p>Phone: +977 9819057663</p>
+                <p>Email: nepal.aims@gmail.com</p>
                 <span class="social">
                     <a href="#">
-                        <img src="static/assets/images/facebook.png" alt="facebook">
+                        <img src= "{% static 'assets/images/facebook.png' %}" alt="logo"/>
                     </a>
                     <a href="#">
-                        <img src="static/assets/images/instagram.png" alt="instagram">
+                        <img src= "{% static 'assets/images/instagram.png' %}" alt="logo"/>
                     </a>
                     <a href="#">
-                        <img src="static/assets/images/twitter.png" alt="twitter">
+                        <img src= "{% static 'assets/images/twitter.png' %}" alt="logo"/>
                     </a>
                 </span>
             </div>
@@ -88,17 +91,17 @@
             </div>
             <div class="h-line half"></div>
             <div class="footer-col-content">
-                <a href="#">
+                <a href="{% url 'get_article' %}">
                     <span class="footer-link">
                         Blog
                     </span>
                 </a>
-                <a href="#">
+                <a href="{% url 'market' %}">
                     <span class="footer-link">
                         Shop
                     </span>
                 </a>
-                <a href="#">
+                <a href="{% url 'contactus' %}">
                     <span class="footer-link">
                         Contact
                     </span>
@@ -121,6 +124,6 @@
         </div>
     </div>
     <div class="footer-img">
-        <img src="static/assets/images/footer-img.png" alt="">
+        <img src= "{% static 'assets/images/footer-img.png' %}" alt="logo"/>
     </div>
 </footer>

@@ -9,11 +9,54 @@ function getElemById(id) {
 }
 
 nextBtn.forEach((button) => {
-  // console.log ("nextBtn")
   button.addEventListener("click", () => {
-    changeStep("next");
+    if (validateCurrentStep()) {
+      changeStep("next");
+    }  
   });
 });
+
+function validateCurrentStep() {
+  const currentStep = document.querySelector(".step.active");
+  const inputs = currentStep.querySelectorAll("input[required], select[required], input[type='radio'][required]");
+  let isValid = true;
+  inputs.forEach((input) => {
+    if (input.type === "radio") {
+      const name = input.getAttribute("name");
+      const radios = currentStep.querySelectorAll(`input[type='radio'][name='${name}']`);
+      if (!Array.from(radios).some((radio) => radio.checked)) {
+        isValid = false;
+        const error = input.parentElement.querySelector(".error-msg");
+        if (error) {
+          error.textContent = "This field is required";
+        } else {
+          input.insertAdjacentHTML("afterend", '<div class="error-msg">This field is required</div>');
+        }
+      } else {
+        const error = input.parentElement.querySelector(".error-msg");
+        if (error) {
+          error.remove();
+        }
+      }
+    } else {
+      if (!input.value) {
+        isValid = false;
+        const error = input.nextElementSibling;
+        if (error && error.classList.contains("error-msg")) {
+          error.textContent = "This field is required";
+        } else {
+          input.insertAdjacentHTML("afterend", '<div class="error-msg">This field is required</div>');
+        }
+      } else {
+        const error = input.nextElementSibling;
+        if (error && error.classList.contains("error-msg")) {
+          error.remove();
+        }
+      }
+    }
+  });
+  return isValid;
+}
 
 prevBtn.forEach((button) => {
   button.addEventListener("click", () => {
@@ -33,6 +76,7 @@ function changeStep(btn) {
   }
   steps[index].classList.add("active");
 }
+
 
 finishBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -82,3 +126,22 @@ function readURL(input) {
 function isOnlyWhitespace(str) {
   return str.trim().length === 0;
 }
+
+
+// function validateCurrentStep() {
+//   const currentStep = document.querySelector(".step.active");
+//   const inputs = currentStep.querySelectorAll("input[required], select[required]");
+//   let isValid = true;
+//   inputs.forEach((input) => {
+//     if (!input.value) {
+//       isValid = false;
+//       input.insertAdjacentHTML('afterend', '<div class="error-msg">This field is required</div>');
+//     } else {
+//       const error = input.nextElementSibling;
+//       if (error && error.classList.contains("error-msg")) {
+//         error.remove();
+//       }
+//     }   
+//   });
+//   return isValid;
+// }

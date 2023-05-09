@@ -4,36 +4,19 @@
 {% block content_css %}<link rel="stylesheet" href="static/css/blog.css" type="text/css" >{% endblock %}
 
 {% block content %}
-        <section class="blog-section">
+<section class="blog-section">
+{% for article in articles %}
             <div class="blog-details">
-                <img src="/static/assets/images/ag1.png" alt="Blog Image">
-                <h2 class="blog-title">Raise Agriculture Productivity</h2>
-                <p class="blog-excerpt">The Challenge of Sustainable Agriculture The world needs to produce at least 50% more food by 2050 to feed a projected 9 billion people. To help meet this goal, the Bank is working with countries to boost the productivity of farms, livestock and fisheries.</p>
-                <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                <img  src="{{ article.Article_Photo.url }}" alt="Blog Image">
+                <h2 class="blog-title">{{ aricle.ArticleName }}</h2>
+                <p class="blog-excerpt">{{ article.Description }}</p>
+                <div class="read-more-author">
+                <p class="author">Posted By:<br>{{ article.user.first_name }} {{ article.user.last_name }}</p>
+                <a href="{% url 'blog_read_more'%}" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
+                </div>
               </div>
-
-              <div class="blog-details">
-                <img src="/static/assets/images/ag2.png" alt="Blog Image">
-                <h2 class="blog-title">Modern Farmer Improve Their Productivity</h2>
-                <p class="blog-excerpt">Kurwa Nyaroche is among of the farmers at Guta village, Bunda District, Mara Region, who is seeing a big difference in his agricultural productivity after received a support from Millenium Development.</p>
-                <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
-              </div>
-
-              <div class="blog-details">
-                <img src="/static/assets/images/ag3.png" alt="Blog Image">
-                <h2 class="blog-title">Sustainable Agriculture Technique</h2>
-                <p class="blog-excerpt">The Challenge of Sustainable Agriculture The world needs to produce at least 50% more food by 2050 to feed a projected 9 billion people.</p>
-                <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
-            </div>
-        
-                <div class="blog-details">
-                    <img src="/static/assets/images/ag4.png" alt="Blog Image">
-                    <h2 class="blog-title">An IT Revolution in Farming</h2>
-                    <p class="blog-excerpt">Kurwa Nyaroche is among of the farmers at Guta village, Bunda District, Mara Region, who is seeing a big difference in his agricultural productivity.</p>
-                    <a href="#" class="read-more">Read More <i class="fa fa-arrow-right"></i></a>
-                  </div>
-        
-              </section> 
+              {% endfor %}
+            </section> 
           
           
 {% endblock %}
