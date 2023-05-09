@@ -1,5 +1,7 @@
 from django.db import models
 from accounts.models import User
+from django.core.validators import RegexValidator
+
 
 # Create your models here.
 
@@ -12,8 +14,8 @@ class Farmer_KYC(models.Model):
     MaritualStatus = models.CharField(max_length=50)
     Dob = models.DateField()
     Nationality = models.CharField(max_length=225)
-    Citizenship = models.IntegerField(default=0)
-    Passport = models.IntegerField(default=0)
+    Citizenship = models.CharField(validators=[RegexValidator(r'^\d+(-\d+)*$')], max_length=20)
+    Passport = models.CharField(validators=[RegexValidator(r'^\d+(-\d+)*$')], max_length=20)
     Residential = models.CharField(max_length=50)
     FatherName = models.CharField(max_length=225)
     MotherName = models.CharField(max_length=225)
