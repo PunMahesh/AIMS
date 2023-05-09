@@ -56,22 +56,22 @@
   
         <div class="chart-container">
           <!-- bar chart -->
-          <div class="chart">
+          <div class="chart barChart">
             <h2 class="chart-title">Sales per Month</h2>
             <canvas id="barChart"></canvas>
           </div>
   
           <!-- area chart -->
           <div class="chart">
-            <h2 class="chart-title">Temperature and Humidity</h2>
-            <canvas id="areaChart"></canvas>
-          </div>
+              <h2 class="chart-title">Temperature and Humidity</h2>
+              <canvas id="areaChart"></canvas>
+            </div>
+            <!-- pie chart -->
+            <div class="chart">
+              <h2 class="chart-title">Crop Distribution</h2>
+              <canvas id="pieChart"></canvas>
+            </div>
   
-          <!-- pie chart -->
-          <div class="chart">
-            <h2 class="chart-title">Crop Distribution</h2>
-            <canvas id="pieChart"></canvas>
-          </div>
             <!-- scatter plot -->
             <div class="chart">
               <h2 class="chart-title">Product Rating vs. Price</h2>
@@ -83,14 +83,11 @@
               <h2 class="chart-title">Website Traffic</h2>
               <canvas id="lineChart"></canvas>
             </div>
-          
-            <!-- heat map -->
-            <div class="chart">
-              <h2 class="chart-title">Employee Attendance</h2>
-              <canvas id="heatMap"></canvas>
-            </div>
-          
-          
+          <!-- bar chart -->
+          <div class="chart">
+            <h2 class="chart-title">Total Crop Production per Month</h2>
+            <canvas id="barChart2"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -182,7 +179,7 @@
   // Scatter plot data
 const scatterData = {
     datasets: [{
-      label: 'Scatter Dataset',
+      label: 'Product Rating vs. Price',
       data: [{
           x: 10,
           y: 20
@@ -236,17 +233,18 @@ const scatterData = {
     }
   };
   
-  // Line chart data
-  const lineData = {
+ // Line chart data
+const lineData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June'],
     datasets: [{
-      label: 'Line Dataset',
-      data: [100, 200, 150, 300, 250, 400],
+      label: 'Monthly Pageviews',
+      data: [500, 1000, 750, 1200, 900, 1500],
       borderColor: 'rgba(255, 99, 132, 1)',
       borderWidth: 1,
       fill: false
     }]
   };
+  
   
   // Line chart options
   const lineOptions = {
@@ -351,7 +349,30 @@ const lineChart = new Chart(document.getElementById("lineChart"), {
     }
   }
 });
-
+// Bar chart data
+const barData2 = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    datasets: [{
+      label: 'Crop Production in KGs',
+      data: [1200, 1800, 2200, 1500, 2500, 2100, 1900, 2700, 2300, 2600, 2400, 2000],
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1
+    }]
+  };
+  
+  // Bar chart options
+  const barOptions2 = {
+    indexAxis: "x",
+  };
+  
+  // Initialize the chart
+  const barChart2 = new Chart(document.getElementById('barChart2'), {
+    type: 'bar',
+    data: barData2,
+    options: barOptions2
+  });
+  
 
 </script>
 {% endblock %}
