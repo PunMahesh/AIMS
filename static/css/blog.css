@@ -44,7 +44,7 @@
   display: block;
   width: 150px;
   height: 50px;
-  margin: 0 auto;
+  margin: 0;
   background-color: #43a54c;
   color: #ffffff;
   text-align: center;
@@ -59,4 +59,7 @@
   background-color: #2f7d3c;
 }
 
-
+.read-more-author{
+  display: flex;
+  justify-content: space-around;
+}
