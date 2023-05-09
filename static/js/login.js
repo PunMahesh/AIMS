@@ -87,58 +87,27 @@ function checkPasswordForSpecialCharacter(password) {
 }
 
 function validatePassword() {
-    passwordInputField.addEventListener('input', () => {
-        passwordIsValid = false;
-        if (passwordInputField.value === '') {
-            passwordError.textContent = 'Password is required';
-            submitBtn.setAttribute('disabled', '');
-            return;
-        }
-        // if(passwordInputField.value.length < 8) {
-        //     passwordError.textContent = 'Password must be at least 8 characters';
-        //     submitBtn.setAttribute('disabled', '');
-        //     return;
-        // }
-        // if(!checkPasswordForUppercase(passwordInputField.value)) {
-        //     passwordError.textContent = 'Password must contain at least one uppercase letter';
-        //     submitBtn.setAttribute('disabled', '');
-        //     return;
-        // }
-        // if(!checkPasswordForNumber(passwordInputField.value)) {
-        //     passwordError.textContent = 'Password must contain at least a number';
-        //     submitBtn.setAttribute('disabled', '');
-        //     return;
-        // }
-        // if(!checkPasswordForSpecialCharacter(passwordInputField.value)) {
-        //     passwordError.textContent = 'Password must contain at least a special character';
-        //     submitBtn.setAttribute('disabled', '');
-        //     return;
-        // }
-        passwordError.textContent = '';
-        passwordIsValid = true;
-        if (usernameIsValid) {
-            submitBtn.removeAttribute('disabled');
-        }    passwordIsValid = false;
+    passwordIsValid = false;
     if (passwordInputField.value === '') {
         passwordError.textContent = 'Password is required';
         submitBtn.setAttribute('disabled', '');
         return;
     }
-    if(passwordInputField.value.length < 8) {
-        passwordError.textContent = 'Password must be at least 8 characters';
-        submitBtn.setAttribute('disabled', '');
-        return;
-    }
-    if(!checkPasswordForUppercase(passwordInputField.value)) {
-        passwordError.textContent = 'Password must contain at least one uppercase letter';
-        submitBtn.setAttribute('disabled', '');
-        return;
-    }
-    if(!checkPasswordForNumber(passwordInputField.value)) {
-        passwordError.textContent = 'Password must contain at least a number';
-        submitBtn.setAttribute('disabled', '');
-        return;
-    }
+    // if(passwordInputField.value.length < 8) {
+    //     passwordError.textContent = 'Password must be at least 8 characters';
+    //     submitBtn.setAttribute('disabled', '');
+    //     return;
+    // }
+    // if(!checkPasswordForUppercase(passwordInputField.value)) {
+    //     passwordError.textContent = 'Password must contain at least one uppercase letter';
+    //     submitBtn.setAttribute('disabled', '');
+    //     return;
+    // }
+    // if(!checkPasswordForNumber(passwordInputField.value)) {
+    //     passwordError.textContent = 'Password must contain at least a number';
+    //     submitBtn.setAttribute('disabled', '');
+    //     return;
+    // }
     // if(!checkPasswordForSpecialCharacter(passwordInputField.value)) {
     //     passwordError.textContent = 'Password must contain at least a special character';
     //     submitBtn.setAttribute('disabled', '');
@@ -150,7 +119,7 @@ function validatePassword() {
         submitBtn.removeAttribute('disabled');
     }
     return;
-});
+};
 passwordInputField.addEventListener('input', () => {
     validatePassword();
     if (usernameInputField.value !== '') {
@@ -170,4 +139,3 @@ loginForm.addEventListener('submit', (e) => {
         loginForm.submit();
     }
 });
-}
