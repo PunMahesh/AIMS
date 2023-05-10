@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
 from .models import User
 
-
 # check if string is email
 def is_email(string):
     if '@' in string:
@@ -129,3 +128,4 @@ def home_view(request):
 
 def success(request):
     return render(request, 'success.html')
+
