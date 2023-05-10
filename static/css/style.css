@@ -76,7 +76,7 @@
     margin-bottom: 14px;
     gap: 20px;
 }
-.shop-now-btn > button {
+.shop-now-btn > a > button {
     border: none;
     width: 170px;
     height: 48px;
@@ -91,10 +91,13 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.shop-now-btn > button:active {
+.shop-now-btn > a{
+    text-decoration: none;
+}
+.shop-now-btn > a > button:active {
     transform: scale(0.97);
 }
-.shop-now-btn > button > span {
+.shop-now-btn > a > button > span {
     color: inherit;
 }
 
@@ -201,7 +204,7 @@
     letter-spacing: 2px;
 }
 
-.learn-more-btn > button {
+.learn-more-btn > a > button {
     border: none;
     width: 160px;
     height: 48px;
@@ -216,10 +219,13 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.learn-more-btn > button:active {
+.learn-more-btn > a{
+    text-decoration: none;
+}
+.learn-more-btn > a > button:active {
     transform: scale(0.97);
 }
-.learn-more-btn > button > span {
+.learn-more-btn > a > button > span {
     color: inherit;
 }
 
