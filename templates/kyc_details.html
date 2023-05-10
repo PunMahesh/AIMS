@@ -1,127 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
     {% load custom_filters %}
-  <head>
-    <meta charset="utf-8">
-    <title>AIMS | PDF</title>
-  </head>
-  <body>
-    <form method="POST" action = "{% url 'generate_pdf' %}">
-        {% csrf_token %}
-    <div><h2>A. Personal Information: </h2></div>
-    <div>
-        <label for="first_name">Name: </label>
-        {{ farmer_kyc.first_name }} {{ farmer_kyc.MiddleName }} {{ farmer_kyc.Last_name }}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/kyc_details.css">
+    <title>KYC Form</title>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action = "{% url 'generate_pdf' %}">
+            {% csrf_token %}
+            <div class="step step-5 confirm-details">
+                <div class="header">
+                    <div class="form-name"><h1>KYC Form</h1></div>
+                </div>
+                <div class="title">
+                    <div class="form-section"><span>Personal Information</span></div>
+                </div>
+                <div class="flex">
+                    <div class="left-half">
+                        <div class="form-container confirm-details-form-container">
+                            <div class="form-body">
+                                <div class="profile-pic">
+                                    {% if farmer_kyc.PassportPhoto %}
+                                    <img src="{{ farmer_kyc.PassportPhoto.url }}" alt="{{ farmer_kyc.PassportPhoto }}">
+                                {% endif %}                        
+                            </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Name</h3>
+                                            {{ farmer_kyc.first_name }} {{ farmer_kyc.MiddleName }} {{ farmer_kyc.Last_name }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Date of Birth</h3>
+                                            {{ farmer_kyc.Dob }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Gender</h3>
+                                            {{ farmer_kyc.Gender }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Marital Status</h3>
+                                            {{ farmer_kyc.MaritualStatus }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Nationality</h3>
+                                            {{ farmer_kyc.Nationality }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Residential Status</h3>
+                                            {{ farmer_kyc.Residential }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            <div class="right-half">
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Citizenship No.</h3>
+                                            {{ farmer_kyc.Citizenship }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Passport No.</h3>
+                                            {{ farmer_kyc.Passport }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Father's Name</h3>
+                                            {{ farmer_kyc.FatherName }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Mother's Name</h3>
+                                            {{ farmer_kyc.MotherName }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Grandfather's Name</h3>
+                                            {{ farmer_kyc.GrandfatherName }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Grandmother's Name</h3>
+                                            {{ farmer_kyc.GrandMotherName }}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                        <div class="lower">
+                            <div class="bottom">
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Spouse's Name</h3>
+                                            {{ farmer_kyc.SpouseName }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Son's Name</h3>
+                                            {{ farmer_kyc.SonName }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Daughter's Name</h3>
+                                            {{ farmer_kyc.DaughterName }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Country</h3>
+                                            {{ farmer_kyc.Country }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Province</h3>
+                                            {{ farmer_kyc.Province }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">District</h3>
+                                            {{ farmer_kyc.District }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Rural Municipality/Municipality</h3>
+                                            {{ farmer_kyc.Municipality }}
+                                        </div>
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Ward No.</h3>
+                                            {{ farmer_kyc.WardNo }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row-main render">
+                                    <div class="form-row render-only">
+                                        <div class="form-field render-data">
+                                            <h3 class="label">Street/Village</h3>
+                                            {{ farmer_kyc.Street }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="bottom-right">
+                            <div>
+                                <br><label for="front_Pic">Front of Document: </label><br/>
+                                {% if farmer_kyc.FrontPic %}
+                                    <img class="front" src="{{ farmer_kyc.FrontPic.url }}" alt="{{ farmer_kyc.FrontPic }}">
+                                {% endif %}
+                            </div>
+                            <div>
+                                <br><label for="front_Pic">Back of Document: </label><br/>
+                                {% if farmer_kyc.BackPic %}
+                                    <img class="back" src="{{ farmer_kyc.BackPic.url }}" alt="{{ farmer_kyc.BackPic }}">
+                                {% endif %}
+                            </div>
+                            
+                        </div>
+                    </div>
+                                
+                </div>
+            </div>
+            <div>
+                <button type="submit">Download PDF</button>
+            </div>
+        </form>
     </div>
-    <div>
-        <label class="label">Gender: </label>
-        {{ farmer_kyc.Gender }}
-    </div>
-    <div>
-        <label class="label">Marital Status: </label>
-        {{ farmer_kyc.MaritualStatus }}
-    </div>
-    <div>
-        <label class="label" for="dob">Date of Birth: </label>
-        {{ farmer_kyc.Dob }}
-    </div>
-    <div>
-        <label class="label" for="nationality">Nationality: </label>
-        {{ farmer_kyc.Nationality }}
-    </div>
-    <div>
-        <label class="label" for="citizenship">Citizenship No.: </label>
-        {{ farmer_kyc.Citizenship }}
-    </div>
-    <div>
-        <label class="label" for="passport">Passport No.: </label>
-        {{ farmer_kyc.Passport }}
-    </div>
-    <div>
-        <label class="label">Residential Status: </label>
-        {{ farmer_kyc.Residential }}
-    </div>
-<div><h2>B. Family Information: </h2></div>
-    <div>
-        <label class="label" for="father">Father's Name: </label>
-        {{ farmer_kyc.FatherName }}
-    </div>
-    <div>
-        <label class="label" for="mother">Mother's Name: </label>
-        {{ farmer_kyc.MotherName }}
-    </div>
-    <div>
-        <label class="label" for="grandfather">Grandfather's Name: </label>
-        {{ farmer_kyc.GrandfatherName }}
-    </div>
-    <div>
-        <label class="label" for="grandmother">Grandmother's Name: </label>
-        {{ farmer_kyc.GrandMotherName }}
-    </div>
-    <div>
-        <label class="label" for="spouse">Spouse's Name: </label>
-        {{ farmer_kyc.SpouseName }}
-    </div>
-    <div>
-        <label class="label" for="son">Sons's Name: </label>
-        {{ farmer_kyc.SonName }}
-    </div>
-    <div>
-        <label class="label" for="daughter">Daughter's Name: </label>
-        {{ farmer_kyc.DaughterName }}
-    </div>
-    <div><h2>C. Address Details: </h2></div>
-    <div>
-        <label class="label" for="country">Country: </label>
-        {{ farmer_kyc.Country }}
-    </div>
-    <div>
-        <label class="label" for="province">Province: </label>
-        {{ farmer_kyc.Province }}
-    </div>
-    <div>
-        <label class="label" for="district">District: </label>
-        {{ farmer_kyc.District }}
-    </div>
-    <div>
-        <label class="label" for="municipality">Rural Municipality/ Municipality: </label>
-        {{ farmer_kyc.Municipality }}
-    </div>
-    <div>
-        <label class="label" for="ward_no">Ward No.: </label>
-        {{ farmer_kyc.WardNo }}
-    </div>
-    <div>
-        <label class="label" for="street">Street/Village: </label>
-        {{ farmer_kyc.Street }}
-    </div>
-    <div><h2>D. Documents: </h2></div>
-    <div>
-        <label for="citizenship_doc">Documentation Type: </label>
-        {{ farmer_kyc.CitizenProof }}
-    </div>
-    <div>
-        <br><label for="front_Pic">Passport Size Photo: </label><br/>
-        {% if farmer_kyc.PassportPhoto %}
-            <img src="{{ farmer_kyc.PassportPhoto.url }}" alt="{{ farmer_kyc.PassportPhoto }}">
-        {% endif %}
-
-    </div>
-    <div>
-        <br><label for="front_Pic">Front of Document: </label><br/>
-        {% if farmer_kyc.FrontPic %}
-            <img src="{{ farmer_kyc.FrontPic.url }}" alt="{{ farmer_kyc.FrontPic }}">
-        {% endif %}
-    </div>
-    <div>
-        <br><label for="front_Pic">Back of Document: </label><br/>
-        {% if farmer_kyc.BackPic %}
-            <img src="{{ farmer_kyc.BackPic.url }}" alt="{{ farmer_kyc.BackPic }}">
-        {% endif %}
-    </div>
-    <div>
-        <button type="submit">Download PDF</button>
-    </div>
-</form>
-  </body>
+</body>
 </html>

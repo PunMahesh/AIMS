@@ -129,14 +129,19 @@ passwordInputField.addEventListener('input', () => {
     validatePassword();
     if (usernameInputField.value !== '') {
         validateUsername();
-        validatePassword();
     };
+});
 
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        validateLogin();
-        if (usernameIsValid && passwordIsValid) {
-            loginForm.submit();
-        }
-    }); 
-}
+const validateLogin = () => {
+    validateUsername();
+    validatePassword();
+};
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validateLogin();
+    if (usernameIsValid && passwordIsValid) {
+        loginForm.submit();
+    }
+});
+

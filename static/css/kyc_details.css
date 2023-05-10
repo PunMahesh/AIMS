@@ -1,0 +1,53 @@
+.profile-pic {
+    position: absolute;
+    right: 50px;
+}
+
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+}
+
+.flex{
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: space-around; 
+    position: relative;
+}
+.left-half{
+    width:45%;
+}
+.right-half{
+    width:45%;
+}
+.bottom,.bottom-right{
+    width: 45%;
+}
+.front,.back{
+    margin-top: 30px;
+    width: 500px;
+}
+label{
+    font: 30px;
+    font-weight: 700;
+}
+.lower{
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: space-around;
+}
+button{
+    margin-top: 30px;
+    width: 200px;
+    height: 50px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+}
+button:hover{
+    background-color: #45a049;
+    cursor: pointer;
+}
