@@ -1,7 +1,6 @@
 
 .fifth-first-col {
     width: 650px;
-    margin-left: 70px;
     height: 220vh;
 }
 
@@ -11,6 +10,7 @@
     font-weight: lighter;
     font-size: 14px;
     color: black;
+    text-align: center;
 }
 
 .fifth-first-col-article-text > h3 {

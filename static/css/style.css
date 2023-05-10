@@ -91,9 +91,7 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.shop-now-btn > a{
-    text-decoration: none;
-}
+
 .shop-now-btn > a > button:active {
     transform: scale(0.97);
 }
@@ -219,9 +217,7 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.learn-more-btn > a{
-    text-decoration: none;
-}
+
 .learn-more-btn > a > button:active {
     transform: scale(0.97);
 }
@@ -275,7 +271,7 @@
     margin: 0 0 40px 80px;
 
 }
-.view-product-btn > button {
+.view-product-btn > a > button {
     border: none;
     width: 190px;
     height: 55px;
@@ -290,11 +286,14 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.view-product-btn > button:active {
+.view-product-btn > a > button:active {
     transform: scale(0.97);
 }
-.view-product-btn > button > span {
+.view-product-btn > a > button > span {
     color: inherit;
+}
+a{
+    text-decoration: none;
 }
 
 /*Fourth Content Styles*/
@@ -345,7 +344,7 @@
     letter-spacing: 1px;
 }
 
-.card-btn > button {
+.card-btn > a > button {
     border: none;
     display: flex;
     align-items: center;
@@ -356,9 +355,10 @@
     font-weight: 600;
     cursor: pointer;
 }
-.card-btn > button:active {
+.card-btn > a > button:active {
     transform: scale(0.99);
 }
+
 
 .fourth-content-images {
     display: flex;
@@ -482,7 +482,7 @@
     margin: 10px;
     width: 600px;
 }
-.learn-more-btn > button {
+.learn-more-btn > a > button {
     border: none;
     width: 210px;
     height: 55px;
@@ -498,10 +498,10 @@
     letter-spacing: 1px;
     margin-left: 345px;
 }
-.learn-more-btn > button:active {
+.learn-more-btn > a > button:active {
     transform: scale(0.97);
 }
-.learn-more-btn > button > span {
+.learn-more-btn > a > button > span {
     color: inherit;
 }
 

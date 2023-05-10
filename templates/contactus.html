@@ -23,7 +23,7 @@
 
 <div class="send-message">
 <h2>Send a Message</h2>
-<form action="#" method="post">
+<form action="./sumbit" method="post">
   {% csrf_token %}
   <div class="upper-half">
     <div class="form-group half-display">
@@ -54,10 +54,10 @@
     $(document).ready(function(){
       $('form').submit(function(e){
         e.preventDefault();
-        $('success-msg').display('block');
-        $('.success-msg').fadeIn().delay(3000).fadeOut();
+        $('.success-msg').css("display", "block");
       });
     });
+  </script>
 </form>
 </div>
 </div>

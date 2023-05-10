@@ -83,8 +83,9 @@ button{
   margin-left: 20px;
   cursor: pointer;
 }
-.success-msg {
+.success-msg p {
   display: none;
-  margin: 0 0 -20px 20px;
+  margin: -20px 0 20px  20px;
   color: #266B50;
+  font-size: 16px;
 }
