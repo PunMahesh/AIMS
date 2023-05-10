@@ -42,9 +42,9 @@ function validateUsername() {
         submitBtn.setAttribute('disabled', '');
         return;
     }
-    if(checkForAtSign(usernameInputField.value)) {
+    if (checkForAtSign(usernameInputField.value)) {
         usernameLabel.textContent = 'Email';
-        if(!validateEmail(usernameInputField.value)) {
+        if (!validateEmail(usernameInputField.value)) {
             usernameError.textContent = 'Invalid Email';
             submitBtn.setAttribute('disabled', '');
             return;
@@ -144,3 +144,4 @@ loginForm.addEventListener('submit', (e) => {
         loginForm.submit();
     }
 });
+

@@ -1,6 +1,6 @@
 {% extends "base/homebase.html" %}
 
-{% block title %}AIMS | HOME{% endblock %}
+{% block title %}Home{% endblock %}
 {% block content_css %}<link rel="stylesheet" href="static/css/style.css" type="text/css" >{% endblock %}
 
 {% block content %}
@@ -37,14 +37,12 @@
                     </a>
                 </div>
                 <div class="register-here-btn">
-                    <a href="{% url 'registrationpage'%}">
-                    <button>
+                    <button onclick="goToRegister()">
                         Register Here
                         <span class="material-symbols-outlined">
                             arrow_forward
                         </span>
                     </button>
-                </a>
                 </div>
             </div>
         </div>
@@ -81,11 +79,9 @@
             </div>
         </div>
         <div class="second-content-video">
-            <div class="second-content-video">
-                <!-- <img src="static/assets/images/Video.png" alt="video"> -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Vu1LCN8RcjU" title="YouTube video player" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
+            <!-- <img src="static/assets/images/Video.png" alt="video"> -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Vu1LCN8RcjU" title="YouTube video player" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
     <div class="third-content">
@@ -109,14 +105,12 @@
         </div>
         <div class="third-content-button">
             <div class="view-product-btn">
-                <a href="{% url 'market'%}" >
                 <button>
-                        View Product
-                        <span class="material-symbols-outlined">
-                            arrow_forward
-                        </span>
-                    </button>
-                </a>
+                    View Product
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
+                </button>
             </div>
         </div>
     </div>
@@ -218,14 +212,12 @@
         <div class="fifth-second-col">
             <div class="second-col-btn">
                 <div class="learn-more-btn">
-                    <a href="{% url 'get_article' %}">
                     <button>
                         Learn More
                         <span class="material-symbols-outlined">
                             arrow_forward
                         </span>
                     </button>
-                    </a>
                 </div>
             </div>
             <div class="second-col-articles">

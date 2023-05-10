@@ -45,24 +45,24 @@
 
 .first-header > h3 {
     font-size: 32px;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: black;
     font-weight: bold;
 }
 
 .second-header > h4 {
     font-size: 28px;
-    letter-spacing: 7px;
+    letter-spacing: 5px;
     color: black;
     font-weight: bold;
 }
 
 .text-detail {
-    margin: 20px 0 20px 0;
+    /* margin: 10px 0 10px 0; */
     width: 500px;
 }
 .text-detail > p {
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     font-size: 18px;
     color: black;
     text-align: justify;
@@ -76,7 +76,7 @@
     margin-bottom: 14px;
     gap: 20px;
 }
-.shop-now-btn > a > button {
+.shop-now-btn > button {
     border: none;
     width: 170px;
     height: 48px;
@@ -91,16 +91,14 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.shop-now-btn > a > button:active {
+.shop-now-btn > button:active {
     transform: scale(0.97);
 }
-.shop-now-btn > a > button > span {
+.shop-now-btn > button > span {
     color: inherit;
 }
-.shop-now-btn > a {
-    text-decoration: none;
-}
-.register-here-btn > a > button {
+
+.register-here-btn > button {
     border: none;
     width: 180px;
     height: 48px;
@@ -115,10 +113,10 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.register-here-btn > a > button:active {
+.register-here-btn > button:active {
     transform: scale(0.97);
 }
-.register-here-btn > a > button > span {
+.register-here-btn > button > span {
     color: inherit;
 }
 
@@ -271,7 +269,7 @@
     margin: 0 0 40px 80px;
 
 }
-.view-product-btn > a > button {
+.view-product-btn > button {
     border: none;
     width: 190px;
     height: 55px;
@@ -286,14 +284,11 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.view-product-btn > a > button:active {
+.view-product-btn > button:active {
     transform: scale(0.97);
 }
-.view-product-btn > a > button > span {
+.view-product-btn > button > span {
     color: inherit;
-}
-.view-product-btn > a {
-    text-decoration: none;
 }
 
 /*Fourth Content Styles*/
@@ -481,7 +476,7 @@
     margin: 10px;
     width: 600px;
 }
-.learn-more-btn > a > button {
+.learn-more-btn > button {
     border: none;
     width: 210px;
     height: 55px;
@@ -497,16 +492,13 @@
     letter-spacing: 1px;
     margin-left: 345px;
 }
-.learn-more-btn > a > button:active {
+.learn-more-btn > button:active {
     transform: scale(0.97);
 }
-.learn-more-btn > a > button > span {
+.learn-more-btn > button > span {
     color: inherit;
 }
 
-.learn-more-btn > a {
-    text-decoration: none;
-}
 .second-col-articles {
     display: flex;
     flex-direction: column;

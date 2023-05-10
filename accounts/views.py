@@ -9,7 +9,6 @@ from django.contrib.auth import update_session_auth_hash
 
 
 
-
 # check if string is email
 def is_email(string):
     if '@' in string:
