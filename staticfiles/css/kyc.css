@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 30px 0 30px;
+}
+.form-name  span {
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.page-counter {
+    color: rgb(92, 92, 92);
+}
+
+.title {
+    background-color:#266B50;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.form-section {
+    margin-left: 50px;
+}
+.form-section > span {
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Hide all steps by default: */
+.step {
+    display: none;
+}
+.step.active {
+    display: block;
+    position: relative;
+}
+
+.form-container {
+    width: 70%;
+    border: 1px solid black;
+    padding: 15px;
+    /* height: 630px; */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 250px;
+    top: 130px;
+}
+
+.form-body {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.profile-pic {
+    position: absolute;
+    right: 50px;
+}
+
+.section-title {
+    margin: 5px 0 20px 0
+}
+.section-title > span {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.label {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.form-row-main {
+    margin-bottom: 30px;
+}
+.form-row-main.render {
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.form-row.render-only {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 1000px;
+}
+
+.form-field {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form-field.render-data {
+    gap: 1px;
+    width: 50%;
+}
+.render-data > .label {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.render-data > p > .field-value {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.form-field input {
+    height: 40px;
+    width: 90%;
+    background-color: rgb(229, 253, 245);
+    border: 1px solid gray;
+    padding: 10px;
+}
+.form-field input:focus {
+    border: 2px solid gray;
+}
+.form-field input[type="radio"] {
+    height: auto;
+    width: auto;
+}
+.radio-options {
+    display: flex;
+    gap: 15px;
+}
+.option-radio {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px
+}
+.option-radio > input {
+    order: 1
+}
+.option-radio > label {
+    order: 2;
+}
+
+.next-prev-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.single {
+    justify-content: flex-end;
+}
+
+.next-btn {
+    border: none;
+    background-color: #266B50;
+    height: 40px;
+    width: 150px;
+    border-radius: 7px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.next-btn:active {
+    transform: scale(0.96);
+}
+
+.prev-btn {
+    border: none;
+    background-color: #266B50;
+    height: 40px;
+    width: 150px;
+    border-radius: 7px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.prev-btn:active {
+    transform: scale(0.96);
+}
+
+
+.form-row.reverse {
+    flex-direction: column;
+    gap: 20px
+}
+
+.form-field.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.form-field.row label {
+    width: 20%;
+}
+
+.form-field.row input {
+    width: 60%;
+}
+
+/* Style the error message for the radio button */
+.error-msg {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #d00;
+  }

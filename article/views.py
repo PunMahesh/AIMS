@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Article
-from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
+@login_required
 def add_article(request):
     if request.method == "POST":
         user = request.user
@@ -15,6 +17,7 @@ def add_article(request):
         return redirect("Article_added")
     return render(request, 'article.html')
 
+@login_required
 def get_article(request):
     articles = Article.objects.all()
     context = {'articles': articles}

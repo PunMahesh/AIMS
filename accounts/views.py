@@ -9,6 +9,7 @@ from django.contrib.auth import update_session_auth_hash
 
 
 
+
 # check if string is email
 def is_email(string):
     if '@' in string:
@@ -144,40 +145,5 @@ def PasswordChangeView(request):
     context = {'user': user}
     return render(request, 'password_change.html', context)
 
-@login_required
-def password_change(request):
-    if request.method == 'POST':
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        email = request.POST.get('email')
-        old_password = request.POST.get('old_password')
-        new_password1 = request.POST.get('new_password1')
-        new_password2 = request.POST.get('new_password2')
-
-        user = request.user
-
-        # Update user details
-        if first_name:
-            user.first_name = first_name
-        if last_name:
-            user.last_name = last_name
-        if email:
-            user.email = email
-
-        # Update password
-        if old_password and new_password1 and new_password2:
-            if user.check_password(old_password):
-                if new_password1 == new_password2:
-                    user.set_password(new_password1)
-                    update_session_auth_hash(request, user)  # Important!
-                    messages.success(request, 'Your password was successfully updated!')
-                else:
-                    messages.error(request, 'The new passwords did not match.')
-            else:
-                messages.error(request, 'Your old password was entered incorrectly.')
-
-        user.save()
-
-    return render(request, 'password_change.html')
-
-    
+def custom_404(request, exception=None):
+    return render(request, 'error.html', status=404)

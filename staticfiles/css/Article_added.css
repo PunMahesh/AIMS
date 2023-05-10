@@ -1,0 +1,63 @@
+.article-box {
+    border: 1px solid #F0F0F0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    margin: 100px;
+    width: 300;
+    border-top-color: #43A54C;
+    border-top-width: 3px;
+  }
+  
+  .tick-container {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #43A54C;
+    margin-bottom: 25px;
+  }
+  
+  .tick {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    
+  }
+  
+  .tick-mark {
+   
+    background-color: #43A54C;
+    color: #FFFFFF;
+  }
+  
+  
+  
+  h2 {
+    color: #43A54C;
+    font-size: 24px;
+    margin-bottom: 25px;
+  
+  }
+  
+  
+  .continue-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #43A54C;
+    color: #FFFFFF;
+    width: 150px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .continue-btn:hover {
+    background-color: #2C7D3F;
+  }

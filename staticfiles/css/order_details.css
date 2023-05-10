@@ -1,0 +1,123 @@
+.contact-container{
+    height: 590px;
+  }
+  .contact-sidebar{
+      position: absolute;
+      left: 59px;
+      top:100px;
+      height: 590px;
+      width: 316px;
+      background-color: #266B50;
+  }
+  
+  .contact-sidebar h4{
+      color: white;
+      padding: 20px 0 20px 20px;
+      border-bottom: 1px solid white;
+  }
+ .change-heading{
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: underline #266B50; 
+    margin: 0;
+    padding: 0 0 20px 20px;
+ }
+  .contact-sidebar li{
+    padding: 20px 0 20px 39px;
+    list-style: none;
+  }
+  .contact-sidebar li span{
+    color: white;
+    font-size: 20px;
+    vertical-align: top;
+    margin: 5px 0 0 10px;
+  }
+  
+  .send-message{
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    height: 70vh;
+    width: 800px;
+    padding-top:10px ;
+  }
+  .send-message h2{
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px 0 20px 20px;
+  }
+  .form-group{
+    display: flex;
+    flex-direction: column;
+  }
+  .upper-half{
+    display: flex;
+    justify-content: space-between;
+  }
+  .half-display {
+    width: 40%;
+  }
+  label{
+    font-size: 16px;
+    padding: 0 0 0 20px;
+  }
+  input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #266B50;
+    padding: 0 0 0 10px;
+    margin: 20px 0 20px 20px; ;
+    
+  }
+ 
+  button{
+    width: 150px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 20px;
+    cursor: pointer;
+    border: none;
+  }
+  h3{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 20px 0 10px  20px;
+  }
+  .password-field {
+    position: relative;
+  }
+  .view-show {
+    width: 28px;
+    content: url("../assets/images/eye_show.svg");
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 44px;
+    right: -11px;
+    cursor: pointer;
+  }
+  .view-hide {
+    width: 28px;
+    content: url("../assets/images/eye_hide.svg");
+    border-radius: 50%;
+    padding: 5px;
+    position: absolute;
+    top: 44px;
+    right: -11px;
+    cursor: pointer;
+  }
+  .error-msg{
+    color: red;
+    margin: -10px 0 10px 20px;
+    font-size: 12px;
+  }
+  #first-name,#last-name,#email{
+    border: 1px solid #266B50;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    margin: 20px 0 20px 20px;
+   font-size: 16px;
+  }
