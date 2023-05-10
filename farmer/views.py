@@ -169,11 +169,13 @@ def generate_pdf(request):
     # PDF generation succeeded
     return response
 
+
 @login_required
-def kyc_details(request):
+def kyc_detail(request):
     user = request.user.id
 
     # Retrieve the data from the database
     farmer_kyc = get_object_or_404(Farmer_KYC, user_id=user)
     context = {'farmer_kyc': farmer_kyc}
+    print(context)
     return render(request, "kyc_details.html",context)

@@ -10,6 +10,6 @@ urlpatterns = [
     # path("pdf",views.pdf,name='pdf'),
     # path("my_pdf",views.my_pdf,name='my_pdf'),
     path('generate_pdf', views.generate_pdf, name='generate_pdf'),
-    path('kyc_details', views.kyc_details, name='kyc_details'),
+    path('kyc_detail', views.kyc_detail, name='kyc_detail'),
  
 ]

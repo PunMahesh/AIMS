@@ -110,7 +110,7 @@
     <div>
         <br><label for="front_Pic">Front of Document: </label><br/>
         {% if image2_data %}
-        <img src="data:image/{{ farmer_kyc.FrontPic.name|get_file_extension }};base64,{{ image1_data }}" />
+        <img src="data:image/{{ farmer_kyc.FrontPic.name|get_file_extension }};base64,{{ image2_data }}" />
         {% else %}
             <p>No image found</p>
         {% endif %}
@@ -118,7 +118,7 @@
     <div>
         <br><label for="front_Pic">Back of Document: </label><br/>
         {% if image3_data %}
-        <img src="data:image/{{ farmer_kyc.BackPic.name|get_file_extension }};base64,{{ image1_data }}" />
+        <img src="data:image/{{ farmer_kyc.BackPic.name|get_file_extension }};base64,{{ image3_data }}" />
         {% else %}
             <p>No image found</p>
         {% endif %}
