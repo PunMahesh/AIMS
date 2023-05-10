@@ -1,16 +1,17 @@
-{% load static %}
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/Article_added.css' %}">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet" />
-    </head>
-    <body>
+{% extends "base.html" %}
 
-        <div class="article-box">
-            <div class="tick-container">
-                <span class="tick-mark">&#10003;</span>
-              </div>
-            <h2>Article Added</h2>
-            <a href="#" class="continue-btn">Continue</a>
-          </div>
-          </body>
+{% block title %}Article Added{% endblock %}
+{% block content_css %}<link rel="stylesheet" href="static/css/Article_added.css" type="text/css">{% endblock %}
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet" />
+
+
+{% block content %}
+<div class="content">
+  <div class="article-box">
+    <div class="tick-container">
+        <span class="tick-mark">&#10003;</span>
+      </div>
+    <h2>Article Added</h2>
+    <a href="article" class="continue-btn">Continue</a>
+  </div>
+{% endblock %}

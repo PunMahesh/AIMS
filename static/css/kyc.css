@@ -51,7 +51,8 @@ body {
     width: 70%;
     border: 1px solid black;
     padding: 15px;
-    height: 630px;
+    /* height: 630px; */
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -214,8 +215,9 @@ body {
     width: 60%;
 }
 
+/* Style the error message for the radio button */
 .error-msg {
-    color: red;
-    font-size: 12px;
     margin-top: 5px;
+    font-size: 12px;
+    color: #d00;
   }

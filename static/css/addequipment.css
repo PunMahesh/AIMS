@@ -90,6 +90,13 @@
     border-radius: 6px;
     cursor: pointer;
 }
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  } 
+  
 .submit-btn input[type="submit"]:active{
     transform: scale(0.95);
 }

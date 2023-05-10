@@ -2,6 +2,7 @@ from django.urls import path
 from accounts import views
 from django.contrib.auth import views as auth_views
 
+
 urlpatterns = [
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'), 
     name='password_change_done'),
@@ -21,5 +22,6 @@ urlpatterns = [
     path("registrationpage",views.registration,name='registrationpage'),
     path("story",views.story,name='story'),
     path("success",views.success,name='success'),
+
 
 ]

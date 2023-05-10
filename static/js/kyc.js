@@ -28,9 +28,9 @@ function validateCurrentStep() {
         isValid = false;
         const error = input.parentElement.querySelector(".error-msg");
         if (error) {
-          error.textContent = "This field is required";
+          error.textContent = "Please select an option.";
         } else {
-          input.insertAdjacentHTML("afterend", '<div class="error-msg">This field is required</div>');
+          input.insertAdjacentHTML("afterend", '<div class="error-msg">Please select an option.</div>');
         }
       } else {
         const error = input.parentElement.querySelector(".error-msg");
@@ -81,27 +81,27 @@ function changeStep(btn) {
 finishBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const fullName = `${kyc_form.elements.first_name.value} ${kyc_form.elements.MiddleName.value} ${kyc_form.elements.Last_name.value}`;
-  getElemById("name-preview").textContent = isOnlyWhitespace(fullName) ? "N/A" : fullName;
-  getElemById("Dob-preview").textContent = kyc_form.elements.Dob.value || "N/A";
-  getElemById("Gender-preview").textContent = kyc_form.elements.Gender.value || "N/A";
-  getElemById("MaritualStatus-preview").textContent = kyc_form.elements.MaritualStatus.value || "N/A";
-  getElemById("Nationality-preview").textContent = kyc_form.elements.Nationality.value || "N/A";
-  getElemById("Residential-preview").textContent = kyc_form.elements.Residential.value || "N/A";
-  getElemById("Citizenship-preview").textContent = kyc_form.elements.Citizenship.value || "N/A";
-  getElemById("Passport-preview").textContent = kyc_form.elements.Passport.value || "N/A";
-  getElemById("FatherName-preview").textContent = kyc_form.elements.FatherName.value || "N/A";
-  getElemById("MotherName-preview").textContent = kyc_form.elements.MotherName.value || "N/A";
-  getElemById("GrandfatherName-preview").textContent = kyc_form.elements.GrandfatherName.value || "N/A";
-  getElemById("GrandMotherName-preview").textContent = kyc_form.elements.GrandMotherName.value || "N/A";
-  getElemById("SpouseName-preview").textContent = kyc_form.elements.SpouseName.value || "N/A";
-  getElemById("SonName-preview").textContent = kyc_form.elements.SonName.value || "N/A";
-  getElemById("DaughterName-preview").textContent = kyc_form.elements.DaughterName.value || "N/A";
-  getElemById("Country-preview").textContent = kyc_form.elements.Country.value || "N/A";
-  getElemById("District-preview").textContent = kyc_form.elements.District.value || "N/A";
-  getElemById("Province-preview").textContent = kyc_form.elements.Province.value || "N/A";
-  getElemById("Municipality-preview").textContent = kyc_form.elements.Municipality.value || "N/A";
-  getElemById("WardNo-preview").textContent = kyc_form.elements.WardNo.value || "N/A";
-  getElemById("Street-preview").textContent = kyc_form.elements.Street.value || "N/A";
+  getElemById("name_preview").textContent = isOnlyWhitespace(fullName) ? "N/A" : fullName;
+  getElemById("Dob_preview").textContent = kyc_form.elements.Dob.value || "N/A";
+  getElemById("Gender_preview").textContent = kyc_form.elements.Gender.value || "N/A";
+  getElemById("MaritualStatus_preview").textContent = kyc_form.elements.MaritualStatus.value || "N/A";
+  getElemById("Nationality_preview").textContent = kyc_form.elements.Nationality.value || "N/A";
+  getElemById("Residential_preview").textContent = kyc_form.elements.Residential.value || "N/A";
+  getElemById("Citizenship_preview").textContent = kyc_form.elements.Citizenship.value || "N/A";
+  getElemById("Passport_preview").textContent = kyc_form.elements.Passport.value || "N/A";
+  getElemById("FatherName_preview").textContent = kyc_form.elements.FatherName.value || "N/A";
+  getElemById("MotherName_preview").textContent = kyc_form.elements.MotherName.value || "N/A";
+  getElemById("GrandfatherName_preview").textContent = kyc_form.elements.GrandfatherName.value || "N/A";
+  getElemById("GrandMotherName_preview").textContent = kyc_form.elements.GrandMotherName.value || "N/A";
+  getElemById("SpouseName_preview").textContent = kyc_form.elements.SpouseName.value || "N/A";
+  getElemById("SonName_preview").textContent = kyc_form.elements.SonName.value || "N/A";
+  getElemById("DaughterName_preview").textContent = kyc_form.elements.DaughterName.value || "N/A";
+  getElemById("Country_preview").textContent = kyc_form.elements.Country.value || "N/A";
+  getElemById("Province_preview").textContent = kyc_form.elements.Province.value || "N/A";
+  getElemById("District_preview").textContent = kyc_form.elements.District.value || "N/A";
+  getElemById("Municipality_preview").textContent = kyc_form.elements.Municipality.value || "N/A";
+  getElemById("WardNo_preview").textContent = kyc_form.elements.WardNo.value || "N/A";
+  getElemById("Street_preview").textContent = kyc_form.elements.Street.value || "N/A";
   const pp_photo = kyc_form.elements.PassportPhoto;
   readURL(pp_photo);
 });
@@ -126,22 +126,3 @@ function readURL(input) {
 function isOnlyWhitespace(str) {
   return str.trim().length === 0;
 }
-
-
-// function validateCurrentStep() {
-//   const currentStep = document.querySelector(".step.active");
-//   const inputs = currentStep.querySelectorAll("input[required], select[required]");
-//   let isValid = true;
-//   inputs.forEach((input) => {
-//     if (!input.value) {
-//       isValid = false;
-//       input.insertAdjacentHTML('afterend', '<div class="error-msg">This field is required</div>');
-//     } else {
-//       const error = input.nextElementSibling;
-//       if (error && error.classList.contains("error-msg")) {
-//         error.remove();
-//       }
-//     }   
-//   });
-//   return isValid;
-// }
