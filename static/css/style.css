@@ -4,6 +4,9 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 /*First Content Styles*/
@@ -70,6 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 14px;
     gap: 20px;
 }
 .shop-now-btn > button {
@@ -116,6 +120,10 @@
     color: inherit;
 }
 
+.register-here-btn > a {
+    text-decoration: none;
+}
+
 /*Second Content Styles*/
 .second-content {
     margin-bottom: 10px;
@@ -147,10 +155,10 @@
     top: 0;
     bottom: 0;
     margin: auto 0;
-    margin-right: 60px;
+    margin-right: 25px;
     z-index: 1;
     height: 600px;
-    width: 1100px;
+    width: 1000px;
 }
 .second-content-video > iframe {
     height: 100%;
@@ -219,9 +227,10 @@
 .third-content {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 30px;
-    margin: 20px 0 20px 0;
+    justify-content: space-between;
+    margin: 40px 0 20px 0;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 .third-content-title {
@@ -257,7 +266,8 @@
 
 .third-content-button {
     align-self: flex-end;
-    margin-bottom: 27px;
+    margin: 0 0 40px 80px;
+
 }
 .view-product-btn > button {
     border: none;
@@ -294,7 +304,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-left: 175px;
+    margin-left: 105px;
 }
 
 .fourth-content-card {
@@ -350,7 +360,7 @@
 }
 .fourth-image-top {
     position: relative;
-    right: 100px;
+    right: 80px;
     top: 0;
     bottom: 0;
     margin: auto 0;
@@ -358,7 +368,7 @@
 }
 .fourth-image-bottom {
     position: relative;
-    left: 150px;
+    left: 170px;
     top: 0;
     bottom: 0;
     margin: auto 0;
@@ -369,7 +379,7 @@
 .fifth-content {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 40px;
     margin-bottom: 10px;
 }
@@ -410,19 +420,22 @@
 
 .article-title {
     margin: 10px;
+    margin-bottom: 20px;
 }
 .article-title > h3 {
     color: black;
-    margin: 5px 0 5px 0;
+    margin: 8px 0 8px 0;
     letter-spacing: 1px;
-    font-size: 17px;
+    font-size: 19px;
 }
 
 .article-img {
-    width: 450px;
+    width: 550px;
 }
 .article-img > img {
     width: 100%;
+    object-fit: cover;
+
 }
 
 .article-date-container {
@@ -492,7 +505,13 @@
     gap: 15px;
     margin: 10px;
 }
-
+.second-col-article-img{
+    width: 100%;
+}
+.second-col-article-img > img {
+    width: 100%;
+    object-fit:cover;
+}
 .second-col-article-1 {
     display: flex;
     justify-content: center;
