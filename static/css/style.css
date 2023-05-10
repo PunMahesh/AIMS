@@ -5,21 +5,24 @@
     justify-content: center;
     width: 100%;
     margin-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 /*First Content Styles*/
 .first-content {
     display: flex;
-    gap: 70px;
+    gap: 40px;
 }
 
 .first-content-img {
     padding: 20px;
-    padding-left: 0;
+    height: fit-content;
+    margin-left: 60px;
 }
 .first-content-img > img {
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
 }
 
@@ -29,10 +32,11 @@
     align-items: flex-start;
     justify-content: space-around;
     margin: 5px;
+    margin-right: 60px;
 }
 
 .leaf-img {
-    margin-left: 150px;
+    margin-left: 40px;
 }
 .leaf-img > img {
     height: 114px;
@@ -69,6 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 14px;
     gap: 20px;
 }
 .shop-now-btn > a > button {
@@ -120,6 +125,7 @@
 .register-here-btn > a {
     text-decoration: none;
 }
+
 /*Second Content Styles*/
 .second-content {
     margin-bottom: 10px;
@@ -135,6 +141,7 @@
     top: 0;
     bottom: 0;
     margin: auto 0;
+    margin-left: 80px;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -150,11 +157,12 @@
     top: 0;
     bottom: 0;
     margin: auto 0;
+    margin-right: 25px;
     z-index: 1;
     height: 600px;
-    width: 1100px;
+    width: 1000px;
 }
-.second-content-video > img {
+.second-content-video > iframe {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -194,10 +202,8 @@
     font-size: 13px;
     letter-spacing: 2px;
 }
-.learn-more-btn > a{
-    text-decoration: none;
-}
-.learn-more-btn > a > button {
+
+.learn-more-btn > button {
     border: none;
     width: 160px;
     height: 48px;
@@ -212,10 +218,10 @@
     font-size: 16px;
     letter-spacing: 1px;
 }
-.learn-more-btn > a > button:active {
+.learn-more-btn > button:active {
     transform: scale(0.97);
 }
-.learn-more-btn > a > button > span {
+.learn-more-btn > button > span {
     color: inherit;
 }
 
@@ -223,9 +229,10 @@
 .third-content {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 30px;
-    margin: 100px 0 100px 0;
+    justify-content: space-between;
+    margin: 40px 0 20px 0;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 .third-content-title {
@@ -261,7 +268,8 @@
 
 .third-content-button {
     align-self: flex-end;
-    margin-bottom: 27px;
+    margin: 0 0 40px 80px;
+
 }
 .view-product-btn > a > button {
     border: none;
@@ -294,14 +302,14 @@
     align-items: center;
     justify-content: space-around;
     gap: 30px;
-    margin: 100px 0 100px 0;
+    margin: 20px 0 20px 0;
 }
 
 .fourth-content-text {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-left: 175px;
+    margin-left: 105px;
 }
 
 .fourth-content-card {
@@ -357,7 +365,7 @@
 }
 .fourth-image-top {
     position: relative;
-    right: 100px;
+    right: 80px;
     top: 0;
     bottom: 0;
     margin: auto 0;
@@ -365,7 +373,7 @@
 }
 .fourth-image-bottom {
     position: relative;
-    left: 150px;
+    left: 170px;
     top: 0;
     bottom: 0;
     margin: auto 0;
@@ -376,7 +384,7 @@
 .fifth-content {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 40px;
     margin-bottom: 10px;
 }
@@ -417,19 +425,22 @@
 
 .article-title {
     margin: 10px;
+    margin-bottom: 20px;
 }
 .article-title > h3 {
     color: black;
-    margin: 5px 0 5px 0;
+    margin: 8px 0 8px 0;
     letter-spacing: 1px;
-    font-size: 17px;
+    font-size: 19px;
 }
 
 .article-img {
-    width: 450px;
+    width: 550px;
 }
 .article-img > img {
     width: 100%;
+    object-fit: cover;
+
 }
 
 .article-date-container {
@@ -443,7 +454,7 @@
     gap: 5px;
 }
 .article-type > p {
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 1px;
 }
 .article-date {
@@ -458,7 +469,7 @@
 .article-date > p {
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 9px;
     font-weight: lighter;
     color: black;
 }
@@ -502,7 +513,13 @@
     gap: 15px;
     margin: 10px;
 }
-
+.second-col-article-img{
+    width: 100%;
+}
+.second-col-article-img > img {
+    width: 100%;
+    object-fit:cover;
+}
 .second-col-article-1 {
     display: flex;
     justify-content: center;
