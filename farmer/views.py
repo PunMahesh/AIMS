@@ -147,7 +147,7 @@ def generate_pdf(request):
 
     # Pass the data to the template for rendering
     context = {'farmer_kyc': farmer_kyc,'image1_data': image1_data,'image2_data': image2_data,'image3_data': image3_data }
-    template = get_template('template.html')
+    template = get_template('kyc_details.html')
     html = template.render(context, request=request)
 
     # Create a PDF file from the rendered HTML
