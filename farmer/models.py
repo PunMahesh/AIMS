@@ -36,3 +36,5 @@ class Farmer_KYC(models.Model):
     BackPic = models.ImageField(upload_to="images/docs_Back")
     Verify = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.first_name
