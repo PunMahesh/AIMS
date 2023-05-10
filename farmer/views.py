@@ -3,7 +3,7 @@ import os
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
-from farmer.models import Farmer_KYC
+from farmer.models import Farmer_KYC 
 from equipments.models import equipments
 from django.template.loader import get_template
 from django.http import HttpResponse
@@ -11,8 +11,9 @@ from xhtml2pdf import pisa
 import logging
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import default_storage
-
-
+from accounts.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 # Create your views here.
 
 @login_required
@@ -82,6 +83,14 @@ def kyc(request):
         return render(request,'index.html')
     # Return an empty context dictionary for the GET request
     return render(request, 'kyc_form.html')
+
+
+
+@receiver(post_save, sender=Farmer_KYC)
+def update_user_is_farmer(sender, instance, **kwargs):
+    if instance.Verify:
+        instance.user.is_farmer = True
+        instance.user.save()
 
 @login_required
 def farmer_home(request):

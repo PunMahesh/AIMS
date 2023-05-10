@@ -31,10 +31,10 @@
                             {% elif user.is_customer %}
                             <div class="dropdown-options">
                                 <a href="{% url 'password_change' %}">Profile</a>
-                                {% if farmer.kyc.id == farmer.kyc.user_id %}
-                                <a href="{% url 'kyc_details' %}">Verify KYC</a>
+                                {% if user.id == Farmer_KYC.user_id %}
+                                <a href="{% url 'farmer_kyc' %}">Verify KYC</a>
                                 {% else %}
-                                <a href="{% url 'farmer_kyc' %}" target="_blank">Verify KYC</a>
+                                <a href="{% url 'kyc_details' %}">Verify KYC</a>
                                 {% endif %}
                                 <a onclick="logout()">Logout</a>
                             </div>

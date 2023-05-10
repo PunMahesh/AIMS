@@ -292,7 +292,9 @@ footer {
 .contact-us-btn > a > button > span {
     color: inherit;
 }
-
+.contact-us-btn > a{
+    text-decoration: none;
+}
 
 .v-line {
     width: 1px;

@@ -4,13 +4,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import User
 
+
 # check if string is email
 def is_email(string):
     if '@' in string:
         return True
     return False
-
-# Create your views here.
 
 
 def registration(request):

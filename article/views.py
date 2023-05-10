@@ -17,7 +17,6 @@ def add_article(request):
         return redirect("Article_added")
     return render(request, 'article.html')
 
-@login_required
 def get_article(request):
     articles = Article.objects.all()
     context = {'articles': articles}
