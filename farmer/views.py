@@ -9,11 +9,13 @@ from django.template.loader import get_template
 from django.http import HttpResponse
 from xhtml2pdf import pisa
 import logging
+from django.contrib.auth.decorators import login_required
 from django.core.files.storage import default_storage
+
 
 # Create your views here.
 
-
+@login_required
 def kyc(request):
     if request.method == "POST":
         user = request.user.id
@@ -81,18 +83,21 @@ def kyc(request):
     # Return an empty context dictionary for the GET request
     return render(request, 'kyc_form.html')
 
+@login_required
 def farmer_home(request):
     equipment = equipments.objects.all()
     context = {"equipment":equipment}
     print(equipment)
     return render(request,'farmer_home.html',context)
 
+@login_required
 def E_chart(request):
     equipment = equipments.objects.all()
     context = {"equipment":equipment}
     print(equipment)
     return render(request,'farmer_home.html',context)
 
+@login_required
 def generate_pdf(request):
     user = request.user.id
     # Retrieve the data from the database
@@ -155,6 +160,7 @@ def generate_pdf(request):
     # PDF generation succeeded
     return response
 
+@login_required
 def kyc_details(request):
     user = request.user.id
 

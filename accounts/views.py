@@ -1,9 +1,13 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from .form import RegisterForm
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import Group
 from .models import User
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
+
+
 
 # check if string is email
 def is_email(string):
@@ -83,21 +87,25 @@ def login_view(request):
                 "pwerror": "Invalid Credentials"
             }
             return render(request, 'login.html', context)
+        if user is not None and user.is_customer or user.is_farmer:
+            login(request, user)
+            user_info = {
+                "is_authenticated": True,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "email": user.email,
+                "is_admin": user.is_admin,
+                "is_customer": user.is_customer,
+                "is_farmer": user.is_farmer,
+                "role": user.is_farmer and "Farmer" or user.is_customer and "Customer" or user.is_admin and "Admin"
+            }
+            request.session['user_info'] = user_info
+            messages.success(request, 'Login Successful')
+            return redirect("/")
+        elif user is not None and user.is_superuser and user.is_staff:
+            login(request,user)
+            return redirect("/admin")
 
-        login(request, user)
-        user_info = {
-            "is_authenticated": True,
-            "first_name": user.first_name,
-            "last_name": user.last_name,
-            "email": user.email,
-            "is_admin": user.is_admin,
-            "is_customer": user.is_customer,
-            "is_farmer": user.is_farmer,
-            "role": user.is_farmer and "Farmer" or user.is_customer and "Customer" or user.is_admin and "Admin"
-        }
-        request.session['user_info'] = user_info
-        messages.success(request, 'Login Successful')
-        return redirect("/")
 
     return render(request, 'login.html')
 
@@ -129,3 +137,12 @@ def home_view(request):
 def success(request):
     return render(request, 'success.html')
 
+
+@login_required
+def PasswordChangeView(request):
+    user = request.User
+    context = {'user': user}
+    return render(request, 'password_change.html', context)
+
+def custom_404(request, exception=None):
+    return render(request, 'error.html', status=404)

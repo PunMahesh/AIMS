@@ -86,7 +86,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
     cursor: pointer;
     font-size: 16px;
     letter-spacing: 1px;
@@ -108,7 +108,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
     cursor: pointer;
     font-size: 16px;
     letter-spacing: 1px;
@@ -230,7 +230,7 @@
     justify-content: space-between;
     margin: 40px 0 20px 0;
     padding-left: 80px;
-    padding-right: 80px;
+    padding-right: 55px;
 }
 
 .third-content-title {
@@ -490,7 +490,7 @@
     cursor: pointer;
     font-size: 16px;
     letter-spacing: 1px;
-    margin-left: 360px;
+    margin-left: 345px;
 }
 .learn-more-btn > button:active {
     transform: scale(0.97);
@@ -504,6 +504,7 @@
     flex-direction: column;
     gap: 15px;
     margin: 10px;
+    margin-right: 30px;
 }
 .second-col-article-img{
     width: 100%;

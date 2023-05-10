@@ -2,6 +2,7 @@
 
 {% block title %}Add Equipment Details{% endblock %}
 {% block content_css %}<link rel="stylesheet" href="static/css/article.css" type="text/css">{% endblock %}
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet" />
 
 {% block content %}
 <div class="content">
@@ -14,21 +15,25 @@
                 {% csrf_token %}
                 <div class="form-field">
                     <span class="form-label required" >Title</span>
-                    <input type="text" name="ArticleName" placeholder="Enter article name" />
+                    <input type="text" name="ArticleName" placeholder="Enter article name"  />
                 </div>
                 <div class="form-field">
                     <span class="form-label" >Photo</span>
                     <div class="img-upload">
-                        <input type="file" name="Article_Photo" class="custom-img-upload" accept="image/png, image/jpeg" multiple/>
+                        <input type="file" name="Article_Photo" class="custom-img-upload" accept="image/png, image/jpeg" multiple  />
                     </div>
                 </div>
                 <div class="form-field" id="textarea">
                     <span class="form-label required" >Description</span>
-                    <textarea  placeholder="50-150 words" name="Description" rows="4" cols="50"></textarea>
+                    <textarea  placeholder="50-150 words" name="Description" rows="4" cols="50"  ></textarea>
                 </div>
                 <div class="form-field submit-btn">
                     <span class="form-label" ></span>
-                    <input type="submit" />
+                    <input type="submit">
+                </div>
+                <div class="popup">
+                    <h2>Article Added</h2>
+                    <button type="button">Continue</button>
                 </div>
             </form>
         </div>
