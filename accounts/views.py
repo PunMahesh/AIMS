@@ -1,13 +1,8 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .models import User
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import update_session_auth_hash
-
-
 
 # check if string is email
 def is_email(string):
@@ -16,6 +11,7 @@ def is_email(string):
     return False
 
 # Create your views here.
+
 
 def registration(request):
     if request.method == 'POST':
@@ -49,24 +45,26 @@ def registration(request):
             return render(request, 'registration.html', context=context)
 
         if password1 == password2:
-            user = User(username=username, first_name=first_name, last_name=last_name, dob = dob, email=email, address=address, contact=contact, gender=gender)
+            user = User(username=username, first_name=first_name, last_name=last_name,
+                        dob=dob, email=email, address=address, contact=contact, gender=gender)
             user.set_password(password1)
             user.save()
             messages.success(request, 'Registration Successful')
             return redirect('login')
     return render(request, 'registration.html')
 
+
 def login_view(request):
     if request.method == 'POST':
         username_or_email = request.POST.get('username_or_email')
         password = request.POST.get('password')
 
-
         if is_email(username_or_email):
             username = User.objects.get(email=username_or_email).username
             user_exists = User.objects.filter(email=username_or_email).exists()
         else:
-            user_exists = User.objects.filter(username=username_or_email).exists()
+            user_exists = User.objects.filter(
+                username=username_or_email).exists()
             username = username_or_email
 
         if not user_exists:
@@ -87,6 +85,9 @@ def login_view(request):
                 "pwerror": "Invalid Credentials"
             }
             return render(request, 'login.html', context)
+        elif user is not None and user.is_superuser and user.is_staff:
+            login(request, user)
+            return redirect("/admin")
         if user is not None and user.is_customer or user.is_farmer:
             login(request, user)
             user_info = {
@@ -102,16 +103,15 @@ def login_view(request):
             request.session['user_info'] = user_info
             messages.success(request, 'Login Successful')
             return redirect("/")
-        elif user is not None and user.is_superuser and user.is_staff:
-            login(request,user)
-            return redirect("/admin")
-
+        
 
     return render(request, 'login.html')
+
 
 def logout_view(request):
     logout(request)
     return redirect('/')
+
 
 def index(request):
     user_info = request.session.get('user_info')
@@ -120,19 +120,23 @@ def index(request):
             "user": user_info,
         }
         return render(request, 'index.html', context)
-    return render(request,'index.html')
+    return render(request, 'index.html')
+
 
 def story(request):
     return render(request, 'story.html')
 
+
 def error(request):
     return render(request, '404.html')
+
 
 def home_view(request):
     first_name = request.User.first_name
     context = {'first_name': first_name}
-    print (request.user.first_name)
+    print(request.user.first_name)
     return render(request, 'base.html', context)
+
 
 def success(request):
     return render(request, 'success.html')
@@ -143,6 +147,7 @@ def PasswordChangeView(request):
     user = request.User
     context = {'user': user}
     return render(request, 'password_change.html', context)
+
 
 def custom_404(request, exception=None):
     return render(request, 'error.html', status=404)

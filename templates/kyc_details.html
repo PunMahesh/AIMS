@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form method="POST" action = "{% url 'generate_pdf' %}">
+        <form method="POST" action = "{% url 'generate_pdf' %}" >
             {% csrf_token %}
             <div class="step step-5 confirm-details">
                 <div class="header">
