@@ -14,7 +14,7 @@
                 {% csrf_token %}
                 <div class="form-field">
                     <span class="form-label required" >Crop Name</span>
-                    <input type="text" name="crop_name" placeholder="Enter crop name" />
+                    <input type="text" name="crop_name" placeholder="Enter crop name" required />
                 </div>
                 <div class="form-field">
                     <span class="form-label" >Pesticides Used</span>
@@ -22,25 +22,25 @@
                 </div>
                 <div class="form-field">
                     <span class="form-label" >Market Value</span>
-                    <input type="text" name="market_value" placeholder="Market value" />
+                    <input type="text" name="market_value" placeholder="Market value" required />
                 </div>
                 <div class="form-field">
                     <span class="form-label" >Disease</span>
-                    <input type="text" name="disease" placeholder="If any" />
+                    <input type="text" name="disease" placeholder="If any"  />
                 </div>
                 <div class="form-field">
                     <span class="form-label required" >Season</span>
-                    <input type="text" name="season" placeholder="Favourable Season" />
+                    <input type="text" name="season" placeholder="Favourable Season" required />
                 </div>
                 <div class="form-field">
                     <span class="form-label" >Photo</span>
                     <div class="img-upload">
-                        <input type="file" class="custom-img-upload" name="crop_img" accept="image/png, image/jpeg" multiple/>
+                        <input type="file" class="custom-img-upload" name="crop_img" accept="image/png, image/jpeg" multiple required/>
                     </div>
                 </div>
                 <div class="form-field" id="textarea">
                     <span class="form-label required" >Description</span>
-                    <textarea  placeholder="50-150 words" name="description" rows="4" cols="50"></textarea>
+                    <textarea  placeholder="50-150 words" name="description" rows="4" cols="50" required ></textarea>
                 </div>
                 <div class="form-field submit-btn">
                     <span class="form-label" ></span>

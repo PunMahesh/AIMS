@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import Crop
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
+
+@login_required
 def add_crop(request):
     if request.method == "POST":
         user = request.user
@@ -20,18 +24,21 @@ def add_crop(request):
         return redirect("crops")
     return render(request, 'add_crop.html')
 
+@login_required
 def get_crops(request):
     # Fetch Crops information here and pass it in the context. The format should be as follows:
     crops = Crop.objects.all()
     context = {'crops': crops}
     return render(request, 'crops.html', context)
 
+@login_required
 def get_crop(request, id):
     crop = Crop.objects.get(id=id)
     fss = FileSystemStorage()
     context = {'crop': crop, 'crop_img_url': request.build_absolute_uri(fss.url(crop.crop_img))}
     return render(request, 'crops_show_more.html', context)
 
+@login_required
 def delete_crop(request, id):
     crop = Crop.objects.get(id=id)
     crop.delete()

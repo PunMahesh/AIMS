@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <form id="kyc_form" method="post" action="" enctype="multipart/form-data">
+        <form id="kyc_form" method="post" action="" enctype="multipart/form-data" >
             {% csrf_token %}
             <div class="step step-1 active">
                 <div class="header">
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="form-field">
                                     <label for="middle_name">Middle Name</label>
-                                    <input type="text" name="MiddleName" />
+                                    <input type="text" name="MiddleName"  />
                                 </div>
                                 <div class="form-field">
                                     <label for="last_name">Last Name</label>
@@ -45,15 +45,15 @@
                                     <div class="radio-options">
                                         <div class="option-radio">
                                             <label for="male">Male</label>
-                                            <input type="radio" name="Gender" id="male" value="male" required />
+                                            <input type="radio" name="Gender" id="male" value="Male" required />
                                         </div>
                                         <div class="option-radio">
                                             <label for="female">Female</label>
-                                            <input type="radio" name="Gender" id="female" value="female" />
+                                            <input type="radio" name="Gender" id="female" value="Female" />
                                         </div>
                                         <div class="option-radio">
                                             <label for="others">Others</label>
-                                            <input type="radio" name="Gender" id="others" value="others" />
+                                            <input type="radio" name="Gender" id="others" value="Others" />
                                         </div>
                                     </div>
                                 </div>
@@ -62,17 +62,17 @@
                                     <div class="radio-options">
                                         <div class="option-radio">
                                             <label for="single">Single</label>
-                                            <input type="radio" name="MaritualStatus" id="single" value="single" required />
+                                            <input type="radio" name="MaritualStatus" id="single" value="Single" required />
                                         </div>
                                         <div class="option-radio">
                                             <label for="married">Married</label>
-                                            <input type="radio" name="MaritualStatus" id="married" value="married" />
+                                            <input type="radio" name="MaritualStatus" id="married" value="Married" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-field">
                                     <label class="label" for="dob">Date of Birth</label>
-                                    <input type="date" name="Dob" required />
+                                    <input type="date" name="Dob"/>
                                 </div>
                             </div>
                         </div>
@@ -80,11 +80,11 @@
                             <div class="form-row">
                                 <div class="form-field">
                                     <label class="label" for="nationality">Nationality</label>
-                                    <input type="text" name="Nationality"  required />
+                                    <input type="text" name="Nationality" required />
                                 </div>
                                 <div class="form-field">
                                     <label class="label" for="citizenship">Citizenship No.</label>
-                                    <input type="text" name="Citizenship" required />
+                                    <input type="text" name="Citizenship"  required />
                                 </div>
                                 <div class="form-field">
                                     <label class="label" for="passport">Passport No.</label>
@@ -99,15 +99,15 @@
                                     <div class="radio-options">
                                         <div class="option-radio">
                                             <label for="resident">Resident Individual</label>
-                                            <input type="radio" name="Residential" id="resident" value="resident" required />
+                                            <input type="radio" name="Residential" id="resident" value="Resident" required />
                                         </div>
                                         <div class="option-radio">
                                             <label for="non-resident">Non Resident</label>
-                                            <input type="radio" name="Residential" id="non-resident" value="non-resident" />
+                                            <input type="radio" name="Residential" id="non-resident" value="Non-Resident" />
                                         </div>
                                         <div class="option-radio">
                                             <label for="foreign">Foreign National</label>
-                                            <input type="radio" name="Residential" id="foreign" value="foreign" />
+                                            <input type="radio" name="Residential" id="foreign" value="Foreign" />
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +125,6 @@
                     <div class="form-name"><span>KYC Form</span></div>
                     <div class="page-counter">Page 2 of 4</div>
                 </div>
-
                 <div class="title">
                     <div class="form-section"><span>B. Family Information</span></div>
                 </div>
@@ -135,11 +134,11 @@
                             <div class="form-row reverse">
                                 <div class="form-field row">
                                     <label class="label" for="father">Father's Name</label>
-                                    <input type="text" name="FatherName" />
+                                    <input type="text" name="FatherName" required />
                                 </div>
                                 <div class="form-field row">
                                     <label class="label" for="mother">Mother's Name</label>
-                                    <input type="text" name="MotherName"  required />
+                                    <input type="text" name="MotherName" required />
                                 </div>
                                 <div class="form-field row">
                                     <label class="label" for="grandfather">Grandfather's Name</label>
@@ -176,7 +175,6 @@
                     <div class="form-name"><span>KYC Form</span></div>
                     <div class="page-counter">Page 3 of 4</div>
                 </div>
-
                 <div class="title">
                     <div class="form-section"><span>C. Address Details</span></div>
                 </div>
@@ -198,12 +196,12 @@
                                 </div>
                                 <div class="form-field row">
                                     <label class="label" for="municipality">Rural Municipality/ Municipality</label>
-                                    <input type="text" name="Municipality" required />
+                                    <input type="text" name="Municipality"required />
                                 </div>
                                 <div class="form-field row">
                                     <label class="label" for="ward_no">Ward No.</label>
                                     <input type="text" name="WardNo" required />
-                                </div> 
+                                </div>
                                 <div class="form-field row">
                                     <label class="label" for="street">Street/Village</label>
                                     <input type="text" name="Street" required />
@@ -223,7 +221,6 @@
                     <div class="form-name"><span>KYC Form</span></div>
                     <div class="page-counter">Page 4 of 4</div>
                 </div>
-
                 <div class="title">
                     <div class="form-section"><span>D. Photo</span></div>
                 </div>
@@ -238,11 +235,11 @@
                                 <div class="form-field">
                                     <div class="option-radio">
                                         <label for="citizenship_doc">Citizenship</label>
-                                        <input type="radio" name="CitizenProof" id="citizenship_doc" value="citizenship" required />
+                                        <input type="radio" name="CitizenProof" id="citizenship_doc" value="Citizenship" required />
                                     </div>
                                     <div class="option-radio">
                                         <label for="passport_doc">Passport</label>
-                                        <input type="radio" name="CitizenProof" id="passport_doc" value="passport" />
+                                        <input type="radio" name="CitizenProof" id="passport_doc" value="Passport" />
                                     </div>
                                 </div>
                                 <div class="form-field">
@@ -262,7 +259,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="step step-5 confirm-details">
                 <div class="header">
                     <div class="form-name"><span>KYC Form</span></div>
@@ -279,11 +275,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Name</h3>
-                                    <p><span class="field-value" id="name-preview"></span></p>
+                                    <p><span class="field-value" id="name_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Date of Birth</h3>
-                                    <p><span class="field-value" id="Dob-preview"></span></p>
+                                    <p><span class="field-value" id="Dob_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -291,11 +287,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Gender</h3>
-                                    <p><span class="field-value" id="Gender-preview"></span></p>
+                                    <p><span class="field-value" id="Gender_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Marital Status</h3>
-                                    <p><span class="field-value" id="MaritualStatus-preview"></span></p>
+                                    <p><span class="field-value" id="MaritualStatus_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -303,11 +299,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Nationality</h3>
-                                    <p><span class="field-value" id="Nationality-preview"></span></p>
+                                    <p><span class="field-value" id="Nationality_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Residential Status</h3>
-                                    <p><span class="field-value" id="Residential-preview"></span></p>
+                                    <p><span class="field-value" id="Residential_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -315,11 +311,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Citizenship No.</h3>
-                                    <p><span class="field-value" id="Citizenship-preview"></span></p>
+                                    <p><span class="field-value" id="Citizenship_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Passport No.</h3>
-                                    <p><span class="field-value" id="Passport-preview"></span></p>
+                                    <p><span class="field-value" id="Passport_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -327,11 +323,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Father's Name</h3>
-                                    <p><span class="field-value" id="FatherName-preview"></span></p>
+                                    <p><span class="field-value" id="FatherName_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Mother's Name</h3>
-                                    <p><span class="field-value" id="MotherName-preview"></span></p>
+                                    <p><span class="field-value" id="MotherName_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -339,11 +335,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Grandfather's Name</h3>
-                                    <p><span class="field-value" id="GrandfatherName-preview"></span></p>
+                                    <p><span class="field-value" id="GrandfatherName_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Grandmother's Name</h3>
-                                    <p><span class="field-value" id="GrandMotherName-preview"></span></p>
+                                    <p><span class="field-value" id="GrandMotherName_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -351,11 +347,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Spouse's Name</h3>
-                                    <p><span class="field-value" id="SpouseName-preview"></span></p>
+                                    <p><span class="field-value" id="SpouseName_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Son's Name</h3>
-                                    <p><span class="field-value" id="SonName-preview"></span></p>
+                                    <p><span class="field-value" id="SonName_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -363,11 +359,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Daughter's Name</h3>
-                                    <p><span class="field-value" id="DaughterName-preview"></span></p>
+                                    <p><span class="field-value" id="DaughterName_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Country</h3>
-                                    <p><span class="field-value" id="Country-preview"></span></p>
+                                    <p><span class="field-value" id="Country_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -375,11 +371,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Province</h3>
-                                    <p><span class="field-value" id="Province-preview"></span></p>
+                                    <p><span class="field-value" id="Province_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">District</h3>
-                                    <p><span class="field-value" id="District-preview"></span></p>
+                                    <p><span class="field-value" id="District_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -387,11 +383,11 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Rural Municipality/Municipality</h3>
-                                    <p><span class="field-value" id="Municipality-preview"></span></p>
+                                    <p><span class="field-value" id="Municipality_preview"></span></p>
                                 </div>
                                 <div class="form-field render-data">
                                     <h3 class="label">Ward No.</h3>
-                                    <p><span class="field-value" id="WardNo-preview"></span></p>
+                                    <p><span class="field-value" id="WardNo_preview"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -399,14 +395,14 @@
                             <div class="form-row render-only">
                                 <div class="form-field render-data">
                                     <h3 class="label">Street/Village</h3>
-                                    <p><span class="field-value" id="Street-preview"></span></p>
+                                    <p><span class="field-value" id="Street_preview"></span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="next-prev-btn">
                         <button type="button" class="prev-btn">Back</button>
-                        <button href="farmer_home" type="submit" class="next-btn">Confirm Details</button>
+                        <button type="submit" class="next-btn">Confirm Details</button>
                     </div>
                 </div>
             </div>
