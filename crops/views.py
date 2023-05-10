@@ -21,7 +21,7 @@ def add_crop(request):
         details = Crop(user=user,crop_name=crop_name, pesticide_used=pesticide_used, market_value=market_value,
                          disease=disease, season=season, crop_img=crop_img, description=description)
         details.save()
-        return redirect("crops")
+        return redirect("crop_added")
     return render(request, 'add_crop.html')
 
 @login_required
@@ -44,3 +44,6 @@ def delete_crop(request, id):
     crop.delete()
     return render(request, "crops_show_more.html")
 
+@login_required
+def crop_added(request):
+    return render(request, "crops_added.html")

@@ -27,7 +27,7 @@ def add_equipment(request):
         details = equipments(user=user,EquipmentName=EquipmentName,ManufacturedYear=ManufacturedYear,MarketValue=MarketValue,
                          Condition=Condition,Warrenty=Warrenty,Photo=Photo,Description=Description)
         details.save()
-        return redirect("equipments")
+        return redirect("equipment_added")
     return render(request, "addequipment.html")
 
 @login_required
@@ -44,3 +44,7 @@ def equipments_market(request):
 @login_required
 def equipment_item(request):
     return render(request, 'equipment_item.html')
+
+@login_required
+def equipment_added(request):
+    return render(request, "equipment_added.html")

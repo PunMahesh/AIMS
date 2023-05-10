@@ -79,7 +79,7 @@ def kyc(request):
             BackPic=BackPic
         )
         check_kyc.save()
-        return render(request,'kyc_form.html')
+        return render(request,'index.html')
     # Return an empty context dictionary for the GET request
     return render(request, 'kyc_form.html')
 
