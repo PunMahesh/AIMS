@@ -101,11 +101,9 @@
     </div>
     <div>
         <br><label for="front_Pic">Passport Size Photo: </label><br/>
-        {% if image1_data %}
-        <img src="data:image/{{ farmer_kyc.PassportPhoto.name|get_file_extension }};base64,{{ image1_data }}" />
-        {% else %}
-            <p>No image found</p>
-        {% endif %}
+        <a href="data:image/{{ farmer_kyc.PassportPhoto.name|get_file_extension }};base64,{{ image1_data }}" download="{{ farmer_kyc.PassportPhoto.name }}">
+            <img src="data:image/{{ farmer_kyc.PassportPhoto.name|get_file_extension }};base64,{{ image1_data }}">
+          </a>
     </div>
     <div>
         <br><label for="front_Pic">Front of Document: </label><br/>

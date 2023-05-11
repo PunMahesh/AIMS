@@ -106,6 +106,68 @@ def E_chart(request):
     print(equipment)
     return render(request,'farmer_home.html',context)
 
+# @login_required
+# def generate_pdf(request):
+#     user = request.user.id
+#     # Retrieve the data from the database
+#     farmer_kyc = get_object_or_404(Farmer_KYC, user_id=user)
+
+#     # Open the image files and read their data
+#     image1_data = None
+#     if farmer_kyc.PassportPhoto:
+#         if farmer_kyc.PassportPhoto.name.endswith('.jpg') or farmer_kyc.PassportPhoto.name.endswith('.jpeg'):
+#             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.PassportPhoto.name), 'rb') as f:
+#                 image1_data = f.read()
+#         elif farmer_kyc.PassportPhoto.name.endswith('.png'):
+#             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.PassportPhoto.name), 'rb') as f:
+#                 image1_data = f.read()
+#             image1_data = base64.b64encode(image1_data).decode('utf-8')
+    
+#     # Open the image files and read their data
+#     image2_data = None
+#     if farmer_kyc.FrontPic:
+#         if farmer_kyc.FrontPic.name.endswith('.jpg') or farmer_kyc.FrontPic.name.endswith('.jpeg'):
+#             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.FrontPic.name), 'rb') as f:
+#                 image2_data = f.read()
+#         elif farmer_kyc.FrontPic.name.endswith('.png'):
+#             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.FrontPic.name), 'rb') as f:
+#                 image2_data = f.read()
+#             image2_data = base64.b64encode(image2_data).decode('utf-8')
+
+#     # Open the image files and read their data
+#     image3_data = None
+#     if farmer_kyc.BackPic:
+#         if farmer_kyc.BackPic.name.endswith('.jpg') or farmer_kyc.BackPic.name.endswith('.jpeg'):
+#             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.BackPic.name), 'rb') as f:
+#                 image3_data = f.read()
+#         elif farmer_kyc.BackPic.name.endswith('.png'):
+#             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.BackPic.name), 'rb') as f:
+#                 image3_data = f.read()
+#             image3_data = base64.b64encode(image3_data).decode('utf-8')
+
+#     # Pass the data to the template for rendering
+#     context = {'farmer_kyc': farmer_kyc,'image1_data': image1_data,'image2_data': image2_data,'image3_data': image3_data }
+#     template = get_template('template.html')
+#     html = template.render(context, request=request)
+
+#     # Create a PDF file from the rendered HTML
+#     response = HttpResponse(content_type='application/pdf')
+#     response['Content-Disposition'] = 'attachment; filename="file.pdf"'
+#     pdf = pisa.CreatePDF(html, dest=response)
+
+#     # Check if PDF generation succeeded
+#     if pdf.err:
+#         # Log the error message
+#         logging.error('Error generating PDF file: %s', pdf.err)
+
+#         # Include error message in response
+#         error_msg = 'Sorry, an error occurred while generating the PDF file. Please try again later.'
+#         response = HttpResponse(error_msg, content_type='text/plain')
+#         response.status_code = 500
+#         return response
+
+#     # PDF generation succeeded
+#     return response
 @login_required
 def generate_pdf(request):
     user = request.user.id
@@ -115,35 +177,35 @@ def generate_pdf(request):
     # Open the image files and read their data
     image1_data = None
     if farmer_kyc.PassportPhoto:
-        if farmer_kyc.PassportPhoto.name.endswith('.jpg') or farmer_kyc.PassportPhoto.name.endswith('.jpeg'):
+        try:
             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.PassportPhoto.name), 'rb') as f:
                 image1_data = f.read()
-        elif farmer_kyc.PassportPhoto.name.endswith('.png'):
-            with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.PassportPhoto.name), 'rb') as f:
-                image1_data = f.read()
-            image1_data = base64.b64encode(image1_data).decode('utf-8')
+            if farmer_kyc.PassportPhoto.name.endswith('.png'):
+                image1_data = base64.b64encode(image1_data).decode('utf-8')
+        except IOError:
+            pass
     
     # Open the image files and read their data
     image2_data = None
     if farmer_kyc.FrontPic:
-        if farmer_kyc.FrontPic.name.endswith('.jpg') or farmer_kyc.FrontPic.name.endswith('.jpeg'):
+        try:
             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.FrontPic.name), 'rb') as f:
                 image2_data = f.read()
-        elif farmer_kyc.FrontPic.name.endswith('.png'):
-            with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.FrontPic.name), 'rb') as f:
-                image2_data = f.read()
-            image2_data = base64.b64encode(image2_data).decode('utf-8')
+            if farmer_kyc.FrontPic.name.endswith('.png'):
+                image2_data = base64.b64encode(image2_data).decode('utf-8')
+        except IOError:
+            pass
 
     # Open the image files and read their data
     image3_data = None
     if farmer_kyc.BackPic:
-        if farmer_kyc.BackPic.name.endswith('.jpg') or farmer_kyc.BackPic.name.endswith('.jpeg'):
+        try:
             with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.BackPic.name), 'rb') as f:
                 image3_data = f.read()
-        elif farmer_kyc.BackPic.name.endswith('.png'):
-            with open(os.path.join(settings.MEDIA_ROOT, farmer_kyc.BackPic.name), 'rb') as f:
-                image3_data = f.read()
-            image3_data = base64.b64encode(image3_data).decode('utf-8')
+            if farmer_kyc.BackPic.name.endswith('.png'):
+                image3_data = base64.b64encode(image3_data).decode('utf-8')
+        except IOError:
+            pass
 
     # Pass the data to the template for rendering
     context = {'farmer_kyc': farmer_kyc,'image1_data': image1_data,'image2_data': image2_data,'image3_data': image3_data }
@@ -164,11 +226,9 @@ def generate_pdf(request):
         error_msg = 'Sorry, an error occurred while generating the PDF file. Please try again later.'
         response = HttpResponse(error_msg, content_type='text/plain')
         response.status_code = 500
-        return response
 
     # PDF generation succeeded
     return response
-
 
 @login_required
 def kyc_detail(request):
