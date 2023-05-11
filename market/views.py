@@ -6,22 +6,22 @@ from django.db.models import Q
 
 # Create your views here.
 
-@login_required
+@login_required(login_url="login")
 def blog(request):
     return render(request,'blog.html')
 
-@login_required
+@login_required(login_url="login")
 def Article_added(request):
     return render(request,'Article_added.html')
 
 def contactus(request):
     return render(request,'contactus.html')
 
-@login_required
+@login_required(login_url="login")
 def Order_details(request):
     return render(request,'Orders_details.html')
 
-@login_required
+@login_required(login_url="login")
 def success(request):
     return render(request,'success.html')
 
@@ -29,7 +29,7 @@ def success(request):
 def thankyou(request):
     return render(request,'thankyou.html')
 
-@login_required
+@login_required(login_url="login")
 def Account_details(request):
     return render(request,'Account_details.html')
 
