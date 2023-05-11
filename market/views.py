@@ -66,6 +66,12 @@ def get_equip(request):
     context = {'items': items}
     return render(request,'equipment.html', context)
 
+def show_items(request, id):
+    item = shop.objects.get(id=id)
+    context = {'item': item}
+    print(context)
+    return render(request, 'product.html', context)
+
 
 
 

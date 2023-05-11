@@ -1,8 +1,12 @@
-
 {% extends "base/homebase.html" %}
 
+{% load static %}
+
 {% block title %}AIMS | SHOP DETAILS{% endblock %}
-{% block content_css %}<link rel="stylesheet" href="static/css/product.css" type="text/css" >{% endblock %}
+
+{% block content_css %}
+    <link rel="stylesheet" href="{% static 'css/product.css' %}" type="text/css">
+{% endblock %}
 
 {% block content %}
 <div class="shop-section">

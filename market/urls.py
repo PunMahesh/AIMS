@@ -13,4 +13,6 @@ urlpatterns = [
     path('get_fruits', views.get_fruits, name='get_fruits'),
     path('get_equip', views.get_equip, name='get_equip'),
     path('blog_read_more', views.blog_read_more, name='blog_read_more'),
+    path('show_items/<int:id>', views.show_items, name='show_items'),
+
 ]

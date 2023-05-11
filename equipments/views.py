@@ -45,9 +45,3 @@ def equipment_item(request):
 @login_required(login_url="login")
 def equipment_added(request):
     return render(request, "equipment_added.html")
-
-
-def cart_items(request, type, id):
-    item = shop.objects.get(Type=type, id=id)
-    context = {'item': item}
-    return render(request, 'product.html', context)
