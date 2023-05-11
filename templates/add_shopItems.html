@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Add Shop Item Details{% endblock %}
+{% block title %}Add SHOP ITEMS{% endblock %}
 {% block content_css %}<link rel="stylesheet" href="static/css/addequipment.css" type="text/css">{% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
                 <div id="error-container"></div>
                 <div class="form-field">
                     <span class="form-label">Price</span>
-                    <input name="Price" placeholder="2500" required />
+                    <input name="Price" placeholder="Price" required />
                 </div>
                 <div class="form-field">
                     <span class="form-label" >Quantity</span>
@@ -28,10 +28,11 @@
                     <span class="form-label" >Type</span>
                     <select name ="Type" required >
                         <option value="">Select Option</option>
-                        <option value="Equipment">Equipment</option>
                         <option value="Vagetable">Vegetable</option>
                         <option value="Fruit">Fruit</option>
                         <option value="Crops">Crops</option>
+                        <option value="Pesticides">Equipment</option>
+                        <option value="Fertilizer">Equipment</option>
                     </select>
                 </div>
                 <div class="form-field">
