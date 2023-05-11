@@ -4,32 +4,35 @@
 {% block content_css %}<link rel="stylesheet" href="static/css/market.css" type="text/css" >{% endblock %}
 
 {% block content %}
-
-<div class="containers">
+<div class="content">
     {% for item in items %}
+    <div class="market-item-container">
         <div class="inner-containers">
             <div class="image">
                 <img src="{{ item.Photo.url }}" alt="Item in Shop">
                 <div class="identifier">
-                    <p>{{ item.ItemName }}</p>
+                    <p>{{ item.Type }}</p>
                 </div>
             </div>
             <div class="details">
                 <div class="left-details">
                     <div class="details-title">
-                        <h3>{{ item.Type }}</h3>
+                        <h3>{{ item.ItemName }}</h3>
                     </div>
                     <div class="details-price">
-                        <p>Rs.{{ item.Price }} {{ item.Quantity }}</p>
+                        <p>Rs. {{ item.Price }} {{ item.Quantity }}</p>
                     </div>
                 </div>
                 <div class="right-details">
-                    <a href="{% url 'show_items'  item.id %}">
+                    <a href="{% url 'show_items' item.id %}">
                         <button class="btn">View Details</button>
                     </a>
                 </div>
             </div>
         </div>
+    </div>
     {% endfor %}
+    <div class="spacer"></div>
+    <div class="spacer"></div>
 </div>
-{%endblock%}
+{% endblock %}
