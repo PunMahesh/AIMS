@@ -12,6 +12,5 @@ urlpatterns = [
     path('Add_shopItem', views.Add_shopItem, name='Add_shopItem'),
     path('get_fruits', views.get_fruits, name='get_fruits'),
     path('get_equip', views.get_equip, name='get_equip'),
-    path('items/<int:id>/', views.items, name='items'),
     path('blog_read_more', views.blog_read_more, name='blog_read_more'),
 ]

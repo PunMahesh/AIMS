@@ -42,9 +42,10 @@ section{
     margin: 20px 0;
 }
 .image img{
-    max-width: 425px;
+    width: 425px;
     height: 310px;
     border: 1px rgba(0, 0, 0, 0.2) solid;
+    object-fit: cover;
 }
 .image{
     position: relative;
