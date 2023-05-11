@@ -5,14 +5,14 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-@login_required
+@login_required(login_url="login")
 def view_equipments(request):
     # Fetch Crops information here and pass it in the context. The format should be as follows:
         equip = equipments.objects.all()
         context = {'equip': equip}
         return render(request,'equipments.html',context)
 
-@login_required
+@login_required(login_url="login")
 def add_equipment(request):
     if request.method == "POST":
         user = request.user
@@ -30,7 +30,7 @@ def add_equipment(request):
         return redirect("equipment_added")
     return render(request, "addequipment.html")
 
-@login_required
+@login_required(login_url="login")
 def get_equipment(request, id):
     equip = equipments.objects.get(id=id)
     fss = FileSystemStorage()
@@ -40,6 +40,6 @@ def get_equipment(request, id):
 def equipment_item(request):
     return render(request, 'equipment_item.html')
 
-@login_required
+@login_required(login_url="login")
 def equipment_added(request):
     return render(request, "equipment_added.html")
