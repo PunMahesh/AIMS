@@ -6,7 +6,7 @@ class equipments(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     EquipmentName = models.CharField(max_length=225)
     ManufacturedYear = models.CharField(max_length=225)
-    MarketValue = models.CharField(max_length=10)
+    MarketValue = models.CharField(max_length=200)
     Condition = models.CharField(max_length=225)
     Warrenty = models.CharField(max_length=225) 
     Photo = models.ImageField(upload_to="images/equipments")

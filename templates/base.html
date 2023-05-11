@@ -40,7 +40,9 @@
             {% for sidebar_item in sidebar_items %}
             <div class="sidebar-item">
                 <a href="{% url sidebar_item.url %}">
-                    <span class="material-symbols-outlined icon">{{sidebar_item.icon}}</span>
+                    <span class="material-symbols-outlined icon">
+                        <img src="{{ sidebar_item.icon }}" alt=""> 
+                    </span>
                     <span class="text">{{ sidebar_item.name }}</span>
                 </a>
             </div>
