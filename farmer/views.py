@@ -16,7 +16,7 @@ from django.dispatch import receiver
 from django.db.models.signals import post_save
 # Create your views here.
 
-@login_required
+@login_required(login_url="login")
 def kyc(request):
     if request.method == "POST":
         user = request.user.id
@@ -92,14 +92,14 @@ def update_user_is_farmer(sender, instance, **kwargs):
         instance.user.is_farmer = True
         instance.user.save()
 
-@login_required
+@login_required(login_url="login")
 def farmer_home(request):
     equipment = equipments.objects.all()
     context = {"equipment":equipment}
     print(equipment)
     return render(request,'farmer_home.html',context)
 
-@login_required
+@login_required(login_url="login")
 def E_chart(request):
     equipment = equipments.objects.all()
     context = {"equipment":equipment}
@@ -230,7 +230,8 @@ def generate_pdf(request):
     # PDF generation succeeded
     return response
 
-@login_required
+
+@login_required(login_url="login")
 def kyc_detail(request):
     user = request.user.id
 

@@ -16,15 +16,20 @@
   </div>
   <div class="lower-content">
       <div class="shop-image">
-          <img src="/static/assets/images/apple2.png" alt="Apple">
+          <img src="{{ item.Photo.url }}" alt="Item in Shop">
       </div>
       <div class="shop-details">
           <div class="shop-header">
-             <h3><span><a href="{% url 'market' %}">Home</a></span> / Apple</h3>
+             <h3><span><a onclick="goBack()">Home</a></span>{{ item.Type }} </h3>
+            <script>
+            function goBack() {
+                window.history.back();
+            }
+            </script>
           </div>
           <div class="shop-price">
-              <h3>Apple</h3>
-              <p>Rs 120.00</p>
+              <h3>{{ item.ItemName }}</h3>
+              <p>{{ item.ItemName }}{{ item.ItemName }}</p>
               <p>Fresh Apple Available. 120 Rs per Kilo</p>
               <p>Availability: Yes</p>
           </div>

@@ -141,7 +141,7 @@ def success(request):
     return render(request, 'success.html')
 
 
-@login_required
+@login_required (login_url="login")
 def PasswordChangeView(request):
     user = request.User
     context = {'user': user}
