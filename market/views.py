@@ -1,3 +1,4 @@
+from django.http import HttpResponseNotFound
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
 from .models import shop
@@ -56,18 +57,18 @@ def shopItems(request):
     return render(request,'add_shopItems.html')
 
 def get_fruits(request):
-    items = shop.objects.filter(Q(Type='Vagetable') | Q(Type='Fruit'))
+    items = shop.objects.filter(Q(Type='Vagetable') | Q(Type='Fruit') | Q(Type='Crops'))
     context = {'items': items}
     return render(request, 'market.html', context)
 
 def get_equip(request):
-    items = shop.objects.filter(Q(Type='Equipment') | Q(Type='Pesticides'))
+    items = shop.objects.filter(Q(Type='Equipment') | Q(Type='Fertilizer') | Q(Type='Pesticides'))
     context = {'items': items}
     return render(request,'equipment.html', context)
 
-def items(request, id):
-    item = shop.objects.get(id=id)
-    context = {'item': item}
-    return render(request, 'products.html', context)
+
+
+
+
 
 

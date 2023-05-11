@@ -5,8 +5,9 @@
 
 {% block content %}
 
-<div class="containers">
-    {% for item in items %}
+{% for item in items %}
+<section>
+        <div class="containers">
         <div class="inner-containers">
             <div class="image">
                 <img src="{{ item.Photo.url }}" alt="Item in Shop">
@@ -20,16 +21,17 @@
                         <h3>{{ item.ItemName }}</h3>
                     </div>
                     <div class="details-price">
-                        <p>Rs.{{ item.Price }} {{ item.Quantity }}</p>
+                        <p>Rs. {{ item.Price }} {{ item.Quantity }}</p>
                     </div>
                 </div>
                 <div class="right-details">
-                    <a href="{% url 'items' item.id %}">
+                    <a href="{% url 'cart_items' item.Type item.id %}">
                         <button class="btn">View Details</button>
                     </a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
     {% endfor %}
-</div>
-{%endblock%}
+    {%endblock%}

@@ -1,4 +1,6 @@
 from django.shortcuts import redirect, render
+
+from market.models import shop
 from .models import equipments
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.decorators import login_required
@@ -43,3 +45,9 @@ def equipment_item(request):
 @login_required(login_url="login")
 def equipment_added(request):
     return render(request, "equipment_added.html")
+
+
+def cart_items(request, type, id):
+    item = shop.objects.get(Type=type, id=id)
+    context = {'item': item}
+    return render(request, 'product.html', context)
