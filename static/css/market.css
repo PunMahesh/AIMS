@@ -1,27 +1,20 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+section{
+    margin: 30px 60px 0 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
-.body{
-    max-width: 1440px;
-}
-.navigator{
-    margin: 20px  0  20px 60px; 
-    font-size: 16px;
-}
-.page-title{
-    margin: 0 0 0 60px;
-    font-size: 24px;
-    font-weight: 600;
-    color: #4F9656;
-}
-section {
-    margin: 30px 30px 0 30px;
+.content {
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.market-item-container {
+    margin: 20px 20px 0 20px;
 }
 .containers{
     max-width: 425px;
@@ -93,4 +86,10 @@ section {
     padding: 10px 12.5px;
     border: none;
     cursor: pointer;
+}
+
+.spacer {
+    margin: 0 10px;
+    padding: 0 10px;
+    flex: calc(50% - 40px); /* 50% - (margins + paddings) */
 }

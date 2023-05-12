@@ -21,11 +21,11 @@
                         <h3>{{ item.ItemName }}</h3>
                     </div>
                     <div class="details-price">
-                        <p>Rs.{{ item.Price }} {{ item.Quantity }}</p>
+                        <p>Rs. {{ item.Price }} {{ item.Quantity }}</p>
                     </div>
                 </div>
                 <div class="right-details">
-                    <a href="{% url 'show_items'  item.id %}">
+                    <a href="{% url 'show_items' item.id %}">
                         <button class="btn">View Details</button>
                     </a>
                 </div>
