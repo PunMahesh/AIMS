@@ -6,7 +6,7 @@ class Crop(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     crop_name = models.CharField(max_length=225)
     pesticide_used = models.CharField(max_length=225)
-    market_value = models.CharField(max_length=10)
+    market_value = models.CharField(max_length=100)
     disease = models.CharField(max_length=225,null=True, blank=True)
     season = models.CharField(max_length=225)
     crop_img = models.ImageField(upload_to="images/crops")

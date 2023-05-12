@@ -34,6 +34,10 @@ body {
     align-items: center;
     width: auto;
     cursor: pointer;
+    background-color: #266B50;
+    padding: 6px 10px 5px 15px;
+    color: white;
+    border-radius: 20px 0 20px 0;
 }
 .profile-btn-dd:active {
     transform: scale(0.98);

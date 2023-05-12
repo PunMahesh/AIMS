@@ -17,8 +17,8 @@
     font-weight: 600;
     color: #4F9656;
 }
-section{
-    margin: 30px 60px 0 60px;
+section {
+    margin: 30px 30px 0 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
